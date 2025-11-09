@@ -12,7 +12,7 @@ Each folder focuses on a specific concept or pattern and contains:
 
 | Folder Name | Description |
 |--------------|-------------|
-| [`star_patterns`](./star_patterns) | Contains various star pattern problems for practicing loops, nested loops, and logic building. |
+| [`loop`](./loop) | Contains various star pattern problems for practicing loops, nested loops, and logic building. |
 | *(more coming soon...)* | New folders will be added as I practice more DSA topics. |
 
 ---

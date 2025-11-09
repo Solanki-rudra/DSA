@@ -1,11 +1,11 @@
-# ⭐ Star Pattern Programs
+# ⭐ loop Programs
 
 This folder contains various **star and number pattern programs** written in JavaScript.  
 Each pattern helps improve logic building, looping concepts, and nested loop understanding.
 
 ---
 
-## 📂 File: `patterns.js`
+## 📂 File: `starPatterns.js`
 
 ### 📘 Description
 This file includes multiple functions (`pattern1` to `pattern18`) that print different patterns using loops.  
