@@ -11,6 +11,7 @@ to store values, indices, or frequencies — making solutions faster than brute 
 |------|----------|-------------|
 | [`1_two_sum.js`](./1_two_sum.js) | LeetCode #1 — Two Sum | Find two numbers that add up to a given target using different approaches. |
 | [`217_contains_duplicate.js`](./217_contains_duplicate.js) | LeetCode #217 — Contains Duplicate | Check whether an array contains any duplicate elements. |
+| [`219_contains_duplicate_2.js`](./219_contains_duplicate_2.js) | LeetCode #219 — Contains Duplicate II | Check for duplicates where the indices difference is within `k`. |
 
 ---
 
@@ -38,7 +39,19 @@ to store values, indices, or frequencies — making solutions faster than brute 
 
 ---
 
+### 🔁 **219 Contains Duplicate II**
+**Goal:** Given an integer array `nums` and an integer `k`, return `true` if there are two distinct indices `i` and `j` such that `nums[i] == nums[j]` and `|i - j| <= k`.
+
+| Function | Approach | Time | Space | Description |
+|-----------|-----------|------|--------|-------------|
+| `containsDuplicate2Brute` | Brute Force | O(n × k) | O(1) | Check each element’s next `k` elements for duplicates. |
+| `containsDuplicate2Better` | Sorting | O(n log n) | O(n) | Sort values with indices and check distance. |
+| `containsDuplicate2Optimal` | Hash Set | O(n) | O(k) | Use a sliding window + Set to track recent elements. |
+
+---
+
 ## ▶️ How to Run
 ```bash
 node 1_two_sum.js
 node 217_contains_duplicate.js
+node 219_contains_duplicate.js
