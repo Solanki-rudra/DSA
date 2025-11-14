@@ -33,6 +33,32 @@ function groupAnagramsBrute(strs) {
     return result;
 }
 
+/**
+ * @name groupAnagramsBetter
+ * @description Better Approach: Sort each string, then sort array and group neighbors.
+ * @timeComplexity O(n * k log k + n log n)
+ * @spaceComplexity O(n * k)
+ */
+function groupAnagramsBetter(strs) {
+    if (strs.length === 0) return [];
+    const sorted = strs.map(s => [s.split('').sort().join(''), s]);
+    sorted.sort((a, b) => a[0].localeCompare(b[0]));
+    const result = [];
+    let group = [sorted[0][1]];
+
+    for (let i = 1; i < sorted.length; i++) {
+        if (sorted[i][0] === sorted[i - 1][0]) {
+            group.push(sorted[i][1]);
+        } else {
+            result.push(group);
+            group = [sorted[i][1]];
+        }
+    }
+    result.push(group);
+    return result;
+}
+
 // Test
 const strs = ["eat","tea","tan","ate","nat","bat"];
 console.log(groupAnagramsBrute(strs));   // true
+console.log(groupAnagramsBetter(strs));  // true
