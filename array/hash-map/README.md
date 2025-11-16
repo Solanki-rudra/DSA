@@ -13,6 +13,7 @@ to store values, indices, or frequencies — making solutions faster than brute 
 | [`217_contains_duplicate.js`](./217_contains_duplicate.js) | LeetCode #217 — Contains Duplicate | Check whether an array contains any duplicate elements. |
 | [`219_contains_duplicate_2.js`](./219_contains_duplicate_2.js) | LeetCode #219 — Contains Duplicate II | Check for duplicates where the indices difference is within `k`. |
 | [`242_valid_anagram.js`](./242_valid_anagram.js) | LeetCode #242 — Valid Anagram | Check whether two strings are anagrams of each other. |
+| [`49_group_anagrams.js`](./49_group_anagrams.js) | LeetCode #49 — Group Anagrams | Group a list of strings into sets of anagrams. |
 
 ---
 
@@ -62,9 +63,21 @@ to store values, indices, or frequencies — making solutions faster than brute 
 
 ---
 
+### 🔤 **49 Group Anagrams**
+**Goal:** Given an array of strings, group all anagrams together.
+
+| Function | Approach | Time | Space | Description |
+|-----------|-----------|--------|---------|-------------|
+| `groupAnagramsBrute` | Brute Force | O(n² · k log k) | O(nk) | Compare each string with every other by sorting inside nested loops. |
+| `groupAnagramsBetter` | Sorting + Grouping | O(nk log k + n log n) | O(nk) | Map strings → sorted keys, sort them, then group neighbors. |
+| `groupAnagramsOptimal` | Hash Map | O(nk log k) | O(nk) | Use sorted string as hash key and group all anagrams in a map. |
+
+---
+
 ## ▶️ How to Run
 ```bash
 node 1_two_sum.js
 node 217_contains_duplicate.js
 node 219_contains_duplicate.js
 node 242_valid_anagram.js
+node 49_group_anagrams.js
