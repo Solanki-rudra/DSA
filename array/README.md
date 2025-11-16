@@ -10,6 +10,7 @@ Each subfolder focuses on a specific **technique or pattern** (like Hash Map, Tw
 | Folder | Description |
 |---------|-------------|
 | [`hash-map`](./hash-map) | Problems that use **Hash Maps** to solve array-related questions efficiently. |
+| [`prefix-suffix`](./prefix-suffix) | Problems that use the **Prefix–Suffix** pattern to solve array problems in linear time. |
 | *(more coming soon...)* | Additional patterns will be added here. |
 
 ---
