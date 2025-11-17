@@ -14,7 +14,7 @@ to store values, indices, or frequencies — making solutions faster than brute 
 | [`219_contains_duplicate_2.js`](./219_contains_duplicate_2.js) | LeetCode #219 — Contains Duplicate II | Check for duplicates where the indices difference is within `k`. |
 | [`242_valid_anagram.js`](./242_valid_anagram.js) | LeetCode #242 — Valid Anagram | Check whether two strings are anagrams of each other. |
 | [`49_group_anagrams.js`](./49_group_anagrams.js) | LeetCode #49 — Group Anagrams | Group a list of strings into sets of anagrams. |
-
+| [`347_top_k_frequent_elements.js`](./347_top_k_frequent_elements.js) | LeetCode #347 — Top K Frequent Elements | Return the `k` most frequent elements using Hash Map + Bucket Sort. |
 ---
 
 ## 🧩 Problem Summaries
@@ -73,6 +73,16 @@ to store values, indices, or frequencies — making solutions faster than brute 
 | `groupAnagramsOptimal` | Hash Map | O(nk log k) | O(nk) | Use sorted string as hash key and group all anagrams in a map. |
 
 ---
+### 🔢 **347 Top K Frequent Elements**
+**Goal:** Return the `k` most frequent elements from the array.
+
+| Function | Approach | Time | Space | Description |
+|-----------|-----------|------|--------|-------------|
+| `topKFrequentBrute` | Brute Force | O(n²) | O(n) | Count frequencies using nested loops + sorting. |
+| `topKFrequentBetter` | Hash Map + Sorting | O(n log n) | O(n) | Build frequency map and sort by counts. |
+| `topKFrequentOptimal` | Bucket Sort | O(n) | O(n) | Use frequency buckets and collect top `k` elements. |
+
+---
 
 ## ▶️ How to Run
 ```bash
@@ -81,3 +91,4 @@ node 217_contains_duplicate.js
 node 219_contains_duplicate.js
 node 242_valid_anagram.js
 node 49_group_anagrams.js
+node 347_top_k_frequent_elements.js
