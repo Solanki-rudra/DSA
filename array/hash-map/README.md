@@ -15,6 +15,7 @@ to store values, indices, or frequencies — making solutions faster than brute 
 | [`242_valid_anagram.js`](./242_valid_anagram.js) | LeetCode #242 — Valid Anagram | Check whether two strings are anagrams of each other. |
 | [`49_group_anagrams.js`](./49_group_anagrams.js) | LeetCode #49 — Group Anagrams | Group a list of strings into sets of anagrams. |
 | [`347_top_k_frequent_elements.js`](./347_top_k_frequent_elements.js) | LeetCode #347 — Top K Frequent Elements | Return the `k` most frequent elements using Hash Map + Bucket Sort. |
+| [`128_longest_cons_seq.js`](./128_longest_cons_seq.js) | LeetCode #128 — Longest Consecutive Sequence | return the length of the longest consecutive elements sequence. |
 ---
 
 ## 🧩 Problem Summaries
@@ -84,6 +85,16 @@ to store values, indices, or frequencies — making solutions faster than brute 
 
 ---
 
+---
+### 🔢 **128 Longest Consecutive Sequence**
+**Goal:** return the length of the longest consecutive elements sequence.
+
+| Function | Approach | Time | Space | Description |
+|-----------|-----------|------|--------|-------------|
+| `longestConsecutiveBrute` | Brute Force | O(n^3) | O(1) | check each and every next number by nested loops. |
+
+---
+
 ## ▶️ How to Run
 ```bash
 node 1_two_sum.js
@@ -92,3 +103,4 @@ node 219_contains_duplicate.js
 node 242_valid_anagram.js
 node 49_group_anagrams.js
 node 347_top_k_frequent_elements.js
+node 128_longest_cons_seq.js
