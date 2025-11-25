@@ -92,6 +92,8 @@ to store values, indices, or frequencies — making solutions faster than brute 
 | Function | Approach | Time | Space | Description |
 |-----------|-----------|------|--------|-------------|
 | `longestConsecutiveBrute` | Brute Force | O(n^3) | O(1) | check each and every next number by nested loops. |
+| `longestConsecutiveBetter` | Sorting | O(n log n) | O(1) | count consecutive numbers linearly. |
+| `longestConsecutiveBrute` | Hash Set | O(n) | O(n) | only count forward from the start of each streak. |
 
 ---
 
