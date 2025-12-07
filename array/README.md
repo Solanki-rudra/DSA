@@ -11,7 +11,8 @@ Each subfolder focuses on a specific **technique or pattern** (like Hash Map, Tw
 |---------|-------------|
 | [`hash-map`](./hash-map) | Problems that use **Hash Maps** to solve array-related questions efficiently. |
 | [`prefix-suffix`](./prefix-suffix) | Problems that use the **Prefix–Suffix** pattern to solve array problems in linear time. |
-| [`lexicographical`](./lexicographical) | Problems that use the **lexicographical** pattern to solve array problems. |
+| [`lexicographical`](./lexicographical) | Problems that use the **Lexicographical** pattern to solve array problems. |
+| [`cyclic-sort`](./cyclic-sort) | Problems that use the **Cyclic-Sort** pattern to solve array problems. |
 | *(more coming soon...)* | Additional patterns will be added here. |
 
 ---
