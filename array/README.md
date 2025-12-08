@@ -13,6 +13,7 @@ Each subfolder focuses on a specific **technique or pattern** (like Hash Map, Tw
 | [`prefix-suffix`](./prefix-suffix) | Problems that use the **Prefix–Suffix** pattern to solve array problems in linear time. |
 | [`lexicographical`](./lexicographical) | Problems that use the **Lexicographical** pattern to solve array problems. |
 | [`cyclic-sort`](./cyclic-sort) | Problems that use the **Cyclic-Sort** pattern to solve array problems. |
+| [`sliding-window`](./sliding-window) | Problems that use the **Sliding-Window** pattern to solve array problems. |
 | *(more coming soon...)* | Additional patterns will be added here. |
 
 ---
