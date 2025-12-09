@@ -10,7 +10,7 @@ Sliding Window helps reduce time complexity from **O(n²) → O(n)** by keeping 
 
 | File | Problem | Description |
 |------|---------|-------------|
-| `121_best_time_to_buy_and_sell_stock.js` | LeetCode #121 — Best Time to Buy and Sell Stock | Find the maximum profit by choosing one buy day and one sell day. |
+| [`121_best_time_to_buy_and_sell_stock.js`](./121_best_time_to_buy_sell_stock.js) | LeetCode #121 — Best Time to Buy and Sell Stock | Find the maximum profit by choosing one buy day and one sell day. |
 
 ---
 
