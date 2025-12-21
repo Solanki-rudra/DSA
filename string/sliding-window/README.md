@@ -11,6 +11,7 @@ to efficiently detect patterns, substrings, or optimize window-based conditions 
 |------|----------|-------------|
 | [`567_permutation_in_string.js`](./567_permutation_in_string.js) | LeetCode #567 — Permutation in String | Check whether a permutation of one string exists as a substring inside another using Sliding Window. |
 | [`424_long_repeat_char_replace.js`](./424_long_repeat_char_replace.js) | LeetCode #424 — Longest Repeating Character Replacement | Find the longest substring that can be made of repeating characters after at most `k` replacements. |
+| [`3_long_substr_without_repeat.js`](./3_long_substr_without_repeat.js) | LeetCode #3 — Longest Substring Without Repeating Characters | Find the length of the longest substring without repeating characters. |
 
 ---
 
@@ -40,7 +41,20 @@ The window expands greedily while tracking the **most frequent character** in th
 
 ---
 
+### 🔁 **3 — Longest Substring Without Repeating Characters**
+**Goal:** Given a string `s`, find the **length of the longest substring** that contains **no repeating characters**.
+
+The window expands to include new characters and shrinks when a **duplicate character** is encountered, ensuring all characters in the window remain unique.
+
+| Function | Approach | Time | Space | Description |
+|-----------|-----------|------|--------|-------------|
+| `lengthOfLongestSubstringBrute` | Brute Force | O(n³) | O(1) | Check every possible substring and stop when a duplicate character appears. |
+| `lengthOfLongestSubstringOptimal` | Sliding Window + Hash Map | O(n) | O(n) | Maintain a dynamic window and shrink it when a character repeats. |
+
+---
+
 ## ▶️ How to Run
 ```bash
 node 567_permutation_in_string.js
 node 424_long_repeat_char_replace.js
+node 3_long_substr_without_repeat.js
