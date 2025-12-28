@@ -10,6 +10,8 @@ Each subfolder focuses on a specific **technique or pattern** (like Greedy, Hash
 | Folder | Description |
 |---------|-------------|
 | [`greedy`](./greedy) | Problems that use greedy techniques to process or convert strings efficiently. |
+| [`sliding-window`](./sliding-window) | Problems that use sliding-window techniques to process or convert strings efficiently. |
+| [`two-pointers`](./two-pointers) | Problems that use two-pointers techniques to process or convert strings efficiently. |
 | *(more coming soon...)* | Additional patterns will be added here. |
 
 ---
