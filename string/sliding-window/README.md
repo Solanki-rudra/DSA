@@ -12,6 +12,7 @@ to efficiently detect patterns, substrings, or optimize window-based conditions 
 | [`567_permutation_in_string.js`](./567_permutation_in_string.js) | LeetCode #567 — Permutation in String | Check whether a permutation of one string exists as a substring inside another using Sliding Window. |
 | [`424_long_repeat_char_replace.js`](./424_long_repeat_char_replace.js) | LeetCode #424 — Longest Repeating Character Replacement | Find the longest substring that can be made of repeating characters after at most `k` replacements. |
 | [`3_long_substr_without_repeat.js`](./3_long_substr_without_repeat.js) | LeetCode #3 — Longest Substring Without Repeating Characters | Find the length of the longest substring without repeating characters. |
+| [`76_min_sliding_window.js`](./76_min_sliding_window.js) | LeetCode #76 — Minimum Window Substring | Find the minimum window in `s` which contains all characters of `t`. |
 
 ---
 
@@ -53,8 +54,22 @@ The window expands to include new characters and shrinks when a **duplicate char
 
 ---
 
+### 🔁 **76 — Minimum Window Substring**
+**Goal:** Given two strings `s` and `t`, find the **minimum window substring** of `s` such that **every character in `t` (including duplicates)** is included in the window.  
+If no such substring exists, return an empty string `""`.
+
+The window expands until all required characters are included, then shrinks greedily to find the **smallest valid window**.
+
+| Function | Approach | Time | Space | Description |
+|-----------|-----------|------|--------|-------------|
+| `minWindowBrute` | Brute Force | O(n³) | O(n) | Try every substring and verify if it contains all characters of `t` with required frequency. |
+| `minWindowOptimal` | Sliding Window + Hash Map | O(n) | O(n) | Use two pointers and frequency maps to expand and shrink the window while maintaining validity. |
+
+---
+
 ## ▶️ How to Run
 ```bash
 node 567_permutation_in_string.js
 node 424_long_repeat_char_replace.js
 node 3_long_substr_without_repeat.js
+node 76_min_sliding_window.js
