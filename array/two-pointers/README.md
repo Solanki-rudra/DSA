@@ -13,6 +13,7 @@ Two Pointers avoids extra space and is commonly used when the array is **sorted*
 | File | Problem | Description |
 |------|----------|-------------|
 | [`167_two_sum_2.js`](./167_two_sum_2.js) | LeetCode #167 — Two Sum II (Input Array Is Sorted) | Find two numbers in a sorted array that add up to a given target using Two Pointers. |
+| [`15_three_sum.js`](./15_three_sum.js) | LeetCode #15 — 3 Sum | Find all unique triplets in the array that sum to zero using sorting and Two Pointers. |
 
 ---
 
@@ -35,6 +36,28 @@ Return the indices of the two numbers (`index1 < index2`).
 
 ---
 
+### 🔢 **15 — Three Sum**
+
+**Goal:**  
+Given an integer array `nums`, return **all unique triplets**  
+`[nums[i], nums[j], nums[k]]` such that:
+
+- `i ≠ j ≠ k`
+- `nums[i] + nums[j] + nums[k] == 0`
+
+The solution must not contain duplicate triplets.
+
+---
+
+| Function | Approach | Time | Space | Description |
+|-----------|-----------|------|--------|-------------|
+| `threeSumBrute` | Brute Force + Set | O(n³) | O(n) | Try all triplets and use a set to avoid duplicates. |
+| `threeSumBetter` | Hash Set | O(n²) | O(n) | Fix one element and use a hash set to find complements. |
+| `threeSumOptimal` | Sorting + Two Pointers | O(n²) | O(1) | Sort array and use two pointers to find valid triplets efficiently. |
+
+---
+
 ## ▶️ How to Run
 ```bash
 node 167_two_sum_2.js
+node 15_three_sum.js
