@@ -87,7 +87,9 @@ Given n non-negative integers representing an elevation map where the width of e
 
 | Function | Approach | Time | Space | Description |
 |---------|----------|------|-------|-------------|
-| `trapBrute` | Brute Force | O(n²) | O(1) | Try by checking max left and right for each element. |
+| `trapBrute` | Brute Force | O(n²) | O(1) | For each index, calculate max left and max right and compute trapped water. |
+| `trapBetter` | Prefix–Suffix | O(n) | O(n) | Precompute max left and max right arrays to avoid repeated calculations. |
+| `trapOptimal` | Two Pointers | O(n) | O(1) | Use two pointers from both ends and track max boundaries to calculate trapped water optimally. |
 
 ---
 
