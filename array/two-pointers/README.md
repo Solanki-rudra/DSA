@@ -16,7 +16,8 @@ Two Pointers avoids extra space and is commonly used when the array is
 | [`167_two_sum_2.js`](./167_two_sum_2.js) | LeetCode #167 — Two Sum II (Input Array Is Sorted) | Find two numbers in a sorted array that add up to a given target using Two Pointers. |
 | [`15_three_sum.js`](./15_three_sum.js) | LeetCode #15 — 3 Sum | Find all unique triplets in the array that sum to zero using sorting and Two Pointers. |
 | [`11_most_water_container.js`](./11_most_water_container.js) | LeetCode #11 — Container With Most Water | Find two lines that together with the x-axis form a container holding the maximum water. |
-| [`42_traping_rain_water.js`](./42_traping_rain_water.js) | LeetCode #42 — Traping Rain Water | Find maximum unit of water that traps into the bars. |
+| [`42_traping_rain_water.js`](./42_traping_rain_water.js) | LeetCode #42 — Trapping Rain Water | Find maximum unit of water that traps into the bars. |
+| [`26_remove_duplicate.js`](./26_remove_duplicate.js) | LeetCode #26 — Remove Duplicates | Remove duplicates from a sorted array in-place and return the new length. |
 
 ---
 
@@ -78,7 +79,7 @@ holds the **maximum amount of water**.
 
 ---
 
-### 🔢 **42 — Traping Rain Water**
+### 🔢 **42 — Trapping Rain Water**
 
 **Goal:**  
 Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
@@ -93,6 +94,20 @@ Given n non-negative integers representing an elevation map where the width of e
 
 ---
 
+### 🔢 **26 — Remove Duplicates**
+
+**Goal:**  
+Given a **sorted array** `nums`, remove the duplicates **in-place** such that each element appears only once and return the new length.
+
+---
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `removeDuplicatesBrute` | Brute Force | O(n²) | O(1) | Compare each element with previously seen elements and shift unique values forward. |
+| `removeDuplicatesOptimal` | Two Pointers | O(n) | O(1) | Use slow and fast pointers to overwrite duplicates in-place efficiently. |
+
+---
+
 ## ▶️ How to Run
 
 ```bash
@@ -100,3 +115,4 @@ node 167_two_sum_2.js
 node 15_three_sum.js
 node 11_most_water_container.js
 node 42_traping_rain_water.js
+node 26_remove_duplicate.js
