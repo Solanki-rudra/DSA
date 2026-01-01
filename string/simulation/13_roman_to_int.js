@@ -1,11 +1,11 @@
-// Pattern: String, Greedy
+// Pattern: String, Simulation
 
 // LeetCode Problem 13: Roman to Integer
 // Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 
 /**
 * @name romanToInt
-* @description Greedy Approach: Add values normally, subtract when a smaller numeral appears before a larger one.
+* @description Approach: Add values normally, subtract when a smaller numeral appears before a larger one.
 * @timeComplexity O(n)
 * @spaceComplexity O(1)
 */
