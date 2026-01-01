@@ -1,10 +1,10 @@
 # 🔁 String + Simulation Problems
 
 This folder contains problems where **strings are processed by directly following given rules**,  
-step by step, without making optimization choices.
+step by step, without making optimization decisions.
 
-These problems are best solved using **simulation**, where the logic mirrors the problem statement  
-exactly as described.
+These problems are best solved using **simulation**, where the solution logic closely mirrors  
+the problem statement itself.
 
 ---
 
@@ -14,6 +14,7 @@ exactly as described.
 |------|-----------|--------------|-------------|
 | [`13_roman_to_int.js`](./13_roman_to_int.js) | 13 | Roman to Integer | Convert a Roman numeral string into its integer value by simulating Roman numeral rules. |
 | [`412_fizz_buzz.js`](./412_fizz_buzz.js) | 412 | Fizz Buzz | Generate strings based on divisibility rules for numbers from 1 to n. |
+| [`14_longest_cmn_prfx.js`](./14_longest_cmn_prfx.js) | 14 | Longest Common Prefix | Find the longest prefix shared by all strings by progressively shrinking the prefix. |
 
 ---
 
@@ -29,11 +30,9 @@ String simulation / rule-based parsing
 **Goal:**  
 Convert a Roman numeral string into its integer value.
 
-Roman numerals follow fixed rules:
-- Symbols are usually added
+**Rules:**
+- Symbols are normally added
 - A smaller value before a larger value means subtraction
-
-#### Approach
 
 | Function | Pattern | Time Complexity | Space Complexity | Description |
 |--------|--------|-----------------|------------------|-------------|
@@ -47,28 +46,45 @@ Roman numerals follow fixed rules:
 String construction via simulation
 
 **Goal:**  
-For numbers from 1 to `n`:
-- Output `"Fizz"` if divisible by 3
-- Output `"Buzz"` if divisible by 5
+For numbers from `1` to `n`:
+- Output `"Fizz"` if divisible by `3`
+- Output `"Buzz"` if divisible by `5`
 - Output `"FizzBuzz"` if divisible by both
-- Otherwise, output the number as a string
-
-#### Approach
+- Otherwise output the number as a string
 
 | Function | Pattern | Time Complexity | Space Complexity | Description |
 |--------|--------|-----------------|------------------|-------------|
-| `fizzBuzz` | Simulation | O(n) | O(n) | Iterate from 1 to n and apply the given rules to construct the output array. |
+| `fizzBuzz` | Simulation | O(n) | O(n) | Iterate from 1 to n and apply divisibility rules to build the output array. |
 
 ---
 
-## 🧠 Key Pattern Insight
+### 🔤 **14 — Longest Common Prefix**
 
-> **Simulation problems require no optimization or choice.  
+**Problem Type:**  
+String comparison via simulation
+
+**Goal:**  
+Given an array of strings, find the longest prefix that is common to all strings.
+
+**Key Idea:**
+- Start with the first string as a candidate prefix
+- Compare it with each subsequent string
+- Shrink the prefix until it matches all strings
+
+| Function | Pattern | Time Complexity | Space Complexity | Description |
+|--------|--------|-----------------|------------------|-------------|
+| `longestCommonPrefix` | Simulation | O(n · m) | O(m) | Compare characters one by one and reduce the prefix when mismatches occur. |
+
+---
+
+## 🧠 Core Pattern Insight
+
+> **Simulation problems require no optimization or decision-making.  
 You simply follow the rules exactly as written.**
 
 If the solution feels like:
 - “Read → check → act → repeat”  
-then it belongs to **Simulation**.
+then the problem belongs to **Simulation**.
 
 ---
 
@@ -77,3 +93,4 @@ then it belongs to **Simulation**.
 ```bash
 node 13_roman_to_int.js
 node 412_fizz_buzz.js
+node 14_longest_cmn_prfx.js
