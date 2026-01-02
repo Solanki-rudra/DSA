@@ -10,6 +10,7 @@ to convert, compare, or evaluate them efficiently without using extra space.
 | File | Problem | Description |
 |------|----------|-------------|
 | [`125_valid_palindrome.js`](./125_valid_palindrome.js) | LeetCode #125 — Valid Palindrome | Check whether a string is a palindrome after ignoring non-alphanumeric characters and case differences. |
+| [`647_palindromic_substrs.js`](./647_palindromic_substrs.js) | LeetCode #647 — Palindromic Substrings | Count the total number of palindromic substrings in a string. |
 
 ---
 
@@ -27,6 +28,22 @@ A string is a palindrome if it reads the same **forward and backward** after cle
 
 ---
 
+### 🔡 **647 Palindromic Substrings**
+**Goal:** Count the number of **palindromic substrings** in a given string.
+
+A substring is palindromic if it reads the same **forward and backward**.  
+Each occurrence is counted separately, even if the substring values are the same.
+
+| Function | Approach | Time | Space | Description |
+|-----------|-----------|------|--------|-------------|
+| `countSubstringsBrute` | Brute Force | O(n³) | O(n³) | Generate all substrings, store them, and check each for palindrome. |
+| `countSubstringsBetter` | Optimized Brute Force | O(n³) | O(n) | Generate substrings on the fly and check palindrome immediately. |
+| `countSubstringsOptimal` | Two Pointers (Expand Around Center) | O(n²) | O(1) | Expand from each possible center and count palindromes directly. |
+
+---
+
 ## ▶️ How to Run
+
 ```bash
-node 13_roman_to_int.js
+node 125_valid_palindrome.js
+node 647_palindromic_substrs.js

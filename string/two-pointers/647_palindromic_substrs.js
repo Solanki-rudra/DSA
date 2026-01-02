@@ -39,5 +39,60 @@ function countSubstringsBrute(s) {
     return ans
 }
 
+/**
+ * @name countSubstringsBetter
+ * @description Better Approach: Generate substrings and check for palindrome on the fly.
+ * @timeComplexity O(n^3)
+ * @spaceComplexity O(n)
+ */
+function countSubstringsBetter(s) {
+    let ans = 0
+    for (let i = 0; i < s.length; i++) {
+        let str = ""
+        for (let j = i; j < s.length; j++) {
+            str += s[j]
+            let l = 0, r = str.length - 1;
+            let isPali = true
+            while (l <= r) {
+                if (str[l] == str[r]) {
+                    l++
+                    r--
+                } else {
+                    isPali = false
+                    break
+                }
+            }
+            if (isPali) {
+                ans++
+            }
+        }
+    }
+    return ans
+}
+
+/**
+ * @name countSubstringsOptimal
+ * @description Optimal Approach: Expand around centers.
+ * @timeComplexity O(n^2)
+ * @spaceComplexity O(1)
+ */
+function countSubstringsOptimal(s) {
+    let ans = 0
+    function counter(l, r) {
+        while (l >= 0 && r < s.length && s[l] === s[r]) {
+            ans++
+            l--
+            r++
+        }
+    }
+    for (let i = 0; i < s.length; i++) {
+        counter(i, i)
+        counter(i, i + 1)
+    }
+    return ans
+}
+
 let s = "abc"
 console.log(countSubstringsBrute(s)) // Output: 3
+console.log(countSubstringsBetter(s)) // Output: 3
+console.log(countSubstringsOptimal(s)) // Output: 3
