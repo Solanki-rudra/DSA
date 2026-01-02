@@ -11,6 +11,7 @@ to convert, compare, or evaluate them efficiently without using extra space.
 |------|----------|-------------|
 | [`125_valid_palindrome.js`](./125_valid_palindrome.js) | LeetCode #125 — Valid Palindrome | Check whether a string is a palindrome after ignoring non-alphanumeric characters and case differences. |
 | [`647_palindromic_substrs.js`](./647_palindromic_substrs.js) | LeetCode #647 — Palindromic Substrings | Count the total number of palindromic substrings in a string. |
+| [`5_longest_palindromic_substr.js`](./5_longest_palindromic_substr.js) | LeetCode #5 — Longest Palindromic Substring | Find the **longest palindromic substring** in a string. |
 
 ---
 
@@ -18,8 +19,6 @@ to convert, compare, or evaluate them efficiently without using extra space.
 
 ### 🔡 **125 Valid Palindrome**
 **Goal:** Determine whether a string is a **palindrome**, considering **only alphanumeric characters** and ignoring **case sensitivity**.
-
-A string is a palindrome if it reads the same **forward and backward** after cleaning.
 
 | Function | Approach | Time | Space | Description |
 |-----------|-----------|------|--------|-------------|
@@ -31,9 +30,6 @@ A string is a palindrome if it reads the same **forward and backward** after cle
 ### 🔡 **647 Palindromic Substrings**
 **Goal:** Count the number of **palindromic substrings** in a given string.
 
-A substring is palindromic if it reads the same **forward and backward**.  
-Each occurrence is counted separately, even if the substring values are the same.
-
 | Function | Approach | Time | Space | Description |
 |-----------|-----------|------|--------|-------------|
 | `countSubstringsBrute` | Brute Force | O(n³) | O(n³) | Generate all substrings, store them, and check each for palindrome. |
@@ -42,8 +38,19 @@ Each occurrence is counted separately, even if the substring values are the same
 
 ---
 
+### 🔡 **5 Longest Palindromic Substring**
+**Goal:** Find the **longest palindromic substring** in a given string.
+
+| Function | Approach | Time | Space | Description |
+|-----------|-----------|------|--------|-------------|
+| `longestPalindromeBrute` | Brute Force | O(n³) | O(1) | Generate all substrings and check each for palindrome. Keep the longest. |
+| `longestPalindromeOptimal` | Two Pointers (Expand Around Center) | O(n²) | O(1) | Expand from each center (odd & even) and track the longest palindrome. |
+
+---
+
 ## ▶️ How to Run
 
 ```bash
 node 125_valid_palindrome.js
 node 647_palindromic_substrs.js
+node 5_longest_palindromic_substr.js
