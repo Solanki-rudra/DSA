@@ -12,6 +12,7 @@ to convert, compare, or evaluate them efficiently without using extra space.
 | [`125_valid_palindrome.js`](./125_valid_palindrome.js) | LeetCode #125 — Valid Palindrome | Check whether a string is a palindrome after ignoring non-alphanumeric characters and case differences. |
 | [`647_palindromic_substrs.js`](./647_palindromic_substrs.js) | LeetCode #647 — Palindromic Substrings | Count the total number of palindromic substrings in a string. |
 | [`5_longest_palindromic_substr.js`](./5_longest_palindromic_substr.js) | LeetCode #5 — Longest Palindromic Substring | Find the **longest palindromic substring** in a string. |
+| [`68_text_justification.js`](./68_text_justification.js) | LeetCode #68 — Text Justification | Format text such that each line has **exactly maxWidth characters** and is **fully justified**. |
 
 ---
 
@@ -48,9 +49,20 @@ to convert, compare, or evaluate them efficiently without using extra space.
 
 ---
 
+### 📝 **68 Text Justification**
+**Goal:** Format the given words so that each line has **exactly `maxWidth` characters**,  
+and text is **fully justified** (spaces distributed evenly between words).
+
+| Function | Approach | Time | Space | Description |
+|-----------|-----------|------|--------|-------------|
+| `fullJustify` | Greedy + Two Pointers | O(n) | O(n) | Greedily group words into lines and distribute spaces evenly. The last line is left-justified. |
+
+---
+
 ## ▶️ How to Run
 
 ```bash
 node 125_valid_palindrome.js
 node 647_palindromic_substrs.js
 node 5_longest_palindromic_substr.js
+node 68_text_justification.js
