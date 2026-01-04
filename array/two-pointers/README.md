@@ -21,6 +21,7 @@ Two Pointers avoids extra space and is commonly used when the array is
 | [`704_binary_search.js`](./704_binary_search.js) | LeetCode #704 — Binary Search | Search for a target value in a sorted array using Binary Search. |
 | [`34_first_last_position.js`](./34_first_last_position.js) | LeetCode #34 — First and Last Position of Element in Sorted Array | Find the starting and ending position of a target value in a sorted array. |
 | [`88_merge_sorted_arr.js`](./88_merge_sorted_arr.js) | LeetCode #88 — Merge Sorted Array | Merge two sorted arrays into one sorted array in-place. |
+| [`75_sort_colors.js`](./75_sort_colors.js) | LeetCode #75 — Sort Colors | Sort an array containing 0s, 1s, and 2s **in-place** using counting or Dutch National Flag algorithm. |
 
 ---
 
@@ -162,6 +163,21 @@ so that `nums1` becomes **one sorted array**.
 
 ---
 
+### 🔢 **75 — Sort Colors**
+
+**Goal:**  
+Given an array `nums` containing `0`s, `1`s, and `2`s, sort it **in-place** so that all `0`s come first, followed by `1`s, then `2`s.
+
+---
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `sortColorsBrute` | Array Sort | O(n log n) | O(1) | Sort the array directly using built-in sort. |
+| `sortColorsBetter` | Counting | O(2n) | O(1) | Count number of 0s, 1s, 2s and overwrite the array sequentially. |
+| `sortColorsOptimal` | Dutch National Flag (Two Pointers) | O(n) | O(1) | Use three pointers to partition the array in one pass. |
+
+---
+
 ## ▶️ How to Run
 
 ```bash
@@ -173,3 +189,4 @@ node 26_remove_duplicate.js
 node 704_binary_search.js
 node 34_first_last_position.js
 node 88_merge_sorted_arr.js
+node 75_sort_colors.js
