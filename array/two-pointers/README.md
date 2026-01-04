@@ -19,6 +19,7 @@ Two Pointers avoids extra space and is commonly used when the array is
 | [`42_traping_rain_water.js`](./42_traping_rain_water.js) | LeetCode #42 — Trapping Rain Water | Find total units of water that can be trapped between elevation bars. |
 | [`26_remove_duplicate.js`](./26_remove_duplicate.js) | LeetCode #26 — Remove Duplicates from Sorted Array | Remove duplicates from a sorted array in-place and return the new length. |
 | [`704_binary_search.js`](./704_binary_search.js) | LeetCode #704 — Binary Search | Search for a target value in a sorted array using Binary Search. |
+| [`34_first_last_position.js`](./34_first_last_position.js) | LeetCode #34 — First and Last Position of Element in Sorted Array | Find the starting and ending position of a target value in a sorted array. |
 
 ---
 
@@ -126,6 +127,22 @@ if it exists in the array, otherwise return `-1`.
 
 ---
 
+### 🔢 **34 — First and Last Position of Element in Sorted Array**
+
+**Goal:**  
+Given a **sorted array** `nums` and a `target`, return the **starting and ending indices**  
+of the target value. If the target is not found, return `[-1, -1]`.
+
+---
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `searchRangeBrute` | Linear Scan | O(n) | O(1) | Traverse the array and track first and last occurrence of the target. |
+| `searchRangeBetter` | Binary Search + Expansion | O(log n) avg, O(n) worst | O(1) | Find one occurrence using binary search, then expand left and right. |
+| `searchRangeOptimal` | Two Binary Searches | O(log n) | O(1) | Perform two biased binary searches to find first and last positions. |
+
+---
+
 ## ▶️ How to Run
 
 ```bash
@@ -135,3 +152,4 @@ node 11_most_water_container.js
 node 42_traping_rain_water.js
 node 26_remove_duplicate.js
 node 704_binary_search.js
+node 34_first_last_position.js
