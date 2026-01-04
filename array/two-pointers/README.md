@@ -20,6 +20,7 @@ Two Pointers avoids extra space and is commonly used when the array is
 | [`26_remove_duplicate.js`](./26_remove_duplicate.js) | LeetCode #26 — Remove Duplicates from Sorted Array | Remove duplicates from a sorted array in-place and return the new length. |
 | [`704_binary_search.js`](./704_binary_search.js) | LeetCode #704 — Binary Search | Search for a target value in a sorted array using Binary Search. |
 | [`34_first_last_position.js`](./34_first_last_position.js) | LeetCode #34 — First and Last Position of Element in Sorted Array | Find the starting and ending position of a target value in a sorted array. |
+| [`88_merge_sorted_arr.js`](./88_merge_sorted_arr.js) | LeetCode #88 — Merge Sorted Array | Merge two sorted arrays into one sorted array in-place. |
 
 ---
 
@@ -52,8 +53,6 @@ Given an integer array `nums`, return **all unique triplets**
 
 - `i ≠ j ≠ k`
 - `nums[i] + nums[j] + nums[k] == 0`
-
-The solution must not contain duplicate triplets.
 
 ---
 
@@ -143,6 +142,26 @@ of the target value. If the target is not found, return `[-1, -1]`.
 
 ---
 
+### 🔢 **88 — Merge Sorted Array**
+
+**Goal:**  
+Given two **sorted arrays** `nums1` and `nums2`, merge `nums2` into `nums1`  
+so that `nums1` becomes **one sorted array**.
+
+- `nums1` has length `m + n`
+- First `m` elements are valid
+- Last `n` elements are empty (`0`)
+- Merge must be done **in-place**
+
+---
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `mergeBrute` | Copy + Sort | O((m + n) log (m + n)) | O(1) | Copy nums2 into nums1 and sort the entire array. |
+| `mergeOptimal` | Two Pointers (from end) | O(m + n) | O(1) | Merge efficiently using pointers from the back to avoid overwriting. |
+
+---
+
 ## ▶️ How to Run
 
 ```bash
@@ -153,3 +172,4 @@ node 42_traping_rain_water.js
 node 26_remove_duplicate.js
 node 704_binary_search.js
 node 34_first_last_position.js
+node 88_merge_sorted_arr.js
