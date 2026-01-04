@@ -16,8 +16,9 @@ Two Pointers avoids extra space and is commonly used when the array is
 | [`167_two_sum_2.js`](./167_two_sum_2.js) | LeetCode #167 — Two Sum II (Input Array Is Sorted) | Find two numbers in a sorted array that add up to a given target using Two Pointers. |
 | [`15_three_sum.js`](./15_three_sum.js) | LeetCode #15 — 3 Sum | Find all unique triplets in the array that sum to zero using sorting and Two Pointers. |
 | [`11_most_water_container.js`](./11_most_water_container.js) | LeetCode #11 — Container With Most Water | Find two lines that together with the x-axis form a container holding the maximum water. |
-| [`42_traping_rain_water.js`](./42_traping_rain_water.js) | LeetCode #42 — Trapping Rain Water | Find maximum unit of water that traps into the bars. |
-| [`26_remove_duplicate.js`](./26_remove_duplicate.js) | LeetCode #26 — Remove Duplicates | Remove duplicates from a sorted array in-place and return the new length. |
+| [`42_traping_rain_water.js`](./42_traping_rain_water.js) | LeetCode #42 — Trapping Rain Water | Find total units of water that can be trapped between elevation bars. |
+| [`26_remove_duplicate.js`](./26_remove_duplicate.js) | LeetCode #26 — Remove Duplicates from Sorted Array | Remove duplicates from a sorted array in-place and return the new length. |
+| [`704_binary_search.js`](./704_binary_search.js) | LeetCode #704 — Binary Search | Search for a target value in a sorted array using Binary Search. |
 
 ---
 
@@ -75,36 +76,53 @@ holds the **maximum amount of water**.
 | Function | Approach | Time | Space | Description |
 |---------|----------|------|-------|-------------|
 | `maxAreaBrute` | Brute Force | O(n²) | O(1) | Try all possible pairs of lines and calculate the area. |
-| `maxAreaOptimal` | Two Pointers | O(n) | O(1) | Use two pointers from both ends and move the smaller height inward to maximize area. |
+| `maxAreaOptimal` | Two Pointers | O(n) | O(1) | Move the pointer with smaller height inward to maximize area. |
 
 ---
 
 ### 🔢 **42 — Trapping Rain Water**
 
 **Goal:**  
-Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
+Given `n` non-negative integers representing an elevation map where the width of each bar is `1`,  
+compute how much water it can trap after raining.
 
 ---
 
 | Function | Approach | Time | Space | Description |
 |---------|----------|------|-------|-------------|
-| `trapBrute` | Brute Force | O(n²) | O(1) | For each index, calculate max left and max right and compute trapped water. |
-| `trapBetter` | Prefix–Suffix | O(n) | O(n) | Precompute max left and max right arrays to avoid repeated calculations. |
-| `trapOptimal` | Two Pointers | O(n) | O(1) | Use two pointers from both ends and track max boundaries to calculate trapped water optimally. |
+| `trapBrute` | Brute Force | O(n²) | O(1) | For each index, calculate max left and max right heights. |
+| `trapBetter` | Prefix–Suffix | O(n) | O(n) | Precompute max left and right arrays. |
+| `trapOptimal` | Two Pointers | O(n) | O(1) | Use two pointers and track boundaries to calculate trapped water. |
 
 ---
 
-### 🔢 **26 — Remove Duplicates**
+### 🔢 **26 — Remove Duplicates from Sorted Array**
 
 **Goal:**  
-Given a **sorted array** `nums`, remove the duplicates **in-place** such that each element appears only once and return the new length.
+Given a **sorted array** `nums`, remove the duplicates **in-place**  
+such that each element appears only once and return the new length.
 
 ---
 
 | Function | Approach | Time | Space | Description |
 |---------|----------|------|-------|-------------|
-| `removeDuplicatesBrute` | Brute Force | O(n²) | O(1) | Compare each element with previously seen elements and shift unique values forward. |
-| `removeDuplicatesOptimal` | Two Pointers | O(n) | O(1) | Use slow and fast pointers to overwrite duplicates in-place efficiently. |
+| `removeDuplicatesBrute` | Brute Force | O(n²) | O(1) | Compare each element with previous ones and shift unique values. |
+| `removeDuplicatesOptimal` | Two Pointers | O(n) | O(1) | Use slow and fast pointers to overwrite duplicates in-place. |
+
+---
+
+### 🔢 **704 — Binary Search**
+
+**Goal:**  
+Given a **sorted array** `nums` and a `target`, return the **index** of `target`  
+if it exists in the array, otherwise return `-1`.
+
+---
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `searchBrute` | Linear Search | O(n) | O(1) | Traverse the array and compare each element with the target. |
+| `searchOptimal` | Binary Search | O(log n) | O(1) | Repeatedly divide the search space in half to find the target. |
 
 ---
 
@@ -116,3 +134,4 @@ node 15_three_sum.js
 node 11_most_water_container.js
 node 42_traping_rain_water.js
 node 26_remove_duplicate.js
+node 704_binary_search.js
