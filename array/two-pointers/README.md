@@ -23,6 +23,7 @@ Two Pointers avoids extra space and is commonly used when the array is
 | [`88_merge_sorted_arr.js`](./88_merge_sorted_arr.js) | LeetCode #88 — Merge Sorted Array | Merge two sorted arrays into one sorted array in-place. |
 | [`75_sort_colors.js`](./75_sort_colors.js) | LeetCode #75 — Sort Colors | Sort an array containing 0s, 1s, and 2s in-place using counting or Dutch National Flag algorithm. |
 | [`74_search_2d_matrix.js`](./74_search_2d_matrix.js) | LeetCode #74 — Search a 2D Matrix | Determine if a target value exists in a sorted 2D matrix using binary search. |
+| [`153_min_in_rotated_arr.js`](./153_min_in_rotated_arr.js) | LeetCode #153 — Find Minimum in Rotated Sorted Array | Find the minimum element in a rotated sorted array using binary search. |
 
 ---
 
@@ -195,6 +196,21 @@ Determine if a given `target` exists in the matrix.
 
 ---
 
+### 🔢 **153 — Find Minimum in Rotated Sorted Array**
+
+**Goal:**  
+Given a rotated sorted array `nums` **without duplicates**, find the minimum element  
+in **O(log n)** time.
+
+---
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `findMinBrute` | Linear Scan | O(n) | O(1) | Traverse the array and track the minimum value. |
+| `findMinOptimal` | Binary Search | O(log n) | O(1) | Use binary search to discard the sorted half and find the minimum efficiently. |
+
+---
+
 ## ▶️ How to Run
 
 ```bash
@@ -208,3 +224,4 @@ node 34_first_last_position.js
 node 88_merge_sorted_arr.js
 node 75_sort_colors.js
 node 74_search_2d_matrix.js
+node 153_min_in_rotated_arr.js
