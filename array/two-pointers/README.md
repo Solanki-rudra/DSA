@@ -21,7 +21,8 @@ Two Pointers avoids extra space and is commonly used when the array is
 | [`704_binary_search.js`](./704_binary_search.js) | LeetCode #704 — Binary Search | Search for a target value in a sorted array using Binary Search. |
 | [`34_first_last_position.js`](./34_first_last_position.js) | LeetCode #34 — First and Last Position of Element in Sorted Array | Find the starting and ending position of a target value in a sorted array. |
 | [`88_merge_sorted_arr.js`](./88_merge_sorted_arr.js) | LeetCode #88 — Merge Sorted Array | Merge two sorted arrays into one sorted array in-place. |
-| [`75_sort_colors.js`](./75_sort_colors.js) | LeetCode #75 — Sort Colors | Sort an array containing 0s, 1s, and 2s **in-place** using counting or Dutch National Flag algorithm. |
+| [`75_sort_colors.js`](./75_sort_colors.js) | LeetCode #75 — Sort Colors | Sort an array containing 0s, 1s, and 2s in-place using counting or Dutch National Flag algorithm. |
+| [`74_search_2d_matrix.js`](./74_search_2d_matrix.js) | LeetCode #74 — Search a 2D Matrix | Determine if a target value exists in a sorted 2D matrix using binary search. |
 
 ---
 
@@ -149,11 +150,6 @@ of the target value. If the target is not found, return `[-1, -1]`.
 Given two **sorted arrays** `nums1` and `nums2`, merge `nums2` into `nums1`  
 so that `nums1` becomes **one sorted array**.
 
-- `nums1` has length `m + n`
-- First `m` elements are valid
-- Last `n` elements are empty (`0`)
-- Merge must be done **in-place**
-
 ---
 
 | Function | Approach | Time | Space | Description |
@@ -166,15 +162,36 @@ so that `nums1` becomes **one sorted array**.
 ### 🔢 **75 — Sort Colors**
 
 **Goal:**  
-Given an array `nums` containing `0`s, `1`s, and `2`s, sort it **in-place** so that all `0`s come first, followed by `1`s, then `2`s.
+Given an array `nums` containing `0`s, `1`s, and `2`s, sort it **in-place**  
+so that all `0`s come first, followed by `1`s, then `2`s.
 
 ---
 
 | Function | Approach | Time | Space | Description |
 |---------|----------|------|-------|-------------|
 | `sortColorsBrute` | Array Sort | O(n log n) | O(1) | Sort the array directly using built-in sort. |
-| `sortColorsBetter` | Counting | O(2n) | O(1) | Count number of 0s, 1s, 2s and overwrite the array sequentially. |
+| `sortColorsBetter` | Counting | O(n) | O(1) | Count number of 0s, 1s, and 2s and overwrite the array. |
 | `sortColorsOptimal` | Dutch National Flag (Two Pointers) | O(n) | O(1) | Use three pointers to partition the array in one pass. |
+
+---
+
+### 🔢 **74 — Search a 2D Matrix**
+
+**Goal:**  
+You are given an `m x n` matrix where:
+
+- Each row is sorted in ascending order
+- The first integer of each row is greater than the last integer of the previous row
+
+Determine if a given `target` exists in the matrix.
+
+---
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `searchMatrixBrute` | Brute Force | O(m × n) | O(1) | Check each element in the matrix. |
+| `searchMatrixBetter` | Binary Search per Row | O(m log n) | O(1) | Binary search on the potential row. |
+| `searchMatrixOptimal` | Flattened Binary Search | O(log (m × n)) | O(1) | Treat the matrix as a sorted 1D array and apply binary search. |
 
 ---
 
@@ -190,3 +207,4 @@ node 704_binary_search.js
 node 34_first_last_position.js
 node 88_merge_sorted_arr.js
 node 75_sort_colors.js
+node 74_search_2d_matrix.js
