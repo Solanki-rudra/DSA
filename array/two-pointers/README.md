@@ -24,6 +24,7 @@ Two Pointers avoids extra space and is commonly used when the array is
 | [`75_sort_colors.js`](./75_sort_colors.js) | LeetCode #75 — Sort Colors | Sort an array containing 0s, 1s, and 2s in-place using counting or Dutch National Flag algorithm. |
 | [`74_search_2d_matrix.js`](./74_search_2d_matrix.js) | LeetCode #74 — Search a 2D Matrix | Determine if a target value exists in a sorted 2D matrix using binary search. |
 | [`153_min_in_rotated_arr.js`](./153_min_in_rotated_arr.js) | LeetCode #153 — Find Minimum in Rotated Sorted Array | Find the minimum element in a rotated sorted array using binary search. |
+| [`33_search_in_rotated_arr.js`](./33_search_in_rotated_arr.js) | LeetCode #33 — Search in Rotated Sorted Array | Find the index of target element in a rotated sorted array using binary search. |
 
 ---
 
@@ -211,6 +212,26 @@ in **O(log n)** time.
 
 ---
 
+### 🔢 **33 — Search in Rotated Sorted Array**
+
+**Goal:**  
+Given a rotated sorted array `nums` **without duplicates** and an integer `target`,  
+return the **index** of `target` if it exists, otherwise return `-1`.
+
+The array was originally sorted in ascending order and then rotated at an unknown pivot.
+
+**Example:**  
+`[0,1,2,4,5,6,7] → [4,5,6,7,0,1,2]`
+
+---
+
+| Function | Approach | Time | Space | Description |
+|--------|----------|------|-------|-------------|
+| `searchBrute` | Linear Search | O(n) | O(1) | Traverse the array and compare each element with the target. |
+| `searchOptimal` | Binary Search (Rotated Array) | O(log n) | O(1) | Identify the sorted half at each step and discard the half where the target cannot exist. |
+
+---
+
 ## ▶️ How to Run
 
 ```bash
@@ -225,3 +246,4 @@ node 88_merge_sorted_arr.js
 node 75_sort_colors.js
 node 74_search_2d_matrix.js
 node 153_min_in_rotated_arr.js
+node 33_serach_in_rotated_arr.js
