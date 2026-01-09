@@ -15,6 +15,7 @@ manipulation skills.
 |--------|-------------|
 | [`reversal`](./reversal) | Problems involving **reversing linked lists** (entire list, partial, or in-place pointer reversal). |
 | [`merge-sort`](./merge-sort) | Problems that use **Merge Sort on Linked Lists**, including splitting lists and merging sorted lists. |
+| [`two-pointers`](./two-pointers) | Problems that use **Two Pointers on Linked Lists**, including splitting lists and merging sorted lists. |
 | *(more coming soon...)* | Additional Linked List patterns will be added as practice grows. |
 
 
