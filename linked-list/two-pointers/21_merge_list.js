@@ -17,10 +17,38 @@ function mergeTwoListsBrute(list1, list2) {
     return arrToList(arr)
 }
 
-// Test
-const list1 = [1,2,4], list2 = [1,3,4]
-console.log(mergeTwoListsBrute(list1, list2));
+/**
+* @name mergeTwoListsOptimal
+* @description Optimal Approach: Use two pointers to traverse both lists and merge them in sorted order.
+* @timeComplexity O(n)
+* @spaceComplexity O(1)
+*/
+function mergeTwoListsOptimal(list1, list2) {
+    let i = list1, j = list2
+    let ans = new Node(-1)
+    let temp = ans
+    while (i !== null && j !== null) {
+        if (i.val < j.val) {
+            temp.next = i
+            i = i.next
+        } else {
+            temp.next = j
+            j = j.next
+        }
+        temp = temp.next
+    }
+    if (i !== null) {
+        temp.next = i
+    } else {
+        temp.next = j
+    }
+    return ans.next
+}
 
+// Test
+const list1 = [1, 2, 4], list2 = [1, 3, 4]
+console.log(mergeTwoListsBrute(list1, list2));
+console.log(mergeTwoListsOptimal(list1, list2));
 
 
 function listToArr(head) {
