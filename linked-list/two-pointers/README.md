@@ -15,6 +15,7 @@ using **single-pass techniques**.
 |------|--------|-------------|
 | [`876_mid_of_linked_list.js`](./876_mid_of_linked_list.js) | LeetCode #876 — Middle of the Linked List | Find the middle node of a singly linked list using brute force and optimal approaches. |
 | [`21_merge_list.js`](./21_merge_list.js) | LeetCode #21 — Merge Two Sorted Lists | Merge two sorted singly linked lists into one sorted list using brute force and optimal approaches. |
+| [`143_reorder_list.js`](./143_reorder_list.js) | LeetCode #143 — Reorder List | Reorder a linked list by alternating nodes from the start and end using an in-place optimal approach. |
 
 ---
 
@@ -59,6 +60,25 @@ Given the heads of two **sorted** linked lists `list1` and `list2`, merge them i
 
 ---
 
+### 🔍 **LeetCode #143 — Reorder List**
+
+**Goal:** 
+Given the head of a singly linked list, reorder it as:
+L0 → Ln → L1 → Ln-1 → L2 → Ln-2 → ...
+- Node **values are NOT compared**
+- Reordering must be done **in-place**
+- No extra data structures are allowed
+
+---
+
+## 🛠 Approaches Used (143)
+
+| Function | Approach | Time | Space | Description |
+|--------|----------|------|--------|-------------|
+| `reorderList` | Optimal (Split + Reverse + Merge) | O(n) | O(1) | Find the middle, split the list, reverse the second half, and merge both halves alternately. |
+
+---
+
 ## 🧠 Key Learnings
 
 - Dummy node pattern for easier list construction
@@ -74,3 +94,4 @@ Given the heads of two **sorted** linked lists `list1` and `list2`, merge them i
 ```bash
 node 876_mid_of_linked_list.js
 node 21_merge_list.js
+node 143_reorder_list.js
