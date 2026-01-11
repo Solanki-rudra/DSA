@@ -4,7 +4,7 @@ This folder contains **Linked List** problems — one of the most important and
 frequently asked data structures in **DSA and coding interviews**.
 
 Each subfolder focuses on a specific **Linked List technique or pattern**
-(such as Reversal, Two Pointers, Merge Sort, etc.) to build strong pointer
+(such as Two Pointers, etc.) to build strong pointer
 manipulation skills.
 
 ---
@@ -13,8 +13,6 @@ manipulation skills.
 
 | Folder | Description |
 |--------|-------------|
-| [`reversal`](./reversal) | Problems involving **reversing linked lists** (entire list, partial, or in-place pointer reversal). |
-| [`merge-sort`](./merge-sort) | Problems that use **Merge Sort on Linked Lists**, including splitting lists and merging sorted lists. |
 | [`two-pointers`](./two-pointers) | Problems that use **Two Pointers on Linked Lists**, including fast and slow pointers to travels. |
 | *(more coming soon...)* | Additional Linked List patterns will be added as practice grows. |
 
