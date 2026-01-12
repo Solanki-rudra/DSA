@@ -16,7 +16,3 @@ manipulation skills.
 | [`two-pointers`](./two-pointers) | Problems that use **Two Pointers on Linked Lists**, including fast and slow pointers to travels. |
 | *(more coming soon...)* | Additional Linked List patterns will be added as practice grows. |
 
-
-
-> 💡 *Start with simple traversal and reversal problems,  
-then move toward advanced problems like merge sort and reordering lists.*
