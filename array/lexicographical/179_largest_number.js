@@ -23,6 +23,20 @@ function largestNumberBrute(nums) {
     return nums.join('')
 }
 
+/**
+ * @name largestNumberOptimal
+ * @description Optimal Approach: Sort the numbers using a custom comparator based on concatenation results.
+ * @timeComplexity O(n log n)
+ * @spaceComplexity O(1)
+ */
+function largestNumberOptimal(nums) {
+    nums = nums.map(String)
+    nums.sort((a, b) => (b + a).localeCompare(a + b))
+    if (nums[0] === '0') return '0'
+    return nums.join('')
+}
+
 // Test
 let nums = [1, 2, 3]
 console.log(largestNumberBrute(nums));
+console.log(largestNumberOptimal(nums));

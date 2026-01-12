@@ -4,7 +4,7 @@ This folder contains problems where the **order of elements matters**, and solut
 **lexicographical (dictionary-like) ordering** of sequences.
 
 Lexicographical problems are not limited to strings — they also apply to **arrays of numbers**,  
-especially when working with **permutations, ordering rules, and “next/previous” patterns**.
+especially when working with **permutations, ordering rules, and custom comparison logic**.
 
 ---
 
@@ -14,6 +14,7 @@ especially when working with **permutations, ordering rules, and “next/previou
 |-----|-----------|-------------|-------------|
 | [`953_alien_dict.js`](./953_alien_dict.js) | 953 | Verifying an Alien Dictionary | Verify whether words are sorted based on a custom alphabet order. |
 | [`31_next_permutation.js`](./31_next_permutation.js) | 31 | Next Permutation | Rearrange numbers into the next lexicographically greater permutation. |
+| [`179_largest_number.js`](./179_largest_number.js) | 179 | Largest Number | Arrange numbers to form the largest possible concatenated value. |
 
 ---
 
@@ -62,15 +63,46 @@ If no such permutation exists, rearrange the array into the **smallest possible 
 
 ---
 
+### 🔢 179 — Largest Number
+
+**Problem Type:**  
+Lexicographical ordering with **custom concatenation comparison**
+
+**Goal:**  
+Given an array of non-negative integers, arrange them such that they form the  
+**largest possible number** when concatenated, and return it as a string.
+
+#### Key Insight
+
+For any two numbers `a` and `b`, their relative order is decided by comparing:
+a + b vs b + a
+The order that produces the **larger concatenated string** should come first.
+
+This is a **lexicographical comparison**, not a numeric one.
+
+#### Approaches
+
+| Function | Approach | Time Complexity | Space Complexity | Description |
+|--------|----------|----------------|------------------|-------------|
+| `largestNumberBrute` | Manual Comparison Sort | O(n² · k) | O(1) | Compare every pair using string concatenation and swap accordingly. |
+| `largestNumberOptimal` | Custom Sort Comparator | O(n log n · k) | O(1) | Use built-in sort with a custom lexicographical comparator. |
+
+> `k` = average number of digits in a number
+
+#### Edge Case
+- If the largest element after sorting is `"0"`, return `"0"` instead of `"000..."`
+
+---
+
 ## 🧠 Core Lexicographical Insight
 
 > Lexicographical order means comparing sequences the same way words are compared in a dictionary:
 > from left to right, the **first difference determines the order**.
 
-For permutations:
-1. Ignore the suffix that is already in its largest order
-2. Increase the sequence by the smallest possible amount
-3. Rearrange the remaining elements to be as small as possible
+In array problems, lexicographical logic commonly appears in:
+- Custom sorting rules
+- Permutations (next / previous)
+- Concatenation-based comparisons
 
 ---
 
@@ -79,3 +111,4 @@ For permutations:
 ```bash
 node 953_alien_dict.js
 node 31_next_permutation.js
+node 179_largest_number.js
