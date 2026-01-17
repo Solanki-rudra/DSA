@@ -1,4 +1,4 @@
-// Pattern: Array, Two Pointers
+// Pattern: Array, Binary Search
 
 // LeetCode Problem 34: First and Last Position of Element in Sorted Array
 // Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value. If target is not found in the array, return [-1, -1].

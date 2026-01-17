@@ -1,4 +1,4 @@
-// Pattern: Array, Two Pointers
+// Pattern: Array, Binary Search
 
 // LeetCode Problem 153: Find Minimum in Rotated Sorted Array
 // Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.

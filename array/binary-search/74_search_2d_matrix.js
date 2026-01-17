@@ -1,4 +1,4 @@
-// Pattern: Array, Two Pointers
+// Pattern: Array, Binary Search
 
 // LeetCode Problem 74: Search 2D Matrix
 // Given a 2D matrix of integers, determine if a target value exists in the matrix.

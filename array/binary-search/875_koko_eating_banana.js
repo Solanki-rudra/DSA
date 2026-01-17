@@ -1,4 +1,4 @@
-// Pattern: Array, Two Pointers
+// Pattern: Array, Binary Search
 
 // LeetCode Problem 875: Koko Eating Bananas
 // Koko loves to eat bananas. There are n piles of bananas, the i-th pile has piles[i] bananas. Koko wants to eat all bananas in h hours.
