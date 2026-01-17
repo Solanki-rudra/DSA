@@ -15,6 +15,7 @@ to efficiently solve problems on **arrays** by travelsing in **O(log n)**.
 | [`153_min_in_rotated_arr.js`](./153_min_in_rotated_arr.js) | LeetCode #153 — Find Minimum in Rotated Sorted Array | Find the minimum element in a rotated sorted array using binary search. |
 | [`33_search_in_rotated_arr.js`](./33_search_in_rotated_arr.js) | LeetCode #33 — Search in Rotated Sorted Array | Find the index of target element in a rotated sorted array using binary search. |
 | [`875_koko_eating_banana.js`](./875_koko_eating_banana.js) | LeetCode #875 — Koko Eating Bananas | Find the minimum eating speed using Binary Search on Answer. |
+| [`981_time_based_key_value_store.js`](./981_time_based_key_value_store.js) | LeetCode #981 — Time Based Key-Value Store | Store and retrieve values based on timestamps using Binary Search. |
 
 ---
 
@@ -105,22 +106,33 @@ return the **index** of `target` if it exists, otherwise return `-1`.
 
 ### 🔢 **875 — Koko Eating Bananas**
 
-**Goal:** 
-Koko loves bananas and has n piles of bananas, where piles[i] represents
-the number of bananas in the ith pile.
-
-She can eat at most k bananas per hour.
-Each hour, she chooses one pile and eats up to k bananas from it.
-
-Given h hours, return the minimum integer k such that Koko can eat
-all the bananas within h hours.
+**Goal:**  
+Given `n` piles of bananas and `h` hours, find the **minimum eating speed** so that  
+Koko can eat all bananas in time.
 
 ---
 
 | Function | Approach | Time | Space | Description |
 |--------|----------|------|-------|-------------|
-| `minEatingSpeedBrute` | Brute Force | O(n x maxPile) | O(1) | Try all eating speeds from 1 to max(piles) and check feasibility. |
-| `minEatingSpeedOptimal` | Binary Search | O(n log maxPile) | O(1) | Binary search the minimum eating speed that allows finishing within h hours. |
+| `minEatingSpeedBrute` | Brute Force | O(n × maxPile) | O(1) | Try all eating speeds and check feasibility. |
+| `minEatingSpeedOptimal` | Binary Search | O(n log maxPile) | O(1) | Binary search the minimum speed that satisfies the condition. |
+
+---
+
+### 🔢 **981 — Time Based Key-Value Store**
+
+**Goal:**  
+Design a time-based key-value data structure that can store multiple values for the  
+same key at different timestamps and retrieve the value at a given timestamp.
+
+Overall space complexity would be O(n) for storing data in hashmap.
+
+---
+
+| Function | Approach | Time | Space | Description |
+|--------|----------|------|-------|-------------|
+| `set` | Direct Insert | O(1) | O(1) | Store values with timestamps in increasing order. |
+| `get` | Binary Search | O(log n) | O(1) | Binary search to find the latest timestamp ≤ target. |
 
 ---
 
@@ -133,3 +145,4 @@ node 74_search_2d_matrix.js
 node 153_min_in_rotated_arr.js
 node 33_search_in_rotated_arr.js
 node 875_koko_eating_banana.js
+node 981_time_based_key_value_store.js
