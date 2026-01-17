@@ -18,14 +18,8 @@ Two Pointers avoids extra space and is commonly used when the array is
 | [`11_most_water_container.js`](./11_most_water_container.js) | LeetCode #11 — Container With Most Water | Find two lines that together with the x-axis form a container holding the maximum water. |
 | [`42_traping_rain_water.js`](./42_traping_rain_water.js) | LeetCode #42 — Trapping Rain Water | Find total units of water that can be trapped between elevation bars. |
 | [`26_remove_duplicate.js`](./26_remove_duplicate.js) | LeetCode #26 — Remove Duplicates from Sorted Array | Remove duplicates from a sorted array in-place and return the new length. |
-| [`704_binary_search.js`](./704_binary_search.js) | LeetCode #704 — Binary Search | Search for a target value in a sorted array using Binary Search. |
-| [`34_first_last_position.js`](./34_first_last_position.js) | LeetCode #34 — First and Last Position of Element in Sorted Array | Find the starting and ending position of a target value in a sorted array. |
 | [`88_merge_sorted_arr.js`](./88_merge_sorted_arr.js) | LeetCode #88 — Merge Sorted Array | Merge two sorted arrays into one sorted array in-place. |
 | [`75_sort_colors.js`](./75_sort_colors.js) | LeetCode #75 — Sort Colors | Sort an array containing 0s, 1s, and 2s in-place using counting or Dutch National Flag algorithm. |
-| [`74_search_2d_matrix.js`](./74_search_2d_matrix.js) | LeetCode #74 — Search a 2D Matrix | Determine if a target value exists in a sorted 2D matrix using binary search. |
-| [`153_min_in_rotated_arr.js`](./153_min_in_rotated_arr.js) | LeetCode #153 — Find Minimum in Rotated Sorted Array | Find the minimum element in a rotated sorted array using binary search. |
-| [`33_search_in_rotated_arr.js`](./33_search_in_rotated_arr.js) | LeetCode #33 — Search in Rotated Sorted Array | Find the index of target element in a rotated sorted array using binary search. |
-| [`875_koko_eating_banana.js`](./875_koko_eating_banana.js) | LeetCode #875 — Koko Eating Bananas | Find the minimum eating speed using Binary Search on Answer. |
 
 ---
 
@@ -116,37 +110,6 @@ such that each element appears only once and return the new length.
 
 ---
 
-### 🔢 **704 — Binary Search**
-
-**Goal:**  
-Given a **sorted array** `nums` and a `target`, return the **index** of `target`  
-if it exists in the array, otherwise return `-1`.
-
----
-
-| Function | Approach | Time | Space | Description |
-|---------|----------|------|-------|-------------|
-| `searchBrute` | Linear Search | O(n) | O(1) | Traverse the array and compare each element with the target. |
-| `searchOptimal` | Binary Search | O(log n) | O(1) | Repeatedly divide the search space in half to find the target. |
-
----
-
-### 🔢 **34 — First and Last Position of Element in Sorted Array**
-
-**Goal:**  
-Given a **sorted array** `nums` and a `target`, return the **starting and ending indices**  
-of the target value. If the target is not found, return `[-1, -1]`.
-
----
-
-| Function | Approach | Time | Space | Description |
-|---------|----------|------|-------|-------------|
-| `searchRangeBrute` | Linear Scan | O(n) | O(1) | Traverse the array and track first and last occurrence of the target. |
-| `searchRangeBetter` | Binary Search + Expansion | O(log n) avg, O(n) worst | O(1) | Find one occurrence using binary search, then expand left and right. |
-| `searchRangeOptimal` | Two Binary Searches | O(log n) | O(1) | Perform two biased binary searches to find first and last positions. |
-
----
-
 ### 🔢 **88 — Merge Sorted Array**
 
 **Goal:**  
@@ -178,82 +141,6 @@ so that all `0`s come first, followed by `1`s, then `2`s.
 
 ---
 
-### 🔢 **74 — Search a 2D Matrix**
-
-**Goal:**  
-You are given an `m x n` matrix where:
-
-- Each row is sorted in ascending order
-- The first integer of each row is greater than the last integer of the previous row
-
-Determine if a given `target` exists in the matrix.
-
----
-
-| Function | Approach | Time | Space | Description |
-|---------|----------|------|-------|-------------|
-| `searchMatrixBrute` | Brute Force | O(m × n) | O(1) | Check each element in the matrix. |
-| `searchMatrixBetter` | Binary Search per Row | O(m log n) | O(1) | Binary search on the potential row. |
-| `searchMatrixOptimal` | Flattened Binary Search | O(log (m × n)) | O(1) | Treat the matrix as a sorted 1D array and apply binary search. |
-
----
-
-### 🔢 **153 — Find Minimum in Rotated Sorted Array**
-
-**Goal:**  
-Given a rotated sorted array `nums` **without duplicates**, find the minimum element  
-in **O(log n)** time.
-
----
-
-| Function | Approach | Time | Space | Description |
-|---------|----------|------|-------|-------------|
-| `findMinBrute` | Linear Scan | O(n) | O(1) | Traverse the array and track the minimum value. |
-| `findMinOptimal` | Binary Search | O(log n) | O(1) | Use binary search to discard the sorted half and find the minimum efficiently. |
-
----
-
-### 🔢 **33 — Search in Rotated Sorted Array**
-
-**Goal:**  
-Given a rotated sorted array `nums` **without duplicates** and an integer `target`,  
-return the **index** of `target` if it exists, otherwise return `-1`.
-
-The array was originally sorted in ascending order and then rotated at an unknown pivot.
-
-**Example:**  
-`[0,1,2,4,5,6,7] → [4,5,6,7,0,1,2]`
-
----
-
-| Function | Approach | Time | Space | Description |
-|--------|----------|------|-------|-------------|
-| `searchBrute` | Linear Search | O(n) | O(1) | Traverse the array and compare each element with the target. |
-| `searchOptimal` | Binary Search (Rotated Array) | O(log n) | O(1) | Identify the sorted half at each step and discard the half where the target cannot exist. |
-
----
-
-### 🔢 **875 — Koko Eating Bananas**
-
-**Goal:** 
-Koko loves bananas and has n piles of bananas, where piles[i] represents
-the number of bananas in the ith pile.
-
-She can eat at most k bananas per hour.
-Each hour, she chooses one pile and eats up to k bananas from it.
-
-Given h hours, return the minimum integer k such that Koko can eat
-all the bananas within h hours.
-
----
-
-| Function | Approach | Time | Space | Description |
-|--------|----------|------|-------|-------------|
-| `minEatingSpeedBrute` | Brute Force | O(n x maxPile) | O(1) | Try all eating speeds from 1 to max(piles) and check feasibility. |
-| `minEatingSpeedOptimal` | Binary Search | O(n log maxPile) | O(1) | Binary search the minimum eating speed that allows finishing within h hours. |
-
----
-
 ## ▶️ How to Run
 
 ```bash
@@ -262,11 +149,5 @@ node 15_three_sum.js
 node 11_most_water_container.js
 node 42_traping_rain_water.js
 node 26_remove_duplicate.js
-node 704_binary_search.js
-node 34_first_last_position.js
 node 88_merge_sorted_arr.js
 node 75_sort_colors.js
-node 74_search_2d_matrix.js
-node 153_min_in_rotated_arr.js
-node 33_serach_in_rotated_arr.js
-node 875_koko_eating_banana.js
