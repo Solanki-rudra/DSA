@@ -25,6 +25,7 @@ Two Pointers avoids extra space and is commonly used when the array is
 | [`74_search_2d_matrix.js`](./74_search_2d_matrix.js) | LeetCode #74 — Search a 2D Matrix | Determine if a target value exists in a sorted 2D matrix using binary search. |
 | [`153_min_in_rotated_arr.js`](./153_min_in_rotated_arr.js) | LeetCode #153 — Find Minimum in Rotated Sorted Array | Find the minimum element in a rotated sorted array using binary search. |
 | [`33_search_in_rotated_arr.js`](./33_search_in_rotated_arr.js) | LeetCode #33 — Search in Rotated Sorted Array | Find the index of target element in a rotated sorted array using binary search. |
+| [`875_koko_eating_banana.js`](./875_koko_eating_banana.js) | LeetCode #875 — Koko Eating Bananas | Find the minimum eating speed using Binary Search on Answer. |
 
 ---
 
@@ -232,6 +233,27 @@ The array was originally sorted in ascending order and then rotated at an unknow
 
 ---
 
+### 🔢 **875 — Koko Eating Bananas**
+
+**Goal:** 
+Koko loves bananas and has n piles of bananas, where piles[i] represents
+the number of bananas in the ith pile.
+
+She can eat at most k bananas per hour.
+Each hour, she chooses one pile and eats up to k bananas from it.
+
+Given h hours, return the minimum integer k such that Koko can eat
+all the bananas within h hours.
+
+---
+
+| Function | Approach | Time | Space | Description |
+|--------|----------|------|-------|-------------|
+| `minEatingSpeedBrute` | Brute Force | O(n x maxPile) | O(1) | Try all eating speeds from 1 to max(piles) and check feasibility. |
+| `minEatingSpeedOptimal` | Binary Search | O(n log maxPile) | O(1) | Binary search the minimum eating speed that allows finishing within h hours. |
+
+---
+
 ## ▶️ How to Run
 
 ```bash
@@ -247,3 +269,4 @@ node 75_sort_colors.js
 node 74_search_2d_matrix.js
 node 153_min_in_rotated_arr.js
 node 33_serach_in_rotated_arr.js
+node 875_koko_eating_banana.js
