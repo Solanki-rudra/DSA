@@ -9,6 +9,7 @@ These problems help you understand:
 - Splitting, reversing, merging linked lists
 - Cycle detection and pointer chasing
 - Deleting nodes safely using pointer rewiring
+- Carry handling in digit-based linked list problems
 - Difference between brute force and optimal approaches
 
 ---
@@ -24,6 +25,7 @@ These problems help you understand:
 | [`148_sort_list.js`](./148_sort_list.js) | LeetCode #148 — Sort List | Sort a linked list using merge sort (brute force and optimal). |
 | [`141_linked_list_cycle.js`](./141_linked_list_cycle.js) | LeetCode #141 — Linked List Cycle | Detect whether a linked list contains a cycle using brute force and optimal approaches. |
 | [`19_remove_nth_node_from_last.js`](./19_remove_nth_node_from_last.js) | LeetCode #19 — Remove Nth Node From End of List | Remove the nth node from the end using brute force and two pointers. |
+| [`2_add_two_numbers.js`](./2_add_two_numbers.js) | LeetCode #2 — Add Two Numbers | Add two numbers represented by linked lists using brute force (conceptual) and optimal approaches. |
 
 ---
 
@@ -53,10 +55,7 @@ Given the `head` of a singly linked list, return the **middle node**.
 ### 🔍 **LeetCode #21 — Merge Two Sorted Lists**
 
 **Goal:**  
-Given two **sorted** linked lists, merge them into a **single sorted list**.
-
-- Nodes must be reused (no new nodes)
-- Lists are sorted in non-decreasing order
+Merge two **sorted** linked lists into a single sorted list.
 
 ---
 
@@ -65,19 +64,15 @@ Given two **sorted** linked lists, merge them into a **single sorted list**.
 | Function | Approach | Time | Space | Description |
 |--------|----------|------|--------|-------------|
 | `mergeTwoListsBrute` | Brute Force | O(n log n) | O(n) | Convert lists to arrays, merge + sort, then rebuild the list. |
-| `mergeTwoListsOptimal` | Two Pointers | O(n) | O(1) | Merge both lists in-place using two pointers and a dummy node. |
+| `mergeTwoListsOptimal` | Two Pointers | O(n) | O(1) | Merge lists in-place using a dummy node. |
 
 ---
 
 ### 🔍 **LeetCode #143 — Reorder List**
 
 **Goal:**  
-Reorder the list in the following pattern:  
-L0 → Ln → L1 → Ln-1 → L2 → Ln-2 → ...
-
-- Node **values are NOT compared**
-- Reordering must be done **in-place**
-- No extra data structures allowed
+Reorder the list as:  
+`L0 → Ln → L1 → Ln-1 → L2 → Ln-2 → ...`
 
 ---
 
@@ -85,14 +80,14 @@ L0 → Ln → L1 → Ln-1 → L2 → Ln-2 → ...
 
 | Function | Approach | Time | Space | Description |
 |--------|----------|------|--------|-------------|
-| `reorderList` | Split + Reverse + Merge | O(n) | O(1) | Find middle, reverse second half, and merge alternately. |
+| `reorderList` | Split + Reverse + Merge | O(n) | O(1) | Find middle, reverse second half, merge alternately. |
 
 ---
 
 ### 🔍 **LeetCode #206 — Reverse Linked List**
 
 **Goal:**  
-Reverse a singly linked list and return the new head.
+Reverse a singly linked list.
 
 ---
 
@@ -100,18 +95,15 @@ Reverse a singly linked list and return the new head.
 
 | Function | Approach | Time | Space | Description |
 |--------|----------|------|--------|-------------|
-| `reverseListBrute` | Stack (Brute Force) | O(n) | O(n) | Push nodes to a stack and rebuild the list in reverse order. |
-| `reverseListOptimal` | Three Pointers | O(n) | O(1) | Reverse links in-place using `prev`, `curr`, and `next`. |
+| `reverseListBrute` | Stack | O(n) | O(n) | Push nodes to a stack and rebuild in reverse. |
+| `reverseListOptimal` | Three Pointers | O(n) | O(1) | Reverse links in-place. |
 
 ---
 
 ### 🔍 **LeetCode #148 — Sort List**
 
 **Goal:**  
-Sort a singly linked list in **ascending order**.
-
-- Must run in `O(n log n)` time
-- Must use **constant extra space**
+Sort a linked list in ascending order.
 
 ---
 
@@ -119,18 +111,15 @@ Sort a singly linked list in **ascending order**.
 
 | Function | Approach | Time | Space | Description |
 |--------|----------|------|--------|-------------|
-| `sortListBrute` | Brute Force | O(n log n) | O(n) | Convert list to array, sort, then convert back. |
-| `sortListOptimal` | Merge Sort | O(n log n) | O(log n) | Recursively split the list and merge sorted halves. |
+| `sortListBrute` | Brute Force | O(n log n) | O(n) | Convert to array, sort, rebuild list. |
+| `sortListOptimal` | Merge Sort | O(n log n) | O(log n) | Recursively split and merge lists. |
 
 ---
 
 ### 🔍 **LeetCode #141 — Linked List Cycle**
 
 **Goal:**  
-Determine if a linked list contains a **cycle**.
-
-- A cycle exists if a node’s `next` pointer points to a previous node
-- Node values may repeat — comparison must be done by **node reference**
+Detect whether a linked list contains a **cycle**.
 
 ---
 
@@ -138,18 +127,15 @@ Determine if a linked list contains a **cycle**.
 
 | Function | Approach | Time | Space | Description |
 |--------|----------|------|--------|-------------|
-| `hasCycleBrute` | Hash Set (Brute Force) | O(n) | O(n) | Store visited node references and detect revisits. |
-| `hasCycleOptimal` | Two Pointers (Floyd’s Algorithm) | O(n) | O(1) | Use slow and fast pointers; guaranteed to meet if a cycle exists. |
+| `hasCycleBrute` | Hash Set | O(n) | O(n) | Track visited node references. |
+| `hasCycleOptimal` | Floyd’s Algorithm | O(n) | O(1) | Slow & fast pointers meet if a cycle exists. |
 
 ---
 
 ### 🔍 **LeetCode #19 — Remove Nth Node From End of List**
 
 **Goal:**  
-Remove the **nth node from the end** of a singly linked list and return its head.
-
-- Must modify the list **in-place**
-- Node values are irrelevant; pointer manipulation is required
+Remove the **nth node from the end** and return the head.
 
 ---
 
@@ -157,21 +143,43 @@ Remove the **nth node from the end** of a singly linked list and return its head
 
 | Function | Approach | Time | Space | Description |
 |--------|----------|------|--------|-------------|
-| `removeNthFromEndBrute` | Length Calculation (Brute Force) | O(n) | O(1) | First calculate list length, then remove the target node. |
-| `removeNthFromEndOptimal` | Two Pointers + Dummy Node | O(n) | O(1) | Maintain a fixed gap using two pointers to remove the node in one pass. |
+| `removeNthFromEndBrute` | Length Calculation | O(n) | O(1) | Count nodes, then remove target. |
+| `removeNthFromEndOptimal` | Two Pointers + Dummy | O(n) | O(1) | Maintain a fixed gap to delete in one pass. |
+
+---
+
+### 🔍 **LeetCode #2 — Add Two Numbers**
+
+**Goal:**  
+Add two numbers represented by linked lists where digits are stored in **reverse order**.
+
+- Each node contains a **single digit**
+- Numbers can be arbitrarily large
+- Result must also be returned as a linked list
+
+---
+
+### 🛠 Approaches Used (2)
+
+| Function | Approach | Time | Space | Description |
+|--------|----------|------|--------|-------------|
+| `addTwoNumbersBrute` | Conceptual Brute Force | O(n) | O(n) | Convert lists to numbers and add (⚠️ not safe for large values in JS). |
+| `addTwoNumbersOptimal` | Digit-by-Digit + Carry | O(n) | O(n) | Traverse both lists, manage carry, and build result list. |
+
+> ⚠️ **Note:** The brute-force approach is for conceptual understanding only.  
+> JavaScript `Number` cannot safely handle very large integers required by this problem.
 
 ---
 
 ## 🧠 Key Learnings
 
-- Dummy node pattern for safe deletions (especially head removal)
-- Slow & fast pointer technique
+- Dummy node pattern for safe list operations
 - Fixed-gap two pointer strategy
+- Carry propagation in digit-based linked lists
 - Safe pointer mutation vs traversal
-- In-place reversing and merging
 - Cycle detection using Floyd’s algorithm
 - Why merge sort is optimal for linked lists
-- Strong foundation for advanced linked list problems
+- Recognizing invalid brute-force approaches due to language limits
 
 ---
 
@@ -185,3 +193,4 @@ node 206_reverse_linked_list.js
 node 148_sort_list.js
 node 141_linked_list_cycle.js
 node 19_remove_nth_node_from_last.js
+node 2_add_two_numbers.js
