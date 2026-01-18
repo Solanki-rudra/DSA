@@ -8,6 +8,7 @@ These problems help you understand:
 - In-place manipulation of `.next` references
 - Splitting, reversing, merging linked lists
 - Cycle detection and pointer chasing
+- Deleting nodes safely using pointer rewiring
 - Difference between brute force and optimal approaches
 
 ---
@@ -22,6 +23,7 @@ These problems help you understand:
 | [`206_reverse_linked_list.js`](./206_reverse_linked_list.js) | LeetCode #206 — Reverse Linked List | Reverse a singly linked list using brute force and optimal approaches. |
 | [`148_sort_list.js`](./148_sort_list.js) | LeetCode #148 — Sort List | Sort a linked list using merge sort (brute force and optimal). |
 | [`141_linked_list_cycle.js`](./141_linked_list_cycle.js) | LeetCode #141 — Linked List Cycle | Detect whether a linked list contains a cycle using brute force and optimal approaches. |
+| [`19_remove_nth_node_from_last.js`](./19_remove_nth_node_from_last.js) | LeetCode #19 — Remove Nth Node From End of List | Remove the nth node from the end using brute force and two pointers. |
 
 ---
 
@@ -141,10 +143,30 @@ Determine if a linked list contains a **cycle**.
 
 ---
 
+### 🔍 **LeetCode #19 — Remove Nth Node From End of List**
+
+**Goal:**  
+Remove the **nth node from the end** of a singly linked list and return its head.
+
+- Must modify the list **in-place**
+- Node values are irrelevant; pointer manipulation is required
+
+---
+
+### 🛠 Approaches Used (19)
+
+| Function | Approach | Time | Space | Description |
+|--------|----------|------|--------|-------------|
+| `removeNthFromEndBrute` | Length Calculation (Brute Force) | O(n) | O(1) | First calculate list length, then remove the target node. |
+| `removeNthFromEndOptimal` | Two Pointers + Dummy Node | O(n) | O(1) | Maintain a fixed gap using two pointers to remove the node in one pass. |
+
+---
+
 ## 🧠 Key Learnings
 
-- Dummy node pattern for easier list construction
+- Dummy node pattern for safe deletions (especially head removal)
 - Slow & fast pointer technique
+- Fixed-gap two pointer strategy
 - Safe pointer mutation vs traversal
 - In-place reversing and merging
 - Cycle detection using Floyd’s algorithm
@@ -162,3 +184,4 @@ node 143_reorder_list.js
 node 206_reverse_linked_list.js
 node 148_sort_list.js
 node 141_linked_list_cycle.js
+node 19_remove_nth_node_from_last.js
