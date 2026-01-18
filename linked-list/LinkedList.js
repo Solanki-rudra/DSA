@@ -28,4 +28,17 @@ export class LinkedList {
         }
         return arr;
     }
+    createCycle(head, pos) {
+        if (pos < 0) return head;
+        let cycleStart = head
+        for (let i = 0; i < pos; i++) {
+            cycleStart = cycleStart.next
+        }
+        let tail = head
+        while (tail.next !== null) {
+            tail = tail.next
+        }
+        tail.next = cycleStart
+        return head
+    }
 }

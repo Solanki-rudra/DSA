@@ -7,6 +7,7 @@ These problems help you understand:
 - Pointer movement and traversal
 - In-place manipulation of `.next` references
 - Splitting, reversing, merging linked lists
+- Cycle detection and pointer chasing
 - Difference between brute force and optimal approaches
 
 ---
@@ -20,6 +21,7 @@ These problems help you understand:
 | [`143_reorder_list.js`](./143_reorder_list.js) | LeetCode #143 — Reorder List | Reorder a list by alternating nodes from start and end using an in-place approach. |
 | [`206_reverse_linked_list.js`](./206_reverse_linked_list.js) | LeetCode #206 — Reverse Linked List | Reverse a singly linked list using brute force and optimal approaches. |
 | [`148_sort_list.js`](./148_sort_list.js) | LeetCode #148 — Sort List | Sort a linked list using merge sort (brute force and optimal). |
+| [`141_linked_list_cycle.js`](./141_linked_list_cycle.js) | LeetCode #141 — Linked List Cycle | Detect whether a linked list contains a cycle using brute force and optimal approaches. |
 
 ---
 
@@ -68,7 +70,7 @@ Given two **sorted** linked lists, merge them into a **single sorted list**.
 ### 🔍 **LeetCode #143 — Reorder List**
 
 **Goal:**  
-Reorder the list in the following pattern:
+Reorder the list in the following pattern:  
 L0 → Ln → L1 → Ln-1 → L2 → Ln-2 → ...
 
 - Node **values are NOT compared**
@@ -120,12 +122,32 @@ Sort a singly linked list in **ascending order**.
 
 ---
 
+### 🔍 **LeetCode #141 — Linked List Cycle**
+
+**Goal:**  
+Determine if a linked list contains a **cycle**.
+
+- A cycle exists if a node’s `next` pointer points to a previous node
+- Node values may repeat — comparison must be done by **node reference**
+
+---
+
+### 🛠 Approaches Used (141)
+
+| Function | Approach | Time | Space | Description |
+|--------|----------|------|--------|-------------|
+| `hasCycleBrute` | Hash Set (Brute Force) | O(n) | O(n) | Store visited node references and detect revisits. |
+| `hasCycleOptimal` | Two Pointers (Floyd’s Algorithm) | O(n) | O(1) | Use slow and fast pointers; guaranteed to meet if a cycle exists. |
+
+---
+
 ## 🧠 Key Learnings
 
 - Dummy node pattern for easier list construction
 - Slow & fast pointer technique
 - Safe pointer mutation vs traversal
 - In-place reversing and merging
+- Cycle detection using Floyd’s algorithm
 - Why merge sort is optimal for linked lists
 - Strong foundation for advanced linked list problems
 
@@ -139,3 +161,4 @@ node 21_merge_list.js
 node 143_reorder_list.js
 node 206_reverse_linked_list.js
 node 148_sort_list.js
+node 141_linked_list_cycle.js
