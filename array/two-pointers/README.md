@@ -20,6 +20,7 @@ Two Pointers avoids extra space and is commonly used when the array is
 | [`26_remove_duplicate.js`](./26_remove_duplicate.js) | LeetCode #26 — Remove Duplicates from Sorted Array | Remove duplicates from a sorted array in-place and return the new length. |
 | [`88_merge_sorted_arr.js`](./88_merge_sorted_arr.js) | LeetCode #88 — Merge Sorted Array | Merge two sorted arrays into one sorted array in-place. |
 | [`75_sort_colors.js`](./75_sort_colors.js) | LeetCode #75 — Sort Colors | Sort an array containing 0s, 1s, and 2s in-place using counting or Dutch National Flag algorithm. |
+| [`287_find_the_dup_num.js`](./287_find_the_dup_num.js) | LeetCode #287 — Find the Duplicate Number | Find the duplicate number in an array using brute force, hashing, and cycle detection. |
 
 ---
 
@@ -137,7 +138,23 @@ so that all `0`s come first, followed by `1`s, then `2`s.
 |---------|----------|------|-------|-------------|
 | `sortColorsBrute` | Array Sort | O(n log n) | O(1) | Sort the array directly using built-in sort. |
 | `sortColorsBetter` | Counting | O(n) | O(1) | Count number of 0s, 1s, and 2s and overwrite the array. |
-| `sortColorsOptimal` | Dutch National Flag (Two Pointers) | O(n) | O(1) | Use three pointers to partition the array in one pass. |
+| `sortColorsOptimal` | Dutch National Flag | O(n) | O(1) | Use three pointers to partition the array in one pass. |
+
+---
+
+### 🔢 **287 — Find the Duplicate Number**
+
+**Goal:**  
+Given an array of `n + 1` integers where each integer is in the range `[1, n]`,  
+return the **only duplicate number**.
+
+---
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `findDuplicateBrute` | Sorting | O(n log n) | O(1) | Sort the array and find adjacent equal elements. |
+| `findDuplicateBetter` | Hash Map | O(n) | O(n) | Track visited numbers using extra space. |
+| `findDuplicateOptimal` | Floyd’s Cycle Detection | O(n) | O(1) | Treat array as a linked list and detect the cycle entry. |
 
 ---
 
@@ -151,3 +168,4 @@ node 42_traping_rain_water.js
 node 26_remove_duplicate.js
 node 88_merge_sorted_arr.js
 node 75_sort_colors.js
+node 287_find_the_dup_num.js
