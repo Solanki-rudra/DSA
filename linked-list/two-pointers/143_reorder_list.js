@@ -1,3 +1,5 @@
+import { LinkedList } from "../LinkedList.js"
+
 // Pattern: Linked List, Two Pointers
 
 // LeetCode Problem 143: Reorder List
@@ -5,7 +7,7 @@
 
 /**
 * @name reorderListBrute
-* @description Brute Force Approach: measure the length of the linked list and then find the middle node.
+* @description Approach: measure the length of the linked list and then find the middle node.
 * @timeComplexity O(n)
 * @spaceComplexity O(1)
 */
@@ -29,12 +31,16 @@ function reorderList(head) {
         revHead = tempRev
         curr = tempCurr
     }
+    return head
 }
 
 // Test
 const head = [4, 2, 1, 3];
-console.log(reorderList(head));
 
+const linkedList = new LinkedList();
+const listHead = linkedList.arrToList(head);
+
+console.log(reorderList(listHead));
 
 
 function reverseList(head) {

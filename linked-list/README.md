@@ -13,6 +13,6 @@ manipulation skills.
 
 | Folder | Description |
 |--------|-------------|
+| [`LinkedList`](./LinkedList.js) | This Class helps to use Linked List data structure for converting arr to list or list to arr or making list node |
 | [`two-pointers`](./two-pointers) | Problems that use **Two Pointers on Linked Lists**, including fast and slow pointers to travels. |
 | *(more coming soon...)* | Additional Linked List patterns will be added as practice grows. |
-

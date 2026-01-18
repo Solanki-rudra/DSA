@@ -1,3 +1,5 @@
+import { LinkedList } from "../LinkedList.js"
+
 // Pattern: Linked List, Two Pointers
 
 // LeetCode Problem 206: Reverse Linked List
@@ -49,5 +51,9 @@ function reverseListOptimal(head) {
 
 // Test
 const head = [4, 2, 1, 3];
-console.log(reverseListBrute(head));
-console.log(reverseListOptimal(head));
+const linkedList = new LinkedList();
+const listHead1 = linkedList.arrToList(head);
+const listHead2 = linkedList.arrToList(head);
+
+console.log(reverseListBrute(listHead1));
+console.log(reverseListOptimal(listHead2));

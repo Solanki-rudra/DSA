@@ -1,3 +1,5 @@
+import { LinkedList } from "../LinkedList.js"
+
 // Pattern: Linked List, Two Pointers
 
 // LeetCode Problem 876: Middle of the Linked List
@@ -33,18 +35,22 @@ function middleNodeBrute(head) {
 * @spaceComplexity O(1)
 */
 function middleNodeOptimal(head) {
-    if (head === null) return null
-    let i = head, j = head
-    while (j.next !== null && j.next.next !== null) {
-        i = i.next
-        j = j.next.next
+    if(head === null) return null
+    let slow = head, fast = head
+    while(fast !== null && fast.next !== null){
+        slow = slow.next
+        fast = fast.next.next
     }
-    if (j.next !== null) i = i.next
-    return i
+    return slow
 }
 
 
 // Test
 const head = [4, 2, 1, 3];
-console.log(middleNodeBrute(head));
-console.log(middleNodeOptimal(head));
+
+const linkedList = new LinkedList();
+const listHead1 = linkedList.arrToList(head);
+const listHead2 = linkedList.arrToList(head);
+
+console.log(middleNodeBrute(listHead1));
+console.log(middleNodeOptimal(listHead2));
