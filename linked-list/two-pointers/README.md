@@ -28,6 +28,7 @@ These problems help you understand:
 | [`19_remove_nth_node_from_last.js`](./19_remove_nth_node_from_last.js) | LeetCode #19 — Remove Nth Node From End of List | Remove the nth node from the end using brute force and two pointers. |
 | [`2_add_two_numbers.js`](./2_add_two_numbers.js) | LeetCode #2 — Add Two Numbers | Add two numbers represented by linked lists using brute force (conceptual) and optimal approaches. |
 | [`138_copy_list_with_random_pointer.js`](./138_copy_list_with_random_pointer.js) | LeetCode #138 — Copy List with Random Pointer | Create a deep copy of a linked list with random pointers using brute force and optimal approaches. |
+| [`23_merge_k_sorted_list.js`](./23_merge_k_sorted_list.js) | LeetCode #23 — Merge k Sorted Lists | Merge multiple sorted linked lists using brute force and optimal approaches. |
 
 ---
 
@@ -155,21 +156,14 @@ Remove the **nth node from the end** and return the head.
 **Goal:**  
 Add two numbers represented by linked lists where digits are stored in **reverse order**.
 
-- Each node contains a **single digit**
-- Numbers can be arbitrarily large
-- Result must also be returned as a linked list
-
 ---
 
 ### 🛠 Approaches Used (2)
 
 | Function | Approach | Time | Space | Description |
 |--------|----------|------|--------|-------------|
-| `addTwoNumbersBrute` | Conceptual Brute Force | O(n) | O(n) | Convert lists to numbers and add (⚠️ not safe for large values in JS). |
-| `addTwoNumbersOptimal` | Digit-by-Digit + Carry | O(n) | O(n) | Traverse both lists, manage carry, and build result list. |
-
-> ⚠️ **Note:** The brute-force approach is for conceptual understanding only.  
-> JavaScript `Number` cannot safely handle very large integers required by this problem.
+| `addTwoNumbersBrute` | Conceptual Brute Force | O(n) | O(n) | Convert lists to numbers and add (⚠️ unsafe for JS). |
+| `addTwoNumbersOptimal` | Digit-by-Digit + Carry | O(n) | O(n) | Traverse lists, manage carry, build result list. |
 
 ---
 
@@ -177,10 +171,8 @@ Add two numbers represented by linked lists where digits are stored in **reverse
 
 **Goal:**  
 Create a **deep copy** of a linked list where each node has:
-- a `next` pointer
-- a `random` pointer (pointing to any node or `null`)
-
-The copied list must be **completely independent** of the original.
+- `next` pointer
+- `random` pointer
 
 ---
 
@@ -188,8 +180,24 @@ The copied list must be **completely independent** of the original.
 
 | Function | Approach | Time | Space | Description |
 |--------|----------|------|--------|-------------|
-| `copyRandomListBrute` | Hash Map | O(n) | O(n) | Map original nodes to copied nodes, then rebuild pointers. |
-| `copyRandomListOptimal` | Interweaving Nodes | O(n) | O(1) | Insert copied nodes inline, assign random pointers, then separate lists. |
+| `copyRandomListBrute` | Hash Map | O(n) | O(n) | Map original nodes to copied nodes. |
+| `copyRandomListOptimal` | Interweaving Nodes | O(n) | O(1) | Inline copied nodes and separate lists. |
+
+---
+
+### 🔍 **LeetCode #23 — Merge k Sorted Lists**
+
+**Goal:**  
+Merge **k sorted linked lists** into one sorted linked list.
+
+---
+
+### 🛠 Approaches Used (23)
+
+| Function | Approach | Time | Space | Description |
+|--------|----------|------|--------|-------------|
+| `mergeKListsBrute` | Merge + Sort | O(n log n) | O(n) | Merge all lists, then sort the combined list. |
+| `mergeKListsOptimal` | Divide & Conquer | O(n log k) | O(log k) | Merge lists pairwise until one list remains. |
 
 ---
 
@@ -201,9 +209,8 @@ The copied list must be **completely independent** of the original.
 - Safe pointer mutation vs traversal
 - Cycle detection using Floyd’s algorithm
 - Why merge sort is optimal for linked lists
-- Recognizing invalid brute-force approaches due to language limits
 - Deep copy techniques for complex linked structures
-- How pointer interweaving avoids extra space
+- How divide-and-conquer optimizes multi-list merging
 
 ---
 
@@ -219,3 +226,4 @@ node 141_linked_list_cycle.js
 node 19_remove_nth_node_from_last.js
 node 2_add_two_numbers.js
 node 138_copy_list_with_random_pointer.js
+node 23_merge_k_sorted_list.js

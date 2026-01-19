@@ -62,4 +62,12 @@ export class LinkedList {
         }
         return nodes[0];
     }
+    arrToList2D(arr) {
+        if (arr.length === 0) return [];
+        const lists = [];
+        for (let i = 0; i < arr.length; i++) {
+            lists.push(this.arrToList(arr[i]));
+        }
+        return lists;
+    }
 }
