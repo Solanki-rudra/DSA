@@ -11,6 +11,7 @@ These problems help you understand:
 - Deleting nodes safely using pointer rewiring
 - Carry handling in digit-based linked list problems
 - Difference between brute force and optimal approaches
+- Deep copying complex linked structures
 
 ---
 
@@ -26,6 +27,7 @@ These problems help you understand:
 | [`141_linked_list_cycle.js`](./141_linked_list_cycle.js) | LeetCode #141 — Linked List Cycle | Detect whether a linked list contains a cycle using brute force and optimal approaches. |
 | [`19_remove_nth_node_from_last.js`](./19_remove_nth_node_from_last.js) | LeetCode #19 — Remove Nth Node From End of List | Remove the nth node from the end using brute force and two pointers. |
 | [`2_add_two_numbers.js`](./2_add_two_numbers.js) | LeetCode #2 — Add Two Numbers | Add two numbers represented by linked lists using brute force (conceptual) and optimal approaches. |
+| [`138_copy_list_with_random_pointer.js`](./138_copy_list_with_random_pointer.js) | LeetCode #138 — Copy List with Random Pointer | Create a deep copy of a linked list with random pointers using brute force and optimal approaches. |
 
 ---
 
@@ -171,6 +173,26 @@ Add two numbers represented by linked lists where digits are stored in **reverse
 
 ---
 
+### 🔍 **LeetCode #138 — Copy List with Random Pointer**
+
+**Goal:**  
+Create a **deep copy** of a linked list where each node has:
+- a `next` pointer
+- a `random` pointer (pointing to any node or `null`)
+
+The copied list must be **completely independent** of the original.
+
+---
+
+### 🛠 Approaches Used (138)
+
+| Function | Approach | Time | Space | Description |
+|--------|----------|------|--------|-------------|
+| `copyRandomListBrute` | Hash Map | O(n) | O(n) | Map original nodes to copied nodes, then rebuild pointers. |
+| `copyRandomListOptimal` | Interweaving Nodes | O(n) | O(1) | Insert copied nodes inline, assign random pointers, then separate lists. |
+
+---
+
 ## 🧠 Key Learnings
 
 - Dummy node pattern for safe list operations
@@ -180,6 +202,8 @@ Add two numbers represented by linked lists where digits are stored in **reverse
 - Cycle detection using Floyd’s algorithm
 - Why merge sort is optimal for linked lists
 - Recognizing invalid brute-force approaches due to language limits
+- Deep copy techniques for complex linked structures
+- How pointer interweaving avoids extra space
 
 ---
 
@@ -194,3 +218,4 @@ node 148_sort_list.js
 node 141_linked_list_cycle.js
 node 19_remove_nth_node_from_last.js
 node 2_add_two_numbers.js
+node 138_copy_list_with_random_pointer.js

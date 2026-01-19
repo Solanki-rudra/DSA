@@ -5,6 +5,14 @@ export class ListNode {
     }
 }
 
+export class _Node {
+    constructor(val, next = null, random = null) {
+        this.val = val;
+        this.next = next;
+        this.random = random;
+    }
+}
+
 export class LinkedList {
     constructor() {
         this.head = null;
@@ -40,5 +48,18 @@ export class LinkedList {
         }
         tail.next = cycleStart
         return head
+    }
+    arrToDeepList(arr) {
+        if (arr.length === 0) return null;
+        const nodes = arr.map(item => new _Node(item[0]));
+        for (let i = 0; i < nodes.length; i++) {
+            if (i < nodes.length - 1) {
+                nodes[i].next = nodes[i + 1];
+            }
+            if (arr[i][1] !== null) {
+                nodes[i].random = nodes[arr[i][1]];
+            }
+        }
+        return nodes[0];
     }
 }
