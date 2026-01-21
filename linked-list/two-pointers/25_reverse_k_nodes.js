@@ -27,6 +27,37 @@ function reverseKGroupBrute(head, k) {
     return arrToList(arr)
 }
 
+/**
+* @name reverseKGroupOptimal
+* @description Optimal Approach: Reverse k nodes at a time using two pointers.
+* @timeComplexity O(n)
+* @spaceComplexity O(1)
+*/
+function reverseKGroupOptimal(head, k) {
+    let dummy = new ListNode()
+    dummy.next = head
+    let groupPrev = dummy
+    while (true) {
+        let kth = groupPrev
+        for (let i = 0; i < k; i++) {
+            kth = kth.next
+            if (!kth) return dummy.next
+        }
+        let nextHead = kth.next
+        let prev = nextHead
+        let curr = groupPrev.next
+        while (curr !== nextHead) {
+            let temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = temp
+        }
+        let temp = groupPrev.next
+        groupPrev.next = kth
+        groupPrev = temp
+    }
+}
+
 
 // Test
 const head = [1, 2, 3, 4, 5], k = 2
@@ -34,3 +65,4 @@ const head = [1, 2, 3, 4, 5], k = 2
 const listHead = arrToList(head);
 
 console.log(reverseKGroupBrute(listHead, k));
+console.log(reverseKGroupOptimal(listHead, k));

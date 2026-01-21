@@ -29,6 +29,7 @@ These problems help you understand:
 | [`2_add_two_numbers.js`](./2_add_two_numbers.js) | LeetCode #2 — Add Two Numbers | Add two numbers represented by linked lists using brute force (conceptual) and optimal approaches. |
 | [`138_copy_list_with_random_pointer.js`](./138_copy_list_with_random_pointer.js) | LeetCode #138 — Copy List with Random Pointer | Create a deep copy of a linked list with random pointers using brute force and optimal approaches. |
 | [`23_merge_k_sorted_list.js`](./23_merge_k_sorted_list.js) | LeetCode #23 — Merge k Sorted Lists | Merge multiple sorted linked lists using brute force and optimal approaches. |
+| [`25_reverse_k_nodes.js`](./25_reverse_k_nodes.js) | LeetCode #25 — Reverse Nodes in k-Group | Reverse nodes in groups of k using brute force and optimal pointer manipulation. |
 
 ---
 
@@ -170,7 +171,7 @@ Add two numbers represented by linked lists where digits are stored in **reverse
 ### 🔍 **LeetCode #138 — Copy List with Random Pointer**
 
 **Goal:**  
-Create a **deep copy** of a linked list where each node has:
+Create a **deep copy** of a linked list with:
 - `next` pointer
 - `random` pointer
 
@@ -201,6 +202,25 @@ Merge **k sorted linked lists** into one sorted linked list.
 
 ---
 
+### 🔍 **LeetCode #25 — Reverse Nodes in k-Group**
+
+**Goal:**  
+Reverse the nodes of a linked list **k at a time**.
+
+- If remaining nodes < k, leave them unchanged
+- Node values must not be modified
+
+---
+
+### 🛠 Approaches Used (25)
+
+| Function | Approach | Time | Space | Description |
+|--------|----------|------|--------|-------------|
+| `reverseKGroupBrute` | Array Conversion | O(n) | O(n) | Convert list to array, reverse in chunks of k, rebuild list. |
+| `reverseKGroupOptimal` | In-Place Reversal | O(n) | O(1) | Reverse k nodes using pointer manipulation and a dummy node. |
+
+---
+
 ## 🧠 Key Learnings
 
 - Dummy node pattern for safe list operations
@@ -210,7 +230,8 @@ Merge **k sorted linked lists** into one sorted linked list.
 - Cycle detection using Floyd’s algorithm
 - Why merge sort is optimal for linked lists
 - Deep copy techniques for complex linked structures
-- How divide-and-conquer optimizes multi-list merging
+- Group-based in-place reversal patterns
+- Difference between traversal pointers and mutation pointers
 
 ---
 
@@ -227,3 +248,4 @@ node 19_remove_nth_node_from_last.js
 node 2_add_two_numbers.js
 node 138_copy_list_with_random_pointer.js
 node 23_merge_k_sorted_list.js
+node 25_reverse_k_nodes.js
