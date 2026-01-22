@@ -14,5 +14,7 @@ manipulation skills.
 | Folder | Description |
 |--------|-------------|
 | [`LinkedList`](./LinkedList.js) | This Class helps to use Linked List data structure for converting arr to list or list to arr or making list node |
-| [`two-pointers`](./two-pointers) | Problems that use **Two Pointers on Linked Lists**, including fast and slow pointers to travels. |
-| *(more coming soon...)* | Additional Linked List patterns will be added as practice grows. |
+| [`advanced-structures`](./advanced-structures) | Problems involving advanced linked list structures, such as lists with random pointers or flattening binary trees to linked lists. |
+| [`merge-and-sort`](./merge-and-sort) | Problems related to merging multiple sorted linked lists and sorting linked lists. |
+| [`reversal-and-relinking`](./reversal-and-relinking) | Problems that involve reversing linked lists or relinking nodes in specific patterns. |
+| [`traversal-and-pointers`](./traversal-and-pointers) | Problems using traversal techniques and pointer manipulation, including fast and slow pointers. |

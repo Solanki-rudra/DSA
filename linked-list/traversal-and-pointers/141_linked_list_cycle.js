@@ -1,6 +1,6 @@
 import { LinkedList } from "../LinkedList.js"
 
-// Pattern: Linked List, Two Pointers
+// Pattern: Linked List, Traversal and Pointers
 
 // LeetCode Problem 141: Linked List Cycle
 // Given head, the head of a linked list, determine if the linked list has a cycle in it.

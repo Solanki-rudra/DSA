@@ -1,6 +1,6 @@
 import { LinkedList } from "../LinkedList.js"
 
-// Pattern: Linked List, Two Pointers
+// Pattern: Linked List, Reversal and Relinking
 
 // LeetCode Problem 143: Reorder List
 // Given the head of a singly linked list, reorder the list such that it follows the pattern: L0 → Ln → L1 → Ln-1 → L2 → Ln-2 → ...

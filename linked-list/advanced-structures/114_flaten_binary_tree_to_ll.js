@@ -1,6 +1,6 @@
 import { LinkedList } from "../LinkedList.js";
 
-// Pattern: Linked List, Two Pointers
+// Pattern: Linked List, Advanced Structures
 
 // LeetCode Problem 114: Flatten Binary Tree to Linked List
 // Flatten a binary tree to a linked list in-place.

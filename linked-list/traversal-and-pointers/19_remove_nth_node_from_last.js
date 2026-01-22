@@ -1,6 +1,6 @@
 import { LinkedList, ListNode } from "../LinkedList.js"
 
-// Pattern: Linked List, Two Pointers
+// Pattern: Linked List, Traversal and Pointers
 
 // LeetCode Problem 19: Remove Nth Node From End of List
 // Given the head of a singly linked list, remove the nth node from the end of the list and return its head.

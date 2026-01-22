@@ -1,6 +1,6 @@
 import { LinkedList } from "../LinkedList.js"
 
-// Pattern: Linked List, Two Pointers
+// Pattern: Linked List, Traversal and Pointers
 
 // LeetCode Problem 876: Middle of the Linked List
 // Given the head of a singly linked list, return the middle node of the linked list.

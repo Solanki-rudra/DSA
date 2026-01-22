@@ -1,6 +1,6 @@
-import { LinkedList } from "../LinkedList.js"
+import { LinkedList, ListNode } from "../LinkedList.js"
 
-// Pattern: Linked List, Two Pointers
+// Pattern: Linked List, Reversal and Relinking
 
 // LeetCode Problem 25: Reverse Nodes in k-Group
 // Given the head of a linked list, reverse the nodes of the list k at a time, and return the modified list.

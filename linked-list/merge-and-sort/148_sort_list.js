@@ -1,6 +1,6 @@
 import { LinkedList, ListNode } from "../LinkedList.js"
 
-// Pattern: Linked List, Two Pointers
+// Pattern: Linked List, Merge and Sort
 
 // LeetCode Problem 148: Sort List
 // Given the head of a linked list, return the list after sorting it in ascending order.

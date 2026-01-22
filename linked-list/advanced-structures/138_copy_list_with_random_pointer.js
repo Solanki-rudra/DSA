@@ -1,6 +1,6 @@
 import { _Node, LinkedList } from "../LinkedList.js"
 
-// Pattern: Linked List, Two Pointers
+// Pattern: Linked List, Advanced Structures
 
 // LeetCode Problem 138: Copy List with Random Pointer
 // A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.

@@ -1,6 +1,6 @@
 import { LinkedList } from "../LinkedList.js"
 
-// Pattern: Linked List, Two Pointers
+// Pattern: Linked List, Reversal and Relinking
 
 // LeetCode Problem 206: Reverse Linked List
 // Given the head of a singly linked list, reverse the list, and return the reversed list.

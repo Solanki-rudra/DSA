@@ -1,6 +1,6 @@
 import { LinkedList, ListNode } from "../LinkedList.js"
 
-// Pattern: Linked List, Two Pointers
+// Pattern: Linked List, Merge and Sort
 
 // LeetCode Problem 23: Merge k Sorted Lists
 // You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
