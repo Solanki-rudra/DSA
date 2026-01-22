@@ -30,6 +30,7 @@ These problems help you understand:
 | [`138_copy_list_with_random_pointer.js`](./138_copy_list_with_random_pointer.js) | LeetCode #138 — Copy List with Random Pointer | Create a deep copy of a linked list with random pointers using brute force and optimal approaches. |
 | [`23_merge_k_sorted_list.js`](./23_merge_k_sorted_list.js) | LeetCode #23 — Merge k Sorted Lists | Merge multiple sorted linked lists using brute force and optimal approaches. |
 | [`25_reverse_k_nodes.js`](./25_reverse_k_nodes.js) | LeetCode #25 — Reverse Nodes in k-Group | Reverse nodes in groups of k using brute force and optimal pointer manipulation. |
+| [`114_flaten_binary_tree_to_ll.js`](./114_flaten_binary_tree_to_ll.js) | LeetCode #114 — Flatten Binary Tree to Linked List | Flatten a binary tree to a linked list in-place using brute force and optimal approaches. |
 
 ---
 
@@ -221,6 +222,22 @@ Reverse the nodes of a linked list **k at a time**.
 
 ---
 
+### 🔍 **LeetCode #114 — Flatten Binary Tree to Linked List**
+
+**Goal:**  
+Flatten a binary tree to a linked list in-place.
+
+---
+
+### 🛠 Approaches Used (114)
+
+| Function | Approach | Time | Space | Description |
+|--------|----------|------|--------|-------------|
+| `flattenBrute` | DFS Traversal | O(n) | O(n) | Perform reverse pre-order traversal and re-link nodes. |
+| `flattenOptimal` | Iterative Re-linking | O(n) | O(1) | Iteratively re-link using the rightmost node of left subtree. |
+
+---
+
 ## 🧠 Key Learnings
 
 - Dummy node pattern for safe list operations
@@ -249,3 +266,4 @@ node 2_add_two_numbers.js
 node 138_copy_list_with_random_pointer.js
 node 23_merge_k_sorted_list.js
 node 25_reverse_k_nodes.js
+node 114_flaten_binary_tree_to_ll.js
