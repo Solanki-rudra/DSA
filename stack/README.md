@@ -10,9 +10,10 @@ push, pop, peek, and isEmpty operations.
 
 ## 📂 Folder Structure
 
-| File | Description |
-|------|-------------|
+| Folder/File | Description |
+|-------------|-------------|
 | [`Stack.js`](./Stack.js) | Basic Stack implementation using an array with push, pop, peek, and isEmpty methods |
+| [`validation/`](./validation) | Problems involving validation using stacks, such as parentheses matching |
 
 ---
 

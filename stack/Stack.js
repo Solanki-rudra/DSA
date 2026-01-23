@@ -1,4 +1,4 @@
-class Stack {
+export class Stack {
     constructor() {
         this.items = [];
         this.size = 0;
@@ -20,5 +20,8 @@ class Stack {
         if (this.isEmpty())
             return undefined;
         return this.items[this.size - 1];
+    }
+    length() {
+        return this.size;
     }
 }
