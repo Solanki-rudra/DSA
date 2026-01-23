@@ -16,6 +16,7 @@ Each folder focuses on a specific concept or pattern and contains:
 | [`array`](./array) | Contains various pattern problems for practicing arrays |
 | [`string`](./string) | Contains various pattern problems for practicing strings |
 | [`linked-list`](./linked-list) | Contains various pattern problems for practicing linked-list |
+| [`stack`](./stack) | Contains various pattern problems for practicing stack |
 | *(more coming soon...)* | New folders will be added as I practice more DSA topics. |
 
 ---
