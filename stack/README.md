@@ -14,6 +14,7 @@ push, pop, peek, and isEmpty operations.
 |-------------|-------------|
 | [`Stack.js`](./Stack.js) | Basic Stack implementation using an array with push, pop, peek, and isEmpty methods |
 | [`validation/`](./validation) | Problems involving validation using stacks, such as parentheses matching |
+| [`design/`](./design) | Problems involving designing advanced stack data structures, such as Min Stack and Max Stack |
 
 ---
 
@@ -35,6 +36,7 @@ Stack is fundamental for solving problems involving:
 - Parentheses matching
 - Backtracking algorithms
 - Depth-First Search (DFS)
+- Designing advanced data structures (Min Stack, Max Stack)
 
 ## 🔍 Key Concepts
 
