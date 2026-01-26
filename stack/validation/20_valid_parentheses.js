@@ -8,7 +8,7 @@ import { Stack } from "../Stack.js"
 
 /**
 * @name isValid
-* @description Brute Force Approach: Use a stack to validate parentheses.
+* @description Approach: Use a stack to validate parentheses.
 * @timeComplexity O(n)
 * @spaceComplexity O(n)
 */
