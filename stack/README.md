@@ -16,6 +16,7 @@ push, pop, peek, and isEmpty operations.
 | [`validation/`](./validation) | Problems involving validation using stacks, such as parentheses matching |
 | [`design/`](./design) | Problems involving designing advanced stack data structures, such as Min Stack and Max Stack |
 | [`monotonic-stack/`](./monotonic-stack) | Problems using monotonic stack techniques for next greater/smaller elements |
+| [`expression-evaluation/`](./expression-evaluation) | Problems involving expression evaluation using stacks, such as RPN |
 
 ---
 
