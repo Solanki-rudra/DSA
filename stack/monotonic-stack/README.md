@@ -16,6 +16,7 @@ These problems help you understand:
 | File | Problem | Description |
 |------|--------|-------------|
 | [`739_daily_temperatures.js`](./739_daily_temperatures.js) | LeetCode #739 — Daily Temperatures | Given temperatures, find days until warmer temperature for each day using monotonic stack. |
+| [`853_car_fleet.js`](./853_car_fleet.js) | LeetCode #853 — Car Fleet | Calculate number of car fleets reaching destination using monotonic stack. |
 
 ---
 
@@ -43,6 +44,29 @@ Given an array of integers `temperatures` represents the daily temperatures, ret
 
 ---
 
+### 🔍 **LeetCode #853 — Car Fleet**
+
+**Goal:**
+There are `n` cars going to the same destination along a one-lane road. The destination is `target` miles away. You are given two integer arrays `position` and `speed`, both of length `n`, where `position[i]` is the position of the `i^{th}` car and `speed[i]` is the speed of the `i^{th}` car. A car can never pass another car ahead of it, but it can catch up to it and drive bumper to bumper at the same speed. The distance between these two cars is ignored - they are considered as one car. Return the number of car fleets that will arrive at the destination.
+
+**Constraints:**
+- `n == position.length == speed.length`
+- `1 <= n <= 10^5`
+- `0 < target <= 10^6`
+- `0 < position[i] < target`
+- All the values of `position` are unique.
+- `0 < speed[i] <= 10^6`
+
+---
+
+### 🛠 Approaches Used (853)
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|--------|-------------|
+| `carFleet` | Monotonic Stack | O(n log n) | O(n) | Sort cars by position descending, use stack to merge fleets when cars catch up. |
+
+---
+
 ## 🧠 Key Learnings
 
 - Using monotonic stacks for next greater/smaller element problems
@@ -56,4 +80,5 @@ Given an array of integers `temperatures` represents the daily temperatures, ret
 
 ```bash
 node 739_daily_temperatures.js
+node 853_car_fleet.js
 ```
