@@ -17,6 +17,7 @@ These problems help you understand:
 |------|--------|-------------|
 | [`20_valid_parentheses.js`](./20_valid_parentheses.js) | LeetCode #20 — Valid Parentheses | Determine if a string with parentheses is valid using a stack. |
 | [`1249_make_valid_parentheses.js`](./1249_make_valid_parentheses.js) | LeetCode #1249 — Minimum Remove to Make Valid Parentheses | Remove minimum parentheses to make the string valid. |
+| [`32_longest_valid_parentheses.js`](./32_longest_valid_parentheses.js) | LeetCode #32 — Longest Valid Parentheses | Find the length of the longest valid parentheses substring. |
 
 ---
 
@@ -68,6 +69,26 @@ Your task is to remove the minimum number of parentheses ( `'('` or `')'`, in an
 
 ---
 
+### 🔍 **LeetCode #32 — Longest Valid Parentheses**
+
+**Goal:**  
+Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.
+
+**Constraints:**  
+- 1 ≤ s.length ≤ 3×10^4  
+- s[i] is '(' or ')'
+
+---
+
+### 🛠 Approaches Used (32)
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|--------|-------------|
+| `longestValidParenthesesBrute` | Brute Force with Validation | O(n^3) | O(n) | Check all substrings starting from '(' and validate using stack. |
+| `longestValidParenthesesOptimal` | Stack-based Tracking | O(n) | O(n) | Use stack to track indices and calculate valid lengths. |
+
+---
+
 ## 🧠 Key Learnings
 
 - Using stacks for matching and validation
@@ -82,4 +103,5 @@ Your task is to remove the minimum number of parentheses ( `'('` or `')'`, in an
 ```bash
 node 20_valid_parentheses.js
 node 1249_make_valid_parentheses.js
+node 32_longest_valid_parentheses.js
 ```
