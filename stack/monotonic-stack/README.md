@@ -18,6 +18,7 @@ These problems help you understand:
 | [`739_daily_temperatures.js`](./739_daily_temperatures.js) | LeetCode #739 — Daily Temperatures | Given temperatures, find days until warmer temperature for each day using monotonic stack. |
 | [`853_car_fleet.js`](./853_car_fleet.js) | LeetCode #853 — Car Fleet | Calculate number of car fleets reaching destination using monotonic stack. |
 | [`84_large_rect_in_histogram.js`](./84_large_rect_in_histogram.js) | LeetCode #84 — Largest Rectangle in Histogram | Find the area of the largest rectangle that can be formed in a histogram using monotonic stack. |
+| [`496_next_greater_ele.js`](./496_next_greater_ele.js) | LeetCode #496 — Next Greater Element I | Find the next greater element for each element in nums1 from nums2 using monotonic stack. |
 
 ---
 
@@ -89,6 +90,28 @@ Given an array of integers `heights` representing the heights of bars in a histo
 
 ---
 
+### 🔍 **LeetCode #496 — Next Greater Element I**
+
+**Goal:**
+You are given two arrays `nums1` and `nums2` where `nums1`'s elements are a subset of `nums2` (without duplicates). Find all the next greater numbers for `nums1`'s elements in the corresponding places of `nums2`. The next greater number of a number `x` in `nums2` is the first greater number to its right in `nums2`. If it does not exist, return `-1` for this number.
+
+**Constraints:**
+- 1 <= nums1.length <= nums2.length <= 1000
+- 1 <= nums1[i], nums2[i] <= 10^4
+- All integers in `nums1` and `nums2` are unique.
+- All integers of `nums1` also appear in `nums2`.
+
+---
+
+### 🛠 Approaches Used (496)
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|--------|-------------|
+| `nextGreaterElementBrute` | Brute Force | O(n*m) | O(1) | For each element in nums2, scan forward to find the next greater element. |
+| `nextGreaterElementOptimal` | Monotonic Stack | O(n + m) | O(n) | Use a decreasing monotonic stack to track elements and compute next greater elements efficiently. |
+
+---
+
 ## 🧠 Key Learnings
 
 - Using monotonic stacks for next greater/smaller element problems
@@ -104,4 +127,5 @@ Given an array of integers `heights` representing the heights of bars in a histo
 node 739_daily_temperatures.js
 node 853_car_fleet.js
 node 84_large_rect_in_histogram.js
+node 496_next_greater_ele.js
 ```
