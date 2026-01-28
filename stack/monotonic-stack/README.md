@@ -17,6 +17,7 @@ These problems help you understand:
 |------|--------|-------------|
 | [`739_daily_temperatures.js`](./739_daily_temperatures.js) | LeetCode #739 — Daily Temperatures | Given temperatures, find days until warmer temperature for each day using monotonic stack. |
 | [`853_car_fleet.js`](./853_car_fleet.js) | LeetCode #853 — Car Fleet | Calculate number of car fleets reaching destination using monotonic stack. |
+| [`84_large_rect_in_histogram.js`](./84_large_rect_in_histogram.js) | LeetCode #84 — Largest Rectangle in Histogram | Find the area of the largest rectangle that can be formed in a histogram using monotonic stack. |
 
 ---
 
@@ -67,6 +68,27 @@ There are `n` cars going to the same destination along a one-lane road. The dest
 
 ---
 
+### 🔍 **LeetCode #84 — Largest Rectangle in Histogram**
+
+**Goal:**
+Given an array of integers `heights` representing the heights of bars in a histogram, find the area of the largest rectangle that can be formed.
+
+**Constraints:**
+- 1 <= heights.length <= 10^5
+- 0 <= heights[i] <= 10^4
+
+---
+
+### 🛠 Approaches Used (84)
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|--------|-------------|
+| `largestRectangleAreaBrute` | Brute Force | O(n^2) | O(1) | For each bar, expand left and right to find minimum height span. |
+| `largestRectangleAreaBetter` | Two Pass Stack | O(n) | O(n) | Use two passes to find previous and next smaller elements, then calculate areas. |
+| `largestRectangleAreaOptimal` | Monotonic Stack | O(n) | O(n) | Use single pass monotonic stack to find rectangle areas as bars are popped. |
+
+---
+
 ## 🧠 Key Learnings
 
 - Using monotonic stacks for next greater/smaller element problems
@@ -81,4 +103,5 @@ There are `n` cars going to the same destination along a one-lane road. The dest
 ```bash
 node 739_daily_temperatures.js
 node 853_car_fleet.js
+node 84_large_rect_in_histogram.js
 ```

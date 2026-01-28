@@ -57,9 +57,42 @@ function largestRectangleAreaBetter(heights) {
     return ans
 }
 
+/**
+ * @name largestRectangleAreaOptimal
+ * @description Optimal Approach: Use a monotonic increasing stack of indices to compute previous and next smaller element indices for each bar.
+ * @timeComplexity O(n)
+ * @spaceComplexity O(n)
+ */
+function largestRectangleAreaOptimal(heights) {
+    let ans = 0
+    let stack = []
+
+    for (let i = 0; i < heights.length; i++) {
+        while (stack.length && heights[stack[stack.length - 1]] > heights[i]) {
+            let last = stack.pop()
+            let width = stack.length === 0
+                ? i
+                : i - stack[stack.length - 1] - 1
+            ans = Math.max(ans, heights[last] * width)
+        }
+        stack.push(i)
+    }
+
+    while (stack.length) {
+        let last = stack.pop()
+        let width = stack.length === 0
+            ? heights.length
+            : heights.length - stack[stack.length - 1] - 1
+        ans = Math.max(ans, heights[last] * width)
+    }
+
+    return ans
+}
+
 
 // Test
 let heights = [2,1,5,6,2,3]
 
 console.log(largestRectangleAreaBrute(heights));
 console.log(largestRectangleAreaBetter(heights));
+console.log(largestRectangleAreaOptimal(heights));
