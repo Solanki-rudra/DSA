@@ -19,6 +19,7 @@ These problems help you understand:
 | [`853_car_fleet.js`](./853_car_fleet.js) | LeetCode #853 — Car Fleet | Calculate number of car fleets reaching destination using monotonic stack. |
 | [`84_large_rect_in_histogram.js`](./84_large_rect_in_histogram.js) | LeetCode #84 — Largest Rectangle in Histogram | Find the area of the largest rectangle that can be formed in a histogram using monotonic stack. |
 | [`496_next_greater_ele.js`](./496_next_greater_ele.js) | LeetCode #496 — Next Greater Element I | Find the next greater element for each element in nums1 from nums2 using monotonic stack. |
+| [`503_next_greater_ele2.js`](./503_next_greater_ele2.js) | LeetCode #503 — Next Greater Element II | Find the next greater element for each element in a circular array using monotonic stack. |
 
 ---
 
@@ -112,6 +113,27 @@ You are given two arrays `nums1` and `nums2` where `nums1`'s elements are a subs
 
 ---
 
+### 🔍 **LeetCode #503 — Next Greater Element II**
+
+**Goal:**
+Given a circular array (the next element of the last element is the first element), print the Next Greater Number for every element. The Next Greater Number of a number `x` is the first greater number to its traversing-order next in the array, which means you could search circularly to find its next greater number. If it doesn't exist, output `-1` for this number.
+
+**Constraints:**
+- 1 <= nums.length <= 10^4
+- -10^9 <= nums[i] <= 10^9
+
+---
+
+### 🛠 Approaches Used (503)
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|--------|-------------|
+| `nextGreaterElementsBrute` | Brute Force | O(n^2) | O(n) | For each element in the array, scan forward in a circular manner to find the next greater element. |
+node 503_next_greater_ele2.js
+| `nextGreaterElementsOptimal` | Monotonic Stack | O(n) | O(n) | Use a monotonic decreasing stack to track elements and compute next greater elements efficiently in a circular manner. |
+
+---
+
 ## 🧠 Key Learnings
 
 - Using monotonic stacks for next greater/smaller element problems
@@ -128,4 +150,5 @@ node 739_daily_temperatures.js
 node 853_car_fleet.js
 node 84_large_rect_in_histogram.js
 node 496_next_greater_ele.js
+node 503_next_greater_ele2.js
 ```
