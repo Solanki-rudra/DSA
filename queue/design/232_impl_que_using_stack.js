@@ -1,5 +1,7 @@
 // Pattern: Queue, Design
 
+import { Stack } from "../../stack/Stack.js";
+
 // LeetCode Problem 232: Implement Queue using Stacks
 // Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty).
 
@@ -11,8 +13,8 @@
  */
 
 var MyQueue = function() {
-    this.s1 = []
-    this.s2 = []
+    this.s1 = new Stack()
+    this.s2 = new Stack()
 };
 
 /** 
@@ -20,11 +22,11 @@ var MyQueue = function() {
  * @return {void}
  */
 MyQueue.prototype.push = function(x) {
-    while(this.s1.length !== 0){
+    while(!this.s1.isEmpty()){
         this.s2.push(this.s1.pop())
     }
     this.s1.push(x)
-    while(this.s2.length !== 0){
+    while(!this.s2.isEmpty()){
         this.s1.push(this.s2.pop())
     }
 };
@@ -40,14 +42,14 @@ MyQueue.prototype.pop = function() {
  * @return {number}
  */
 MyQueue.prototype.peek = function() {
-    return this.s1[this.s1.length - 1]
+    return this.s1.peek()
 };
 
 /**
  * @return {boolean}
  */
 MyQueue.prototype.empty = function() {
-    return this.s1.length === 0
+    return this.s1.isEmpty()
 };
 
 var obj = new MyQueue()

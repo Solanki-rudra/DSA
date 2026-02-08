@@ -16,6 +16,7 @@ These problems help you understand:
 | File | Problem | Description |
 |------|--------|-------------|
 | [`232_impl_que_using_stack.js`](./232_impl_que_using_stack.js) | LeetCode #232 — Implement Queue using Stacks | Design a FIFO queue using only two stacks with O(1) amortized operations. |
+| [`225_impl_stack_using_que.js`](./225_impl_stack_using_que.js) | LeetCode #225 — Implement Stack using Queues | Design a LIFO stack using only two queues with O(1) amortized operations. |
 
 ---
 
@@ -50,6 +51,37 @@ You must use **only** two stacks to implement this queue. Standard queue impleme
 | Function | Approach | Time | Space | Description |
 |----------|----------|------|--------|-------------|
 | `MyQueue` | Two Stacks | O(1) amortized | O(n) | Use s1 for input and s2 for output; lazy transfer of elements maintains FIFO order. |
+
+---
+
+### 🔍 **LeetCode #225 — Implement Stack using Queues**
+
+**Goal:**
+Implement a last in first out (LIFO) stack using only two queues. The implemented stack should support all the functions of a normal stack (push, top, pop, and empty).
+
+Implement the `MyStack` class:
+- `MyStack()` initializes the stack object.
+- `void push(int x)` pushes the element `x` onto the stack.
+- `int pop()` removes the element on the top of the stack and returns it.
+- `int top()` returns the element on the top of the stack.
+- `boolean empty()` returns `true` if the stack is empty, `false` otherwise.
+
+**Constraints:**
+- 1 <= x <= 9
+node 225_impl_stack_using_que.js
+- At most 100 calls will be made to `push`, `pop`, `top`, and `empty`.
+- All the calls to `pop` and `top` are valid.
+
+**Notes:**
+You must use **only** two queues to implement this stack. Standard stack implementation or using lists/deques is not allowed.
+
+---
+
+### 🛠 Approaches Used (225)
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|--------|-------------|
+| `MyStack` | Two Queues | O(1) amortized | O(n) | Use q1 for storage and q2 for temporary transfer; lazy transfer of elements maintains LIFO order. |
 
 ---
 
