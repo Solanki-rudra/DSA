@@ -17,6 +17,7 @@ Each folder focuses on a specific concept or pattern and contains:
 | [`string`](./string) | Contains various pattern problems for practicing strings |
 | [`linked-list`](./linked-list) | Contains various pattern problems for practicing linked-list |
 | [`stack`](./stack) | Contains various pattern problems for practicing stack |
+| [`queue`](./queue) | Contains various pattern problems for practicing queue |
 | *(more coming soon...)* | New folders will be added as I practice more DSA topics. |
 
 ---
