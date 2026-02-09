@@ -13,7 +13,8 @@ enqueue (push), dequeue (pop), peek, and isEmpty operations.
 | Folder | Description |
 |--------|-------------|
 | [`Queue.js`](./Queue.js) | Basic Queue implementation using an array with push, pop, peek, and isEmpty methods |
-| [`design/`](./design) | Problems involving designing advanced queue data structures, such as implementing queues using stacks |
+| [`design`](./design) | Problems involving designing advanced queue data structures, such as implementing queues using stacks and circular queues |
+| [`bfs`](./bfs/) | Problems involving Breadth-First Search (BFS) techniques using queues to find shortest paths and minimum moves in graphs |
 
 ---
 
