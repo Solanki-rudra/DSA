@@ -1,3 +1,5 @@
+import { Queue } from "../Queue.js";
+
 // Pattern: Stack, Expression Evaluation
 
 // LeetCode Problem 649: Dota2 Senate
@@ -40,7 +42,37 @@ function predictPartyVictoryBrute(senate) {
     }
 }
 
+/**
+* @name predictPartyVictoryOptimal
+* @description Approach: Simulate the process using two queues to track the indices of each party's senators. In each round, the earliest senator from each party bans the earliest senator from the opposite party. The banned senator is removed from their queue, and the surviving senator is added back to their queue with an incremented index (to simulate a later round).
+* @timeComplexity O(n)
+* @spaceComplexity O(n)
+*/
+function predictPartyVictoryOptimal(senate) {
+    let n = senate.length
+    let rQ = new Queue()
+    let dQ = new Queue()
+    for (let i = 0; i < n; i++) {
+        if (senate[i] === 'R') {
+            rQ.push(i)
+        } else {
+            dQ.push(i)
+        }
+    }
+    while (rQ.length() !== 0 && dQ.length() !== 0) {
+        let r = rQ.pop()
+        let d = dQ.pop()
+        if (r < d) {
+            rQ.push(r + n)
+        } else {
+            dQ.push(d + n)
+        }
+    }
+    return rQ.isEmpty() ? 'Dire' : 'Radiant'
+}
+
 // Test
-let senate = "RDD"
+let senate = "RDDRDR"
 
 console.log(predictPartyVictoryBrute(senate));
+console.log(predictPartyVictoryOptimal(senate));
