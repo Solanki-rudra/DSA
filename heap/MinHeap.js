@@ -5,12 +5,20 @@ export class MinHeap {
         this.capacity = cap;
     }
     push(value) {
-        if(this.size >= this.capacity && value > this.peek()) {
-            this.poll()
+        // if heap not full → normal push
+        if (this.size < this.capacity) {
+            this.heap.push(value);
+            this.size++;
+            this._heapifyUp();
+            return;
         }
-        this.heap.push(value);
-        this.size++;
-        this._heapifyUp();
+
+        // heap full
+        if (value <= this.peek()) return;
+
+        // replace min
+        this.heap[0] = value;
+        this._heapifyDown();
     }
     poll() {
         if (this.size === 0) return null;
