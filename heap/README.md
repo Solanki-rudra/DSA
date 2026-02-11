@@ -13,6 +13,7 @@ priority queues. This folder focuses on max-heap behaviour and related problems.
 | Folder | Description |
 |--------|-------------|
 | [`MaxHeap`](./MaxHeap.js) | Basic Max Heap implementation using an array with `push`, `poll`, `peek`, and `isEmpty` methods |
+| [`MinHeap`](./MinHeap.js) | Basic Min Heap implementation using an array with `push`, `poll`, `peek`, and `isEmpty` methods |
 | [`max-heap`](./max-heap) | Problems and examples that use max-heaps (priority-queue style solutions) |
 
 ---
