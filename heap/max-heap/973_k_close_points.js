@@ -3,10 +3,7 @@ import { MaxHeap } from "../MaxHeap.js"
 // Pattern: Heap, Max-Heap
 
 // LeetCode Problem 973: K Closest Points to Origin
-// Given an array of integers stones where stones[i] is the weight of the ith stone, we are playing a game with the stones. On each turn, we choose the heaviest two stones and smash them together. Suppose the heaviest two stones have weights x and y with x <= y. The result of this smash is:
-// If x == y, both stones are totally destroyed; 
-// If x != y, the stone of weight x is totally destroyed, and the stone of weight y has new weight y-x.
-// At the end of the game, there is at most one stone left. Return the weight of the last remaining stone. If there are no stones left, return 0.
+// To retrieve the k closest points to the origin (0, 0) from a list of points, we can use a max-heap to keep track of the k closest points encountered so far. We calculate the distance of each point from the origin and maintain a max-heap of size k. If the heap exceeds size k, we remove the point with the largest distance (the root of the max-heap). This way, at the end of processing all points, the heap will contain the k closest points.
 
 /**
 * @name kClosestBrute
@@ -28,5 +25,35 @@ function kClosestBrute(points, k) {
     }
     return result
 }
+
+/**
+* @name kClosestOptimal
+* @description  Approach: We can calculate the distance of each point from the origin and store it in an array. Then, we can sort this array based on the distances and return the first k points from the sorted array.
+* @timeComplexity O(n log k) - We iterate through all n points and perform heap operations (push/poll) which take O(log k) time each.
+* @spaceComplexity O(k) - We are maintaining a max-heap of size at most k.
+*/
+function kClosestOptimal(points, k) {
+    let maxHeap = new MaxHeap(k, (a, b) => a[0] - b[0]) // Max-heap based on distance
+
+    for (let point of points) {
+        let dist = point[0] * point[0] + point[1] * point[1]
+
+        if (maxHeap.getSize() < k) {
+            maxHeap.push([dist, point])
+        } else if (dist < maxHeap.peek()[0]) {
+            maxHeap.poll()
+            maxHeap.push([dist, point])
+        }
+    }
+
+    let result = []
+    while (!maxHeap.isEmpty()) {
+        result.push(maxHeap.poll()[1])
+    }
+
+    return result
+}
+
 let points = [[3, 3], [5, -1], [-2, 4]], k = 2
 console.log(kClosestBrute(points, k)) // [[3,3],[-2,4]]; 
+console.log(kClosestOptimal(points, k)) // [[3,3],[-2,4]];

@@ -10,6 +10,7 @@ algorithmic challenges.
 | File | Problem | Description |
 |------|---------|-------------|
 | [`1046_last_stone_weight.js`](./1046_last_stone_weight.js) | LeetCode #1046 — Last Stone Weight | Repeatedly smash the two heaviest stones; if unequal, insert the difference. Return the weight of the last remaining stone (or 0). |
+| [`973_k_close_points.js`](./973_k_close_points.js) | LeetCode #973 — K Closest Points to Origin | Find the k points closest to the origin (0, 0) from a given list of points. |
 
 ---
 
@@ -37,6 +38,26 @@ Use a max-heap (priority queue) to always extract the two largest stones efficie
 
 ---
 
+### 🎯 **973 — K Closest Points to Origin**
+
+**Goal:**
+Given an array of points where each point is represented as [x, y], find the k points that are closest to the origin (0, 0). Return these k points in any order.
+
+**Approach:**
+Use a max-heap (priority queue) of size k to maintain the k closest points. For each point, calculate its distance from the origin. If the heap has fewer than k points, add the point. If the heap is full and the current point's distance is smaller than the maximum distance in the heap, remove the farthest point and add the current point.
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `kClosestBrute` | Sorting by distance | O(n log n) | O(n) | Calculate distances for all points, sort by distance, and return the first k points. |
+| `kClosestOptimal` | Max-heap (priority queue) | O(n log k) | O(k) | Maintain a max-heap of size k based on distance; iterate through points and keep only the k closest ones. |
+
+**Key Points:**
+- Max-heap based on distance keeps track of the k closest points dynamically.
+- By maintaining a fixed-size heap of k, we avoid sorting all n points.
+- The comparator uses squared distance to avoid computing square roots (optimization).
+
+---
+
 ## 🧠 Key Learnings
 
 - Implementing and using max-heaps (priority queues)
@@ -49,4 +70,5 @@ Use a max-heap (priority queue) to always extract the two largest stones efficie
 
 ```bash
 node 1046_last_stone_weight.js
+node 973_k_close_points.js
 ```
