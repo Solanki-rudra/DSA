@@ -10,6 +10,7 @@ algorithmic challenges.
 | File | Problem | Description |
 |------|---------|-------------|
 | [`215_kth_larg_ele.js`](./215_kth_larg_ele.js) | LeetCode #215 — Kth Largest Element in an Array | Find the kth largest element in an unsorted array. Compare brute force, sorting, and min-heap (capacity k) approaches. |
+| [`1086_high_five.js`](./1086_high_five.js) | LeetCode #1086 — High Five | Calculate each student's top five average using a min-heap with capacity 5 to track the highest scores. |
 
 ---
 
@@ -36,6 +37,26 @@ Three solutions demonstrating increasing efficiency:
 
 ---
 
+### 🏆 **1086 — High Five**
+
+**Goal:**
+Given a list of scores `[IDi, scorei]` for each student, calculate each student's top five average and return sorted by ID.
+
+**Approaches:**
+Two solutions comparing efficiency:
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `highFiveBrute` | Group by ID, sort, calculate average | O(n log n) | O(n) | Group scores by ID, sort each group, take top 5 and compute average. |
+| `highFiveOptimal` | Min-heap with capacity 5 per student | O(n log 5) | O(n) | Maintain a min-heap of capacity 5 for each student; automatically keeps the top 5 scores. |
+
+**Key Points:**
+- Min-heap with fixed capacity 5 efficiently maintains top 5 elements without sorting entire score list.
+- When heap is full, only replace if new score is larger than the minimum.
+- Polling k=5 elements at the end gives flexible retrieval without sorting.
+
+---
+
 ## 🧠 Key Learnings
 
 - Implementing and using min-heaps (priority queues)
@@ -48,4 +69,5 @@ Three solutions demonstrating increasing efficiency:
 
 ```bash
 node 215_kth_larg_ele.js
+node 1086_high_five.js
 ```
