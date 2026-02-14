@@ -11,6 +11,7 @@ algorithmic challenges.
 |------|---------|-------------|
 | [`215_kth_larg_ele.js`](./215_kth_larg_ele.js) | LeetCode #215 — Kth Largest Element in an Array | Find the kth largest element in an unsorted array. Compare brute force, sorting, and min-heap (capacity k) approaches. |
 | [`1086_high_five.js`](./1086_high_five.js) | LeetCode #1086 — High Five | Calculate each student's top five average using a min-heap with capacity 5 to track the highest scores. |
+| [`703_kth_larg_ele_in_strm.js`](./703_kth_larg_ele_in_strm.js) | LeetCode #703 — Kth Largest Element in a Stream | Design a class that maintains the kth largest element in a stream using a min-heap of capacity k. |
 
 ---
 
@@ -57,6 +58,26 @@ Two solutions comparing efficiency:
 
 ---
 
+### 🏆 **703 — Kth Largest Element in a Stream**
+
+**Goal:**
+Design a class that maintains the kth largest element in a stream. The class is initialized with an integer `k` and an initial array `nums`, and supports an `add(val)` operation that returns the current kth largest element.
+
+**Approaches:**
+Three solutions demonstrating increasing efficiency:
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `addBrute` | Repeated max removal | O(k·n) | O(n) | Append value and find kth largest by removing the max k-1 times from a copy of the array. |
+| `addBetter` | Sort descending | O(n log n) | O(1) | Append value, sort, and return element at index k-1. |
+| `addOptimal` | Min-heap with capacity k | O(n log k) | O(k) | Maintain a min-heap of the k largest elements; root is the kth largest. Push and heapify up when size < k; replace root and heapify down when larger values arrive. |
+
+**Key Points:**
+- Min-heap of capacity `k` is the optimal pattern for streaming top-K problems.
+- Keep heap size at most `k` to ensure O(log k) update time.
+- When initialized, build the heap from the initial `nums` (or push each element with heapify-up).
+
+
 ## 🧠 Key Learnings
 
 - Implementing and using min-heaps (priority queues)
@@ -70,4 +91,5 @@ Two solutions comparing efficiency:
 ```bash
 node 215_kth_larg_ele.js
 node 1086_high_five.js
+node 703_kth_larg_ele_in_strm.js
 ```
