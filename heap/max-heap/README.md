@@ -11,6 +11,7 @@ algorithmic challenges.
 |------|---------|-------------|
 | [`1046_last_stone_weight.js`](./1046_last_stone_weight.js) | LeetCode #1046 — Last Stone Weight | Repeatedly smash the two heaviest stones; if unequal, insert the difference. Return the weight of the last remaining stone (or 0). |
 | [`973_k_close_points.js`](./973_k_close_points.js) | LeetCode #973 — K Closest Points to Origin | Find the k points closest to the origin (0, 0) from a given list of points. |
+| [`621_task_scheduler.js`](./621_task_scheduler.js) | LeetCode #621 — Task Scheduler | Schedule tasks with a cooldown period between identical tasks; find the minimum time needed. |
 
 ---
 
@@ -58,6 +59,25 @@ Use a max-heap (priority queue) of size k to maintain the k closest points. For 
 
 ---
 
+### 📅 **621 — Task Scheduler**
+
+**Goal:**
+Given an array of tasks (represented by characters) and a cooldown period n, schedule all tasks such that there is a gap of at least n units of time between any two identical tasks. Find the minimum number of time units needed to complete all tasks.
+
+**Approach:**
+Use a max-heap to always process the most frequent tasks first. In each cycle, process up to n+1 tasks (to maintain the cooldown). Decrease frequencies and reinsert tasks that still have remaining occurrences.
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `leastInterval` | Max-heap (frequency-based) | O(n log k) | O(k) | Count task frequencies, maintain a max-heap, and simulate scheduling by processing up to n+1 tasks per cycle. |
+
+**Key Points:**
+- Max-heap prioritizes high-frequency tasks to minimize idle time.
+- Each cycle processes up to n+1 tasks; if fewer are available, idle time is accounted for.
+- The formula: `(maxFreq - 1) * (n + 1) + tasksWithMaxFreq` provides an alternative calculation.
+
+---
+
 ## 🧠 Key Learnings
 
 - Implementing and using max-heaps (priority queues)
@@ -71,4 +91,5 @@ Use a max-heap (priority queue) of size k to maintain the k closest points. For 
 ```bash
 node 1046_last_stone_weight.js
 node 973_k_close_points.js
+node 621_task_scheduler.js
 ```
