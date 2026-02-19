@@ -12,6 +12,7 @@ algorithmic challenges.
 | [`1046_last_stone_weight.js`](./1046_last_stone_weight.js) | LeetCode #1046 — Last Stone Weight | Repeatedly smash the two heaviest stones; if unequal, insert the difference. Return the weight of the last remaining stone (or 0). |
 | [`973_k_close_points.js`](./973_k_close_points.js) | LeetCode #973 — K Closest Points to Origin | Find the k points closest to the origin (0, 0) from a given list of points. |
 | [`621_task_scheduler.js`](./621_task_scheduler.js) | LeetCode #621 — Task Scheduler | Schedule tasks with a cooldown period between identical tasks; find the minimum time needed. |
+| [`355_design_twitter.js`](./355_design_twitter.js) | LeetCode #355 — Design Twitter | Design a simplified Twitter with post, follow/unfollow, and news feed retrieval features. |
 
 ---
 
@@ -78,6 +79,30 @@ Use a max-heap to always process the most frequent tasks first. In each cycle, p
 
 ---
 
+### 🐦 **355 — Design Twitter**
+
+**Goal:**
+Design a simplified Twitter system that supports:
+- `postTweet(userId, tweetId)`: Post a tweet by a user
+- `getNewsFeed(userId)`: Get the 10 most recent tweets from users the current user follows (including themselves)
+- `follow(followerId, followeeId)`: A user follows another user
+- `unfollow(followerId, followeeId)`: A user unfollows another user
+
+**Approach:**
+Use a data structure to store tweets (linked list for insertion order) and users (with follow sets). For retrieving the news feed, use a max-heap to merge the tweet streams from all followed users efficiently and extract the 10 most recent tweets.
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `getNewsFeed` | Max-heap merging | O(k log f) | O(f) | Use a max-heap to merge tweet streams from all followed users, where k = 10 and f = number of followed users. |
+
+**Key Points:**
+- Linked lists maintain insertion order for efficient tweet retrieval.
+- Max-heap allows efficient merging and retrieval of most recent tweets across multiple users.
+- Follow/unfollow operations are O(1) using a set.
+- News feed generation is O(k log f) where k = 10 and f = number of followed users.
+
+---
+
 ## 🧠 Key Learnings
 
 - Implementing and using max-heaps (priority queues)
@@ -92,4 +117,5 @@ Use a max-heap to always process the most frequent tasks first. In each cycle, p
 node 1046_last_stone_weight.js
 node 973_k_close_points.js
 node 621_task_scheduler.js
+node 355_design_twitter.js
 ```
