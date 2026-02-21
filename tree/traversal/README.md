@@ -13,6 +13,7 @@ and path sums.
 | File | Problem | Description |
 |------|---------|-------------|
 | [`104_max_depth_of_binary_tree.js`](./104_max_depth_of_binary_tree.js) | LeetCode #104 — Maximum Depth of Binary Tree | Compute the maximum depth (height) of a binary tree using DFS (recursion) or BFS (level-order). |
+| [`100_same_tree.js`](./100_same_tree.js) | LeetCode #100 — Same Tree | Determine whether two binary trees are structurally identical and have the same node values. |
 
 ---
 
@@ -44,6 +45,33 @@ along the longest path from the root down to the farthest leaf).
 
 ---
 
+### 🌲 **100 — Same Tree**
+
+**Goal:**
+Given the roots of two binary trees, determine if they are the same: both
+trees are structurally identical and every corresponding node has the same
+value.
+
+**Approach:**
+- Recursively compare corresponding nodes: both null => true; one null => false;
+  values differ => false; otherwise recurse on left and right subtrees.
+- Iteratively, use synchronized BFS/DFS (two queues or a stack of node pairs)
+  to compare nodes level-by-level or depth-by-depth.
+- Time and space complexities are O(n) where n is the number of nodes (worst
+  case), since each node is compared once.
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `isSameTreeOptimal` | Recursive DFS | O(n) | O(n) | Recursive DFS comparing corresponding nodes; return true only if all pairs match structurally and by value. |
+| `isSameTreeOptimal2` | Iterative DFS (stack of node pairs) | O(n) | O(n) | Iterative DFS using a stack of node pairs to compare nodes without recursion. |
+
+**Key Points:**
+- Simple recursive solution is concise and easy to reason about.
+- Iterative pairwise traversal avoids recursion limits by pushing node pairs onto a stack or queue.
+- Early exit is possible when a mismatch is found, improving average-case speed.
+
+---
+
 ## 🧠 Key Learnings
 
 - Tree traversals (preorder, inorder, postorder, level-order) are foundational
@@ -58,4 +86,5 @@ along the longest path from the root down to the farthest leaf).
 
 ```bash
 node 104_max_depth_of_binary_tree.js
+node 100_same_tree.js
 ```
