@@ -19,6 +19,7 @@ Each folder focuses on a specific concept or pattern and contains:
 | [`stack`](./stack) | Contains various pattern problems for practicing stack |
 | [`queue`](./queue) | Contains various pattern problems for practicing queue |
 | [`heap`](./heap) | Contains various pattern problems for practicing heap(priority queue) |
+| [`tree`](./tree) | Contains various pattern problems for practicing tree |
 
 ---
 
