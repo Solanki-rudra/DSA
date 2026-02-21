@@ -14,6 +14,7 @@ and path sums.
 |------|---------|-------------|
 | [`104_max_depth_of_binary_tree.js`](./104_max_depth_of_binary_tree.js) | LeetCode #104 — Maximum Depth of Binary Tree | Compute the maximum depth (height) of a binary tree using DFS (recursion) or BFS (level-order). |
 | [`100_same_tree.js`](./100_same_tree.js) | LeetCode #100 — Same Tree | Determine whether two binary trees are structurally identical and have the same node values. |
+| [`101_symmetric_tree.js`](./101_symmetric_tree.js) | LeetCode #101 — Symmetric Tree | Check whether a binary tree is a mirror of itself (symmetric around its center). |
 
 ---
 
@@ -72,6 +73,31 @@ value.
 
 ---
 
+### 🌲 **101 — Symmetric Tree**
+
+**Goal:**
+Given the root of a binary tree, determine whether the tree is symmetric around
+its center (a mirror of itself).
+
+**Approach:**
+- Recursively compare left and right subtrees in mirrored order: left.left vs
+  right.right and left.right vs right.left.
+- Iteratively, use a queue or stack of node pairs and compare mirrored nodes
+  pairwise.
+- Time complexity O(n); space complexity O(h) for recursion or O(n) worst-case
+  for iterative queue.
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `isSymmetric` | Recursive mirrored DFS | O(n) | O(h) | Compare mirrored node pairs recursively; return true if all corresponding pairs match structurally and by value. |
+
+**Key Points:**
+- Mirror comparison requires swapping child order when comparing paired subtree nodes.
+- Early exit occurs on first mismatch; iterative approach avoids recursion depth limits.
+- Space complexity is O(h) for recursive approach due to call stack.
+
+---
+
 ## 🧠 Key Learnings
 
 - Tree traversals (preorder, inorder, postorder, level-order) are foundational
@@ -87,4 +113,5 @@ value.
 ```bash
 node 104_max_depth_of_binary_tree.js
 node 100_same_tree.js
+node 101_symmetric_tree.js
 ```
