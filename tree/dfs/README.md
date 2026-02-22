@@ -1,10 +1,10 @@
-# Tree — Traversal Problems
+# Tree — DFS Problems
 
-This folder contains tree traversal problems covering depth-first and
-breadth-first techniques for binary and n-ary trees. These problems focus on
-recursive and iterative traversal patterns, using stacks and queues where
-appropriate to explore nodes and compute properties like depth, orderings,
-and path sums.
+This folder contains tree problems focused on depth-first search (DFS)
+techniques for binary and n-ary trees. These problems emphasize recursive and
+iterative DFS patterns (recursion and stacks). BFS (level-order) is mentioned
+when relevant for comparison or alternative approaches. The exercises cover
+exploring nodes and computing properties like depth, orderings, and path sums.
 
 ---
 

@@ -1,6 +1,6 @@
 import { Tree } from '../Tree.js'
 
-// Pattern: Tree, Traversal
+// Pattern: Tree, DFS
 
 // LeetCode Problem 100: Same Tree
 // Given two binary trees, write a function to check if they are the same or not.

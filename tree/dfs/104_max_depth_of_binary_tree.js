@@ -1,6 +1,6 @@
 import { Tree } from '../Tree.js'
 
-// Pattern: Tree, Traversal
+// Pattern: Tree, DFS
 
 // LeetCode Problem 104: Maximum Depth of Binary Tree
 // Given a binary tree, find its maximum depth.

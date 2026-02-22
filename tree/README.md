@@ -15,7 +15,7 @@ creation, insertion, deletion (for BSTs), and traversals (DFS, BFS).
 | Folder | Description |
 |--------|-------------|
 | [`Tree.js`](./Tree.js) | Basic tree utilities: node constructors, helper functions, and simple operations for building or traversing trees |
-| [`traversal`](./traversal) | Problems focused on traversal algorithms and related patterns (DFS, BFS, inorder/preorder/postorder, level-order, recursion vs iterative approaches) |
+| [`DFS`](./dfs) | Problems focused on traversal algorithms mainly for DFS and related patterns (BFS, inorder/preorder/postorder, level-order, recursion vs iterative approaches) |
 
 ---
 

@@ -1,6 +1,6 @@
 import { Tree } from '../Tree.js'
 
-// Pattern: Tree, Traversal
+// Pattern: Tree, DFS
 
 // LeetCode Problem 101: Symmetric Tree
 // Given a binary tree, check whether it is a mirror of itself.

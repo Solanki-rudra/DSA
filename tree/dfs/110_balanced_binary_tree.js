@@ -1,6 +1,6 @@
 import { Tree } from '../Tree.js'
 
-// Pattern: Tree, Traversal
+// Pattern: Tree, DFS
 
 // LeetCode Problem 110: Balanced Binary Tree
 // Given the root of a binary tree, determine if it is a balanced binary tree.
