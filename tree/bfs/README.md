@@ -29,17 +29,20 @@ values as a list of levels (each level is a list of values from left to right).
 
 **Approach:**
 - Iterative BFS using a queue: process nodes level-by-level, collecting values per level.
-- Recursive approach: DFS with a `level` parameter (push value into `ans[level]`), as implemented in `102_binary_tree_level_order_trav.js`.
-- Time complexity O(n); space complexity O(w) where `w` is the maximum width (nodes at a level).
+- Recursive DFS with a `level` parameter (push value into `ans[level]`) as implemented in `102_binary_tree_level_order_trav.js`.
+- Time complexity O(n); space complexity:
+  - BFS → O(w), where `w` is the maximum width of the tree.
+  - DFS → O(h), where `h` is the height of the tree.
 
 | Function | Approach | Time | Space | Description |
 |---------|----------|------|-------|-------------|
-| `levelOrder` | Iterative BFS / Recursive DFS-with-level | O(n) | O(w) | Return a list of levels representing the tree's nodes visited left-to-right, top-to-bottom. |
+| `levelOrderBFS` | Iterative BFS | O(n) | O(w) | Returns a list of levels representing the tree's nodes visited left-to-right, top-to-bottom. |
+| `levelOrderDFS` | Recursive DFS-with-level | O(n) | O(h) | Alternative approach using recursion and depth tracking to group nodes by level. |
 
 **Key Points:**
-- BFS (queue) is the natural fit for level-order traversal and is simple to implement.
-- A recursive DFS with a `level` argument is an elegant alternative that groups node values by depth.
-- Both approaches visit each node once and collect values per level.
+- BFS (queue) is the natural fit for level-order traversal.
+- A recursive DFS with a `level` argument is an elegant alternative.
+- Both approaches visit each node exactly once.
 
 ---
 
@@ -47,9 +50,11 @@ values as a list of levels (each level is a list of values from left to right).
 
 - Tree traversals (preorder, inorder, postorder, level-order) are foundational
   for many tree problems.
-- Choose recursion for simple, easy-to-read solutions and iterative stacks/queues
-  for explicit control or to avoid recursion limits.
-- Level-order (BFS) naturally computes level-based metrics like depth.
+- Use BFS when problems involve level-based grouping or shortest paths.
+- Use DFS when recursion simplifies subtree-based logic.
+- In trees, space complexity depends on:
+  - DFS → height (h)
+  - BFS → width (w)
 
 ---
 
