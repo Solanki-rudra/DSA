@@ -15,6 +15,7 @@ and path sums.
 | [`104_max_depth_of_binary_tree.js`](./104_max_depth_of_binary_tree.js) | LeetCode #104 — Maximum Depth of Binary Tree | Compute the maximum depth (height) of a binary tree using DFS (recursion) or BFS (level-order). |
 | [`100_same_tree.js`](./100_same_tree.js) | LeetCode #100 — Same Tree | Determine whether two binary trees are structurally identical and have the same node values. |
 | [`101_symmetric_tree.js`](./101_symmetric_tree.js) | LeetCode #101 — Symmetric Tree | Check whether a binary tree is a mirror of itself (symmetric around its center). |
+| [`226_invert_binary_tree.js`](./226_invert_binary_tree.js) | LeetCode #226 — Invert Binary Tree | Invert the tree by swapping the left and right children at each node. |
 
 ---
 
@@ -98,6 +99,33 @@ its center (a mirror of itself).
 
 ---
 
+### 🌲 **226 — Invert Binary Tree**
+
+**Goal:**
+Given the root of a binary tree, invert the tree by swapping the left and right
+children at each node. Return the inverted tree.
+
+**Approach:**
+- Recursively swap left and right children at each node, then recurse on the
+  new children.
+- Iteratively, use a stack to traverse the tree and swap left/right children at
+  each node.
+- Both approaches visit each node once; time complexity is O(n).
+- Recursive space is O(h) due to call stack; iterative space is O(h) for the
+  stack in worst case.
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `invertTreeOptimal` | Recursive DFS | O(n) | O(h) | Swap left and right children at each node recursively; return the inverted tree root. |
+| `invertTreeOptimal2` | Iterative DFS (stack) | O(n) | O(h) | Swap left and right children using a stack to avoid recursion; return the inverted tree root. |
+
+**Key Points:**
+- Simple recursive solution: swap children at current node, then recurse on both children.
+- Iterative approach uses a stack to manage node traversal and avoids recursion depth limits.
+- Both approaches modify the tree in-place and return the modified root.
+
+---
+
 ## 🧠 Key Learnings
 
 - Tree traversals (preorder, inorder, postorder, level-order) are foundational
@@ -114,4 +142,5 @@ its center (a mirror of itself).
 node 104_max_depth_of_binary_tree.js
 node 100_same_tree.js
 node 101_symmetric_tree.js
+node 226_invert_binary_tree.js
 ```
