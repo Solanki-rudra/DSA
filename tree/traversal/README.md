@@ -16,6 +16,7 @@ and path sums.
 | [`100_same_tree.js`](./100_same_tree.js) | LeetCode #100 — Same Tree | Determine whether two binary trees are structurally identical and have the same node values. |
 | [`101_symmetric_tree.js`](./101_symmetric_tree.js) | LeetCode #101 — Symmetric Tree | Check whether a binary tree is a mirror of itself (symmetric around its center). |
 | [`226_invert_binary_tree.js`](./226_invert_binary_tree.js) | LeetCode #226 — Invert Binary Tree | Invert the tree by swapping the left and right children at each node. |
+| [`110_balanced_binary_tree.js`](./110_balanced_binary_tree.js) | LeetCode #110 — Balanced Binary Tree | Determine whether a binary tree is height-balanced (difference in subtree heights <= 1 for every node). |
 
 ---
 
@@ -126,6 +127,31 @@ children at each node. Return the inverted tree.
 
 ---
 
+### 🌲 **110 — Balanced Binary Tree**
+
+**Goal:**
+Given the root of a binary tree, determine whether it is height-balanced.
+A binary tree is height-balanced if the left and right subtrees of every node
+have heights that differ by no more than 1.
+
+**Approach:**
+- Use a post-order recursion that returns the height of a subtree and whether
+  it is balanced; compute left and right heights and ensure their difference
+  is <= 1.
+- Early exit when an unbalanced subtree is detected to keep runtime linear.
+- Time complexity O(n); space complexity O(h) due to recursion stack.
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `isBalancedBrute` | Top-down DFS | O(n^2) | O(h) | Naive approach that recomputes heights for each node; simpler but less efficient. |
+| `isBalancedOptimal` | Post-order DFS | O(n) | O(h) | Compute subtree heights bottom-up and check balance with early exit on imbalance. |
+
+**Key Points:**
+- Post-order traversal computes subtree heights bottom-up enabling early detection of imbalance.
+- Avoid recomputing heights for each node to maintain linear runtime.
+
+---
+
 ## 🧠 Key Learnings
 
 - Tree traversals (preorder, inorder, postorder, level-order) are foundational
@@ -143,4 +169,5 @@ node 104_max_depth_of_binary_tree.js
 node 100_same_tree.js
 node 101_symmetric_tree.js
 node 226_invert_binary_tree.js
+node 110_balanced_binary_tree.js
 ```
