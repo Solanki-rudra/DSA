@@ -14,6 +14,7 @@ width, and level-based aggregates.
 | File | Problem | Description |
 |------|---------|-------------|
 | [`102_binary_tree_level_order_trav.js`](./102_binary_tree_level_order_trav.js) | LeetCode #102 — Binary Tree Level Order Traversal | Return the level-order traversal of a binary tree as a list of levels (left-to-right, top-to-bottom). |
+| [`103_binary_tree_zigzag_trav.js`](./103_binary_tree_zigzag_trav.js) | LeetCode #103 — Binary Tree Zigzag Level Order Traversal | Return the zigzag (alternating left-to-right and right-to-left) level-order traversal of a binary tree. |
 
 ---
 
@@ -46,6 +47,34 @@ values as a list of levels (each level is a list of values from left to right).
 
 ---
 
+### 🌲 **103 — Binary Tree Zigzag Level Order Traversal**
+
+**Goal:**
+Given the root of a binary tree, return the zigzag level order traversal of its
+nodes' values (alternate between left-to-right and right-to-left at each level).
+
+**Approach:**
+- Iterative BFS using a queue.
+- Process nodes level-by-level.
+- Maintain a boolean flag (`ltor`) to track direction.
+- For each level:
+  - If left-to-right → `push` values.
+  - If right-to-left → `unshift` values.
+- Children are always pushed into the queue in normal order (left then right).
+- Time complexity O(n); space complexity O(w), where `w` is the maximum width of the tree.
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `zigzagLevelOrder` | Iterative BFS with direction toggle | O(n) | O(w) | Returns a zigzag level-order traversal alternating direction at each level. |
+
+**Key Points:**
+- This is a BFS pattern with a level-based direction toggle.
+- Do not modify child insertion order in the queue.
+- Only change how values are inserted into the level array.
+- Each node is visited exactly once.
+
+---
+
 ## 🧠 Key Learnings
 
 - Tree traversals (preorder, inorder, postorder, level-order) are foundational
@@ -62,4 +91,5 @@ values as a list of levels (each level is a list of values from left to right).
 
 ```bash
 node 102_binary_tree_level_order_trav.js
+node 103_binary_tree_zigzag_trav.js
 ```
