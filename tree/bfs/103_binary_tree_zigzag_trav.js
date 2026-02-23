@@ -1,7 +1,7 @@
 import { Tree } from '../Tree.js'
 import { Queue } from '../../queue/Queue.js'
 
-// Pattern: Tree, DFS
+// Pattern: Tree, BFS
 
 // LeetCode Problem 103: Binary Tree Zigzag Level Order Traversal
 // Given the root of a binary tree, return the zigzag level order traversal of its nodes' values (i.e., from left to right, level by level).

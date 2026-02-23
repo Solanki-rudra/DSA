@@ -15,6 +15,7 @@ width, and level-based aggregates.
 |------|---------|-------------|
 | [`102_binary_tree_level_order_trav.js`](./102_binary_tree_level_order_trav.js) | LeetCode #102 — Binary Tree Level Order Traversal | Return the level-order traversal of a binary tree as a list of levels (left-to-right, top-to-bottom). |
 | [`103_binary_tree_zigzag_trav.js`](./103_binary_tree_zigzag_trav.js) | LeetCode #103 — Binary Tree Zigzag Level Order Traversal | Return the zigzag (alternating left-to-right and right-to-left) level-order traversal of a binary tree. |
+| [`199_binary_tree_right_side.js`](./199_binary_tree_right_side.js) | LeetCode #199 — Binary Tree Right Side View | Return the values of the nodes visible from the right side of the tree. |
 
 ---
 
@@ -75,6 +76,31 @@ nodes' values (alternate between left-to-right and right-to-left at each level).
 
 ---
 
+### 🌲 **199 — Binary Tree Right Side View**
+
+**Goal:**
+Given the root of a binary tree, return the values of the nodes visible
+when looking at the tree from the right side.
+
+**Approach:**
+- Iterative BFS using a queue.
+- Process nodes level-by-level.
+- For each level, keep track of the last node processed.
+- The last node’s value represents the visible node from the right side.
+- Time complexity O(n); space complexity O(w), where `w` is the maximum width of the tree.
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `rightSideView` | Iterative BFS | O(n) | O(w) | Returns the rightmost node value from each level of the tree. |
+
+**Key Points:**
+- This is a classic BFS level-order variation.
+- The rightmost node at each level is the visible one.
+- Each node is visited exactly once.
+- Space depends on the maximum width of the tree.
+
+---
+
 ## 🧠 Key Learnings
 
 - Tree traversals (preorder, inorder, postorder, level-order) are foundational
@@ -92,4 +118,5 @@ nodes' values (alternate between left-to-right and right-to-left at each level).
 ```bash
 node 102_binary_tree_level_order_trav.js
 node 103_binary_tree_zigzag_trav.js
+node 199_binary_tree_right_side.js
 ```
