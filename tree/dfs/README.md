@@ -20,6 +20,7 @@ value constraints along paths.
 | [`110_balanced_binary_tree.js`](./110_balanced_binary_tree.js) | LeetCode #110 — Balanced Binary Tree | Determine whether a binary tree is height-balanced (difference in subtree heights <= 1 for every node). |
 | [`572_sub_of_tree.js`](./572_sub_of_tree.js) | LeetCode #572 — Subtree of Another Tree | Determine whether one binary tree is a subtree of another. |
 | [`1448_good_nodes.js`](./1448_good_nodes.js) | LeetCode #1448 — Count Good Nodes in Binary Tree | Count nodes that are greater than or equal to all previous values in their root-to-node path. |
+| [`543_diameter_of_binary_tree.js`](./543_diameter_of_binary_tree.js) | LeetCode #543 — Diameter of Binary Tree | Find the length of the longest path between any two nodes in a binary tree. |
 
 ---
 
@@ -167,6 +168,35 @@ there are no nodes with a value greater than X.
 
 ---
 
+### 🌲 **543 — Diameter of Binary Tree**
+
+**Goal:**  
+Given the root of a binary tree, return the diameter of the tree.
+
+The diameter is the length of the longest path between any two nodes in the tree.  
+This path may or may not pass through the root.
+
+**Approach:**
+- Use post-order DFS.
+- At each node:
+  - Compute left subtree depth.
+  - Compute right subtree depth.
+  - Update diameter as `leftDepth + rightDepth`.
+- Return height as `1 + max(leftDepth, rightDepth)`.
+- Visit each node once.
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|-------|-------------|
+| `diameterOfBinaryTree` | Post-order DFS | O(n) | O(h) | Compute subtree heights while updating maximum path length. |
+
+**Key Points:**
+- Similar pattern to Balanced Binary Tree.
+- Use post-order traversal (bottom-up).
+- Diameter is calculated using heights of left and right subtrees.
+- Does NOT necessarily pass through root.
+
+---
+
 ## 🧠 Key Learnings
 
 - Tree traversals (preorder, inorder, postorder, level-order) are foundational.
@@ -187,4 +217,5 @@ node 226_invert_binary_tree.js
 node 110_balanced_binary_tree.js
 node 572_sub_of_tree.js
 node 1448_good_nodes.js
+node 543_diameter_of_binary_tree.js
 ```
