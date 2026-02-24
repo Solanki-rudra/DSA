@@ -21,6 +21,7 @@ value constraints along paths.
 | [`572_sub_of_tree.js`](./572_sub_of_tree.js) | LeetCode #572 — Subtree of Another Tree | Determine whether one binary tree is a subtree of another. |
 | [`1448_good_nodes.js`](./1448_good_nodes.js) | LeetCode #1448 — Count Good Nodes in Binary Tree | Count nodes that are greater than or equal to all previous values in their root-to-node path. |
 | [`543_diameter_of_binary_tree.js`](./543_diameter_of_binary_tree.js) | LeetCode #543 — Diameter of Binary Tree | Find the length of the longest path between any two nodes in a binary tree. |
+| [`98_validate_bst.js`](./98_validate_bst.js) | LeetCode #98 — Validate Binary Search Tree | Determine whether a binary tree satisfies the properties of a valid Binary Search Tree (BST). |
 
 ---
 
@@ -197,6 +198,42 @@ This path may or may not pass through the root.
 
 ---
 
+### 🌲 **98 — Validate Binary Search Tree**
+
+**Goal:**  
+Given the root of a binary tree, determine whether it is a valid
+Binary Search Tree (BST).
+
+A BST must satisfy:
+- Left subtree values < current node value
+- Right subtree values > current node value
+- Both subtrees must also be valid BSTs
+
+**Approach (Inorder Traversal):**
+- Perform inorder DFS traversal.
+- In a valid BST, inorder traversal produces strictly increasing values.
+- Track the previous visited node value.
+- If current value ≤ previous value, return false.
+- Visit each node once.
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|-------|-------------|
+| `isValidBST` | Inorder DFS | O(n) | O(h) | Validate BST by checking strictly increasing inorder traversal. |
+
+**Alternative Approach:**
+- Use DFS with lower and upper bounds.
+- For each node:
+  - Value must be within (min, max) range.
+  - Left subtree updates max bound.
+  - Right subtree updates min bound.
+
+**Key Points:**
+- Inorder traversal of BST is strictly increasing.
+- Must use strict inequality (no duplicates allowed).
+- Similar recursion pattern to tree validation problems.
+
+---
+
 ## 🧠 Key Learnings
 
 - Tree traversals (preorder, inorder, postorder, level-order) are foundational.
@@ -218,4 +255,5 @@ node 110_balanced_binary_tree.js
 node 572_sub_of_tree.js
 node 1448_good_nodes.js
 node 543_diameter_of_binary_tree.js
+node 98_validate_bst.js
 ```
