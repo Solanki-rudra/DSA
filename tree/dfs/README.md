@@ -22,6 +22,7 @@ value constraints along paths.
 | [`1448_good_nodes.js`](./1448_good_nodes.js) | LeetCode #1448 — Count Good Nodes in Binary Tree | Count nodes that are greater than or equal to all previous values in their root-to-node path. |
 | [`543_diameter_of_binary_tree.js`](./543_diameter_of_binary_tree.js) | LeetCode #543 — Diameter of Binary Tree | Find the length of the longest path between any two nodes in a binary tree. |
 | [`98_validate_bst.js`](./98_validate_bst.js) | LeetCode #98 — Validate Binary Search Tree | Determine whether a binary tree satisfies the properties of a valid Binary Search Tree (BST). |
+| [`235_lowest_ancestor_of_bst.js`](./235_lowest_ancestor_of_bst.js) | LeetCode #235 — Lowest Common Ancestor of a Binary Search Tree | Find the lowest common ancestor (LCA) of two nodes in a Binary Search Tree. |
 
 ---
 
@@ -234,6 +235,38 @@ A BST must satisfy:
 
 ---
 
+### 🌲 **235 — Lowest Common Ancestor of a Binary Search Tree**
+
+**Goal:**  
+Given the root of a Binary Search Tree (BST) and two nodes `p` and `q`,
+find their Lowest Common Ancestor (LCA).
+
+The LCA of two nodes is the lowest node in the tree that has both
+`p` and `q` as descendants (a node can be a descendant of itself).
+
+**Approach (Using BST Property):**
+- In a BST:
+  - Left subtree values < current node
+  - Right subtree values > current node
+- Compare `p` and `q` with current node:
+  - If both are smaller → move left.
+  - If both are larger → move right.
+  - Otherwise → current node is the LCA.
+- Traverse until LCA is found.
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|-------|-------------|
+| `lowestCommonAncestorBetter` | Recursive DFS (BST property) | O(h) | O(h) | Traverse tree using BST property to locate split point. |
+| `lowestCommonAncestorOptimal` | Iterative | O(h) | O(1) | Iteratively move left or right until LCA is found. |
+
+**Key Points:**
+- BST property makes this easier than general binary tree LCA.
+- No need to search entire tree.
+- Time complexity depends on height `h` (O(log n) in balanced BST, O(n) in worst case).
+- The split point where `p` and `q` diverge is the LCA.
+
+---
+
 ## 🧠 Key Learnings
 
 - Tree traversals (preorder, inorder, postorder, level-order) are foundational.
@@ -256,4 +289,5 @@ node 572_sub_of_tree.js
 node 1448_good_nodes.js
 node 543_diameter_of_binary_tree.js
 node 98_validate_bst.js
+node 235_lowest_ancestor_of_bst.js
 ```
