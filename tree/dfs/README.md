@@ -23,6 +23,7 @@ value constraints along paths.
 | [`543_diameter_of_binary_tree.js`](./543_diameter_of_binary_tree.js) | LeetCode #543 — Diameter of Binary Tree | Find the length of the longest path between any two nodes in a binary tree. |
 | [`98_validate_bst.js`](./98_validate_bst.js) | LeetCode #98 — Validate Binary Search Tree | Determine whether a binary tree satisfies the properties of a valid Binary Search Tree (BST). |
 | [`235_lowest_ancestor_of_bst.js`](./235_lowest_ancestor_of_bst.js) | LeetCode #235 — Lowest Common Ancestor of a Binary Search Tree | Find the lowest common ancestor (LCA) of two nodes in a Binary Search Tree. |
+| [`230_kth_small_ele_bst.js`](./230_kth_small_ele_bst.js) | LeetCode #230 — Kth Smallest Element in a BST | Return the kth smallest value in a Binary Search Tree using inorder traversal. |
 
 ---
 
@@ -267,6 +268,55 @@ The LCA of two nodes is the lowest node in the tree that has both
 
 ---
 
+### 🌲 **230 — Kth Smallest Element in a BST**
+
+**Goal:**  
+Given the root of a Binary Search Tree (BST) and an integer `k`,  
+return the kth smallest value (1-indexed) among all nodes.
+
+### 🧠 Why This Works
+
+In a **BST**, inorder traversal (Left → Root → Right)  
+returns values in **sorted order**.
+
+So the kth smallest element is simply the  
+`k-1` indexed value in inorder traversal.
+
+### **Approach 1 — Recursive Inorder (Better)**
+
+- Perform inorder traversal.
+- Store values in an array.
+- Return `arr[k - 1]`.
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|-------|-------------|
+| `kthSmallestBetter` | Recursive Inorder DFS | O(n) | O(n) | Collect all values in sorted order and return kth smallest. |
+
+### **Approach 2 — Iterative Inorder (Optimal)**
+
+- Use a stack for inorder traversal.
+- Traverse left subtree first.
+- Decrement `k` each time a node is visited.
+- When `k === 0`, return that value.
+- No need to store all values.
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|-------|-------------|
+| `kthSmallestOptimal` | Iterative Inorder DFS | O(h + k) | O(h) | Stop traversal early once kth smallest is found. |
+
+### 🔎 Complexity Notes
+
+- `h = height of tree`
+- Balanced BST → `O(log n)` height
+- Worst case (skewed tree) → `O(n)`
+
+### 🔑 Key Points
+
+- Inorder traversal of BST = sorted order.
+- Recursive version is simpler but uses extra array space.
+- Iterative version is more space efficient.
+- Classic BST + DFS pattern.
+
 ## 🧠 Key Learnings
 
 - Tree traversals (preorder, inorder, postorder, level-order) are foundational.
@@ -290,4 +340,5 @@ node 1448_good_nodes.js
 node 543_diameter_of_binary_tree.js
 node 98_validate_bst.js
 node 235_lowest_ancestor_of_bst.js
+node 230_kth_small_ele_bst.js
 ```
