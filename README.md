@@ -2,7 +2,8 @@
 
 This repository contains my **DSA practice and revision materials**, organized into topic-wise folders.  
 Each folder focuses on a specific concept or pattern and contains:
-- Source code examples
+- Source code examples with multiple approaches
+- Data structure and patterns wise folder structure
 - Similar patterns or questions
 - A dedicated `README.md` for quick revision
 
