@@ -28,6 +28,7 @@ Each folder focuses on a specific concept or pattern and contains:
 Each topic folder will include:
 - Code files (in JavaScript)
 - Problem statements and explanations
+- Different approaches with time and space complexity
 - `README.md` summarizing key concepts for **fast revision**
 
 ---
