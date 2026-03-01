@@ -24,6 +24,7 @@ value constraints along paths.
 | [`98_validate_bst.js`](./98_validate_bst.js) | LeetCode #98 — Validate Binary Search Tree | Determine whether a binary tree satisfies the properties of a valid Binary Search Tree (BST). |
 | [`235_lowest_ancestor_of_bst.js`](./235_lowest_ancestor_of_bst.js) | LeetCode #235 — Lowest Common Ancestor of a Binary Search Tree | Find the lowest common ancestor (LCA) of two nodes in a Binary Search Tree. |
 | [`230_kth_small_ele_bst.js`](./230_kth_small_ele_bst.js) | LeetCode #230 — Kth Smallest Element in a BST | Return the kth smallest value in a Binary Search Tree using inorder traversal. |
+| [`105_bst_from_pre_and_inorder.js`](./105_bst_from_pre_and_inorder.js) | LeetCode #105 — Construct Binary Tree from Preorder and Inorder Traversal | Build a binary tree using preorder and inorder traversal arrays. |
 
 ---
 
@@ -326,6 +327,42 @@ So the kth smallest element is simply the
 - Combine traversal with helper recursion for complex tree checks.
 
 ---
+---
+
+### 🌲 **105 — Construct Binary Tree from Preorder and Inorder Traversal**
+
+**Goal:**  
+Given two arrays:
+
+- `preorder` → preorder traversal of a binary tree  
+- `inorder` → inorder traversal of the same tree  
+
+Construct and return the original binary tree.
+
+### **Approach — Recursive DFS with HashMap**
+
+1. Store inorder values in a map for O(1) index lookup.
+2. Pick root from `preorder[preStart]`.
+3. Find root index in inorder using the map.
+4. Compute number of nodes in left subtree.
+5. Recursively build:
+   - Left subtree
+   - Right subtree
+6. Return root.
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|-------|-------------|
+| `buildTree` | Recursive DFS + HashMap | O(n) | O(n) | Construct tree using preorder root logic and inorder partitioning. |
+
+### 🔑 Key Points
+
+- Preorder gives the root.
+- Inorder splits left and right subtrees.
+- Use a HashMap to avoid O(n²) searching.
+- Classic divide-and-conquer tree construction pattern.
+- Very common FAANG interview problem.
+
+---
 
 ## ▶️ How to Run
 
@@ -341,4 +378,5 @@ node 543_diameter_of_binary_tree.js
 node 98_validate_bst.js
 node 235_lowest_ancestor_of_bst.js
 node 230_kth_small_ele_bst.js
+node 105_bst_from_pre_and_inorder.js 
 ```
