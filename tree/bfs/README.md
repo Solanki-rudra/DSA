@@ -16,6 +16,7 @@ width, and level-based aggregates.
 | [`102_binary_tree_level_order_trav.js`](./102_binary_tree_level_order_trav.js) | LeetCode #102 — Binary Tree Level Order Traversal | Return the level-order traversal of a binary tree as a list of levels (left-to-right, top-to-bottom). |
 | [`103_binary_tree_zigzag_trav.js`](./103_binary_tree_zigzag_trav.js) | LeetCode #103 — Binary Tree Zigzag Level Order Traversal | Return the zigzag (alternating left-to-right and right-to-left) level-order traversal of a binary tree. |
 | [`199_binary_tree_right_side.js`](./199_binary_tree_right_side.js) | LeetCode #199 — Binary Tree Right Side View | Return the values of the nodes visible from the right side of the tree. |
+| [`297_serialize_deserialize_bt.js`](./297_serialize_deserialize_bt.js) | LeetCode #297 — Serialize and Deserialize Binary Tree | Convert a binary tree into a string representation and reconstruct the original tree from that string. |
 
 ---
 
@@ -25,91 +26,145 @@ width, and level-based aggregates.
 
 ### 🌲 **102 — Binary Tree Level Order Traversal**
 
-**Goal:**
+**Goal:**  
 Given the root of a binary tree, return the level order traversal of its nodes'
 values as a list of levels (each level is a list of values from left to right).
 
 **Approach:**
-- Iterative BFS using a queue: process nodes level-by-level, collecting values per level.
-- Recursive DFS with a `level` parameter (push value into `ans[level]`) as implemented in `102_binary_tree_level_order_trav.js`.
-- Time complexity O(n); space complexity:
-  - BFS → O(w), where `w` is the maximum width of the tree.
-  - DFS → O(h), where `h` is the height of the tree.
+- Iterative BFS using a queue: process nodes level-by-level and collect values per level.
+- Recursive DFS with a `level` parameter can also group nodes by depth.
+
+**Complexity:**
+- Time: **O(n)**
+- Space:
+  - BFS → **O(w)** (maximum width of the tree)
+  - DFS → **O(h)** (height of the tree)
 
 | Function | Approach | Time | Space | Description |
 |---------|----------|------|-------|-------------|
-| `levelOrderBFS` | Iterative BFS | O(n) | O(w) | Returns a list of levels representing the tree's nodes visited left-to-right, top-to-bottom. |
-| `levelOrderDFS` | Recursive DFS-with-level | O(n) | O(h) | Alternative approach using recursion and depth tracking to group nodes by level. |
+| `levelOrderBFS` | Iterative BFS | O(n) | O(w) | Returns nodes level-by-level using a queue. |
+| `levelOrderDFS` | Recursive DFS | O(n) | O(h) | Uses recursion with level tracking. |
 
 **Key Points:**
-- BFS (queue) is the natural fit for level-order traversal.
-- A recursive DFS with a `level` argument is an elegant alternative.
-- Both approaches visit each node exactly once.
+- BFS is the natural approach for level-order traversal.
+- DFS with level tracking is a clean alternative.
+- Every node is visited exactly once.
 
 ---
 
 ### 🌲 **103 — Binary Tree Zigzag Level Order Traversal**
 
-**Goal:**
-Given the root of a binary tree, return the zigzag level order traversal of its
-nodes' values (alternate between left-to-right and right-to-left at each level).
+**Goal:**  
+Return the zigzag level order traversal of a binary tree's nodes
+(alternating between left-to-right and right-to-left).
 
 **Approach:**
-- Iterative BFS using a queue.
-- Process nodes level-by-level.
-- Maintain a boolean flag (`ltor`) to track direction.
-- For each level:
-  - If left-to-right → `push` values.
-  - If right-to-left → `unshift` values.
-- Children are always pushed into the queue in normal order (left then right).
-- Time complexity O(n); space complexity O(w), where `w` is the maximum width of the tree.
+- Use BFS with a queue.
+- Maintain a direction flag (`ltor`).
+- If left-to-right → `push` values.
+- If right-to-left → `unshift` values.
+
+Children are always pushed into the queue in **normal order** (left → right).
+
+**Complexity:**
+- Time: **O(n)**
+- Space: **O(w)**
 
 | Function | Approach | Time | Space | Description |
 |---------|----------|------|-------|-------------|
-| `zigzagLevelOrder` | Iterative BFS with direction toggle | O(n) | O(w) | Returns a zigzag level-order traversal alternating direction at each level. |
+| `zigzagLevelOrder` | Iterative BFS | O(n) | O(w) | Returns level traversal with alternating direction. |
 
 **Key Points:**
-- This is a BFS pattern with a level-based direction toggle.
-- Do not modify child insertion order in the queue.
-- Only change how values are inserted into the level array.
+- Direction only affects how values are inserted.
+- Child insertion order stays the same.
 - Each node is visited exactly once.
 
 ---
 
 ### 🌲 **199 — Binary Tree Right Side View**
 
-**Goal:**
-Given the root of a binary tree, return the values of the nodes visible
-when looking at the tree from the right side.
+**Goal:**  
+Return the values of the nodes visible when looking at the tree from the **right side**.
 
 **Approach:**
-- Iterative BFS using a queue.
-- Process nodes level-by-level.
-- For each level, keep track of the last node processed.
-- The last node’s value represents the visible node from the right side.
-- Time complexity O(n); space complexity O(w), where `w` is the maximum width of the tree.
+- Perform BFS level-order traversal.
+- For each level, track the **last node processed**.
+- That node represents the visible node from the right side.
+
+**Complexity:**
+- Time: **O(n)**
+- Space: **O(w)**
 
 | Function | Approach | Time | Space | Description |
 |---------|----------|------|-------|-------------|
-| `rightSideView` | Iterative BFS | O(n) | O(w) | Returns the rightmost node value from each level of the tree. |
+| `rightSideView` | Iterative BFS | O(n) | O(w) | Returns the rightmost value from each level. |
 
 **Key Points:**
-- This is a classic BFS level-order variation.
-- The rightmost node at each level is the visible one.
-- Each node is visited exactly once.
-- Space depends on the maximum width of the tree.
+- Each level contributes exactly one value.
+- The last node processed at each level is the visible one.
+
+---
+
+### 🌲 **297 — Serialize and Deserialize Binary Tree**
+
+**Goal:**  
+Design an algorithm to convert a binary tree into a **string representation**
+(serialize) and reconstruct the original tree from that string (deserialize).
+
+**Approach:**
+
+**Serialize**
+- Perform BFS traversal.
+- Use a queue to process nodes level-by-level.
+- Append values to a string separated by commas.
+- Represent null nodes using `#`.
+
+Example serialized string:
+
+```
+1,2,3,#,#,4,5,#,#,#,#,
+```
+
+**Deserialize**
+- Convert the string into an array of values.
+- Rebuild the tree using BFS reconstruction.
+- Use a queue to attach left and right children sequentially.
+
+**Complexity:**
+- Time: **O(n)**
+- Space: **O(w)**
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `serialize` | BFS | O(n) | O(w) | Converts a binary tree into a string representation. |
+| `deserialize` | BFS | O(n) | O(w) | Reconstructs the binary tree from the serialized string. |
+
+**Key Points:**
+- Null nodes must be preserved during serialization.
+- BFS ensures the tree structure is maintained.
+- A common validation trick:
+
+```
+serialize(tree) === serialize(deserialize(tree))
+```
+
+If both strings match, the implementation is correct.
 
 ---
 
 ## 🧠 Key Learnings
 
 - Tree traversals (preorder, inorder, postorder, level-order) are foundational
-  for many tree problems.
-- Use BFS when problems involve level-based grouping or shortest paths.
-- Use DFS when recursion simplifies subtree-based logic.
-- In trees, space complexity depends on:
-  - DFS → height (h)
-  - BFS → width (w)
+  for solving many tree problems.
+- **BFS** is useful when problems involve level-based grouping.
+- **DFS** is useful when problems depend on subtree relationships.
+
+Space complexity depends on traversal type:
+
+| Traversal | Space Complexity |
+|----------|------------------|
+| DFS | O(h) (tree height) |
+| BFS | O(w) (tree width) |
 
 ---
 
@@ -119,4 +174,5 @@ when looking at the tree from the right side.
 node 102_binary_tree_level_order_trav.js
 node 103_binary_tree_zigzag_trav.js
 node 199_binary_tree_right_side.js
+node 297_serialize_deserialize_bt.js
 ```
