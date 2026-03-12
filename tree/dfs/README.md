@@ -25,6 +25,7 @@ value constraints along paths.
 | [`235_lowest_ancestor_of_bst.js`](./235_lowest_ancestor_of_bst.js) | LeetCode #235 — Lowest Common Ancestor of a Binary Search Tree | Find the lowest common ancestor (LCA) of two nodes in a Binary Search Tree. |
 | [`230_kth_small_ele_bst.js`](./230_kth_small_ele_bst.js) | LeetCode #230 — Kth Smallest Element in a BST | Return the kth smallest value in a Binary Search Tree using inorder traversal. |
 | [`105_bst_from_pre_and_inorder.js`](./105_bst_from_pre_and_inorder.js) | LeetCode #105 — Construct Binary Tree from Preorder and Inorder Traversal | Build a binary tree using preorder and inorder traversal arrays. |
+| [`124_binary_tree_max_path_sum.js`](./124_binary_tree_max_path_sum.js) | LeetCode #124 — Binary Tree Maximum Path Sum | Find the maximum path of the tree |
 
 ---
 
@@ -327,7 +328,6 @@ So the kth smallest element is simply the
 - Combine traversal with helper recursion for complex tree checks.
 
 ---
----
 
 ### 🌲 **105 — Construct Binary Tree from Preorder and Inorder Traversal**
 
@@ -364,6 +364,33 @@ Construct and return the original binary tree.
 
 ---
 
+### 🌲 **124 — Binary Tree Maximum Path Sum**
+
+**Goal:**  
+Given the root of a binary tree, return the **maximum path sum**.
+
+A **path** is defined as any sequence of nodes where:
+- Each pair of adjacent nodes has an edge connecting them.
+- A node can appear **only once** in the path.
+- The path **does not need to pass through the root**.
+
+The **path sum** is the sum of node values along the path.
+We use **post-order DFS** because we need results from the bottom of the tree first.
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|-------|-------------|
+| `maxPathSum` | Post-order DFS | O(n) | O(h) | Compute maximum path sum while returning the best gain to parent node. |
+
+### 🔑 Key Points
+
+- Uses **post-order DFS (bottom-up)**.
+- Negative subtree sums are ignored using `Math.max(0, value)`.
+- The path **can start and end at any node**.
+- Maintain a **global maximum** while recursion returns gains upward.
+- Similar DFS pattern to **Diameter of Binary Tree (543)**.
+
+---
+
 ## ▶️ How to Run
 
 ```bash
@@ -378,5 +405,6 @@ node 543_diameter_of_binary_tree.js
 node 98_validate_bst.js
 node 235_lowest_ancestor_of_bst.js
 node 230_kth_small_ele_bst.js
-node 105_bst_from_pre_and_inorder.js 
+node 105_bst_from_pre_and_inorder.js
+node 124_binary_tree_max_path_sum.js 
 ```
