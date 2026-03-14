@@ -21,6 +21,7 @@ Each folder focuses on a specific concept or pattern and contains:
 | [`queue`](./queue) | Contains various pattern problems for practicing queue |
 | [`heap`](./heap) | Contains various pattern problems for practicing heap(priority queue) |
 | [`tree`](./tree) | Contains various pattern problems for practicing tree |
+| [`trie`](./trie) | Contains various pattern problems for practicing trie(prefix tree) |
 
 ---
 
