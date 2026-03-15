@@ -20,7 +20,7 @@ class TrieNode {
         this.isEnd = true
     }
     get(ch) {
-        return this.isContain(ch) ? this.map.get(ch) : null
+        return this.map.get(ch) || null
     }
 }
 
@@ -81,33 +81,33 @@ export class Trie {
 
 // ================= TESTING =================
 
-const trie = new Trie()
+// const trie = new Trie()
 
-console.log("---- INSERT ----")
-trie.insert("apple")
-console.log("Inserted: apple")
+// console.log("---- INSERT ----")
+// trie.insert("apple")
+// console.log("Inserted: apple")
 
-console.log("\n---- SEARCH ----")
-console.log("search('apple'):", trie.search("apple"))   // true
-console.log("search('app'):", trie.search("app"))       // false
+// console.log("\n---- SEARCH ----")
+// console.log("search('apple'):", trie.search("apple"))   // true
+// console.log("search('app'):", trie.search("app"))       // false
 
-console.log("\n---- STARTS WITH ----")
-console.log("startsWith('app'):", trie.startsWith("app")) // true
+// console.log("\n---- STARTS WITH ----")
+// console.log("startsWith('app'):", trie.startsWith("app")) // true
 
-console.log("\n---- INSERT app ----")
-trie.insert("app")
+// console.log("\n---- INSERT app ----")
+// trie.insert("app")
 
-console.log("\n---- SEARCH AGAIN ----")
-console.log("search('app'):", trie.search("app"))       // true
+// console.log("\n---- SEARCH AGAIN ----")
+// console.log("search('app'):", trie.search("app"))       // true
 
-console.log("\n---- INSERT bat and ball ----")
-trie.insert("bat")
-trie.insert("ball")
-console.log("Inserted: bat, ball")
+// console.log("\n---- INSERT bat and ball ----")
+// trie.insert("bat")
+// trie.insert("ball")
+// console.log("Inserted: bat, ball")
 
-console.log("\n---- SEARCH bat, ball, ba ----")
-console.log("search('bat'):", trie.search("bat"))       // true
-console.log("search('ball'):", trie.search("ball"))     // true
-console.log("search('ba'):", trie.search("ba"))         // false
-console.log("startsWith('ba'):", trie.startsWith("ba")) // true
-console.log("startsWith('cat'):", trie.startsWith("cat")) // false
+// console.log("\n---- SEARCH bat, ball, ba ----")
+// console.log("search('bat'):", trie.search("bat"))       // true
+// console.log("search('ball'):", trie.search("ball"))     // true
+// console.log("search('ba'):", trie.search("ba"))         // false
+// console.log("startsWith('ba'):", trie.startsWith("ba")) // true
+// console.log("startsWith('cat'):", trie.startsWith("cat")) // false
