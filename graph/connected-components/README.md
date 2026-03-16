@@ -14,6 +14,7 @@ solved using **Depth-First Search (DFS)** or **Breadth-First Search (BFS)**.
 |------|--------|-------------|
 | [`547_number_of_provinces.js`](./547_number_of_provinces.js) | LeetCode #547 — Number of Provinces | Given an adjacency matrix representing connections between cities, return the number of provinces (connected components). |
 | [`200_number_of_islands.js`](./200_number_of_islands.js) | LeetCode #200 — Number of Islands | Given a grid of land (`'1'`) and water (`'0'`), return the number of islands. |
+| [`695_max_area_of_island.js`](./695_max_area_of_island.js) | LeetCode #200 — Number of Islands | Given a grid of land (`'1'`) and water (`'0'`), return the number of islands. |
 
 ---
 
@@ -76,8 +77,38 @@ Return the **total number of islands**.
 
 ---
 
+### 🏝 **695 — Number of Islands**
+
+**Goal:**  
+You are given a 2D grid where:
+
+- `'1'` represents **land**
+- `'0'` represents **water**
+
+An **island** is formed by connecting adjacent land cells **horizontally or vertically**.
+
+Return the **total number of islands**.
+
+**Approach:**
+- Iterate through every cell in the grid.
+- When a `'1'` is found, run **DFS** to explore all connected land cells.
+- Mark visited cells as `'0'` to avoid revisiting.
+- Each DFS traversal represents **one island**.
+
+| Function | Approach | Time | Space | Description |
+|---------|----------|------|-------|-------------|
+| `numIslands` | DFS | O(m × n) | O(m × n) | Counts islands in the grid using DFS flood-fill. |
+
+**Key Points:**
+- The grid acts as a **graph where each cell is a node**.
+- DFS explores all connected land cells.
+- Each DFS call represents **one island**.
+
+---
+
 ## ▶️ How to Run
 
 ```bash
 node 547_number_of_provinces.js
 node 200_number_of_islands.js
+node 695_max_area_of_island.js
