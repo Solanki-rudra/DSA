@@ -17,7 +17,9 @@ Graphs can be represented using:
 
 | Folder | Description |
 |--------|-------------|
-| [`connected-components`](./connected-components) | Problems focused on finding **connected components** in graphs using DFS, BFS, or Union-Find |
+| [`connected-components`](./connected-components) | Problems on finding **connected components** using DFS/BFS (e.g., Number of Islands, Number of Provinces) |
+| [`union-find`](./union-find) | Problems using the **Union-Find (Disjoint Set Union)** data structure (e.g., Redundant Connection) |
+| [`dsu.js`](./dsu.js) | Utility file implementing the **Disjoint Set Union (Union-Find)** class |
 
 ---
 
