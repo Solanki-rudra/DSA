@@ -10,6 +10,7 @@ This folder contains graph problems focused on **graph traversal** using algorit
 |------|---------|-------------|
 | [`133_clone_graph.js`](./133_clone_graph.js) | LeetCode #133 — Clone Graph | Given a reference to a node in a connected undirected graph, return a deep copy (clone) of the graph. |
 | [`994_rotting_oranges.js`](./994_rotting_oranges.js) | LeetCode #994 — Rotting Oranges | Given a grid, return the minimum time required to rot all oranges using BFS. |
+| [`130_surrounded_regions.js`](./130_surrounded_regions.js) | LeetCode #130 — Surrounded Regions | Given a board of 'X' and 'O', capture all regions surrounded by 'X'. |
 
 ---
 
@@ -55,9 +56,29 @@ Return the **minimum time required to rot all fresh oranges**. If impossible, re
 
 ---
 
+### 🧱 **130 — Surrounded Regions**
+
+**Goal:**
+You are given a 2D board containing `'X'` and `'O'`. Capture all regions surrounded by `'X'`.
+
+A region is captured if it is completely surrounded by `'X'` on all sides.
+
+**Approach:**
+- Use **DFS** starting from border `'O'` cells.
+- Mark all border-connected `'O'` as temporary (e.g., `'T'`).
+- Convert remaining `'O'` to `'X'` (captured regions).
+- Convert `'T'` back to `'O'`.
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|-------|-------------|
+| `solve` | DFS | O(m × n) | O(m × n) | Captures surrounded regions using DFS. |
+
+---
+
 ## ▶️ How to Run
 
 ```bash
 node 133_clone_graph.js
 node 994_rotting_oranges.js
+node 130_surrounded_regions.js
 ```
