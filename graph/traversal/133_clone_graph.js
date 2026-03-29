@@ -1,4 +1,4 @@
-// Pattern: Graph, union-find
+// Pattern: Graph, traversal
 
 // LeetCode Problem 133: Clone Graph
 // In this problem, we are given a reference to a node in a connected undirected graph. We need to return a deep copy (clone) of the graph.
