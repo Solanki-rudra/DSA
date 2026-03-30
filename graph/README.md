@@ -20,6 +20,7 @@ Graphs can be represented using:
 | [`connected-components`](./connected-components) | Problems on finding **connected components** using DFS/BFS (e.g., Number of Islands, Number of Provinces) |
 | [`union-find`](./union-find) | Problems using the **Union-Find (Disjoint Set Union)** data structure (e.g., Redundant Connection) |
 | [`traversal`](./traversal) | Problems using the **traversal** by DFS/BFS. |
+| [`topological-sort`](./topological-sort) | Problems using the **topological-sort**. |
 | [`dsu.js`](./dsu.js) | Utility file implementing the **Disjoint Set Union (Union-Find)** class |
 
 ---
