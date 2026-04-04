@@ -11,6 +11,7 @@ This folder contains graph problems focused on **graph traversal** using algorit
 | [`133_clone_graph.js`](./133_clone_graph.js) | LeetCode #133 — Clone Graph | Given a reference to a node in a connected undirected graph, return a deep copy (clone) of the graph. |
 | [`994_rotting_oranges.js`](./994_rotting_oranges.js) | LeetCode #994 — Rotting Oranges | Given a grid, return the minimum time required to rot all oranges using BFS. |
 | [`130_surrounded_regions.js`](./130_surrounded_regions.js) | LeetCode #130 — Surrounded Regions | Given a board of 'X' and 'O', capture all regions surrounded by 'X'. |
+| [`417_pacific_atlantic_water_flow.js`](./417_pacific_atlantic_water_flow.js) | LeetCode #417 — Pacific Atlantic Water Flow | Find all cells where water can flow to both oceans. |
 
 ---
 
@@ -75,10 +76,32 @@ A region is captured if it is completely surrounded by `'X'` on all sides.
 
 ---
 
+### 🌊 **417 — Pacific Atlantic Water Flow**
+
+**Goal:**
+You are given a grid of heights. Water can flow from a cell to neighboring cells with **equal or lower height**.
+
+Return all coordinates from which water can flow to **both Pacific and Atlantic oceans**.
+
+**Approach:**
+- Start traversal from **ocean borders** (reverse thinking).
+- Use **DFS or BFS** to mark reachable cells from:
+  - Pacific (top + left edges)
+  - Atlantic (bottom + right edges)
+- Cells reachable from **both** oceans are the answer.
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|-------|-------------|
+| `pacificAtlanticDFS` | DFS | O(m × n) | O(m × n) | Finds cells reachable to both oceans using DFS. |
+| `pacificAtlanticBFS` | BFS | O(m × n) | O(m × n) | Finds cells reachable to both oceans using BFS. |
+
+---
+
 ## ▶️ How to Run
 
 ```bash
 node 133_clone_graph.js
 node 994_rotting_oranges.js
 node 130_surrounded_regions.js
+node 417_pacific_atlantic_water_flow.js
 ```
