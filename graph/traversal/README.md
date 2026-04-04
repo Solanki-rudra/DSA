@@ -13,6 +13,7 @@ This folder contains graph problems focused on **graph traversal** using algorit
 | [`130_surrounded_regions.js`](./130_surrounded_regions.js) | LeetCode #130 — Surrounded Regions | Given a board of 'X' and 'O', capture all regions surrounded by 'X'. |
 | [`417_pacific_atlantic_water_flow.js`](./417_pacific_atlantic_water_flow.js) | LeetCode #417 — Pacific Atlantic Water Flow | Find all cells where water can flow to both oceans. |
 | [`277_find_celebrity.js`](./277_find_celebrity.js) | LeetCode #277 — Find the Celebrity | Find the celebrity in a group using relationship matrix. |
+| [`127_word_ladder.js`](./127_word_ladder.js) | LeetCode #127 — Word Ladder | Find the shortest transformation sequence from beginWord to endWord. |
 
 ---
 
@@ -28,7 +29,7 @@ Given a reference to a node in a connected undirected graph, return a deep copy 
 **Approach:**
 - Use **Depth-First Search (DFS)** to traverse the graph.
 - For each node, create a copy and recursively clone all its neighbors.
-- Use a map to keep track of already-cloned nodes to avoid cycles and repeated work.
+- Use a map to keep track of already-cloned nodes to avoid cycles.
 
 | Function | Approach | Time | Space | Description |
 |----------|----------|------|-------|-------------|
@@ -39,83 +40,79 @@ Given a reference to a node in a connected undirected graph, return a deep copy 
 ### 🍊 **994 — Rotting Oranges**
 
 **Goal:**
-You are given a grid where:
-- `0` = empty cell
-- `1` = fresh orange
-- `2` = rotten orange  
-
-Return the **minimum time required to rot all fresh oranges**. If impossible, return `-1`.
+Return the minimum time required to rot all fresh oranges.
 
 **Approach:**
-- Use **Breadth-First Search (BFS)**.
-- Add all rotten oranges to a queue initially.
-- Spread the rot to adjacent fresh oranges level by level.
-- Each level represents **one minute**.
+- Use **BFS**
+- Spread rot level-by-level (each level = 1 minute)
 
 | Function | Approach | Time | Space | Description |
 |----------|----------|------|-------|-------------|
-| `orangesRotting` | BFS | O(m × n) | O(m × n) | Returns the minimum time to rot all oranges. |
+| `orangesRotting` | BFS | O(m × n) | O(m × n) | Returns time to rot all oranges. |
 
 ---
 
 ### 🧱 **130 — Surrounded Regions**
 
 **Goal:**
-You are given a 2D board containing `'X'` and `'O'`. Capture all regions surrounded by `'X'`.
-
-A region is captured if it is completely surrounded by `'X'` on all sides.
+Capture all regions surrounded by `'X'`.
 
 **Approach:**
-- Use **DFS** starting from border `'O'` cells.
-- Mark all border-connected `'O'` as temporary (e.g., `'T'`).
-- Convert remaining `'O'` to `'X'` (captured regions).
-- Convert `'T'` back to `'O'`.
+- DFS from border `'O'`
+- Mark safe cells, then flip remaining
 
 | Function | Approach | Time | Space | Description |
 |----------|----------|------|-------|-------------|
-| `solve` | DFS | O(m × n) | O(m × n) | Captures surrounded regions using DFS. |
+| `solve` | DFS | O(m × n) | O(m × n) | Captures surrounded regions. |
 
 ---
 
 ### 🌊 **417 — Pacific Atlantic Water Flow**
 
 **Goal:**
-You are given a grid of heights. Water can flow from a cell to neighboring cells with **equal or lower height**.
-
-Return all coordinates from which water can flow to **both Pacific and Atlantic oceans**.
+Find cells where water can flow to both oceans.
 
 **Approach:**
-- Start traversal from **ocean borders** (reverse thinking).
-- Use **DFS or BFS** to mark reachable cells from:
-  - Pacific (top + left edges)
-  - Atlantic (bottom + right edges)
-- Cells reachable from **both** oceans are the answer.
+- Start from ocean borders
+- Use **DFS/BFS**
+- Take intersection
 
 | Function | Approach | Time | Space | Description |
 |----------|----------|------|-------|-------------|
-| `pacificAtlanticDFS` | DFS | O(m × n) | O(m × n) | Finds cells reachable to both oceans using DFS. |
-| `pacificAtlanticBFS` | BFS | O(m × n) | O(m × n) | Finds cells reachable to both oceans using BFS. |
+| `pacificAtlanticDFS` | DFS | O(m × n) | O(m × n) | DFS solution |
+| `pacificAtlanticBFS` | BFS | O(m × n) | O(m × n) | BFS solution |
 
 ---
 
 ### 🎭 **277 — Find the Celebrity**
 
 **Goal:**
-You are given `n` people and a matrix where `knows(a, b)` means person `a` knows person `b`.
-
-A **celebrity** is someone who:
-- is known by everyone
-- knows no one
-
-Return the celebrity index or `-1` if none exists.
+Find a person who knows no one but is known by everyone.
 
 **Approach:**
-- Use a **two-pointer / elimination technique** to find a candidate.
-- Verify if the candidate is a valid celebrity.
+- Eliminate candidates
+- Verify final candidate
 
 | Function | Approach | Time | Space | Description |
 |----------|----------|------|-------|-------------|
-| `findCelebrity` | Two-pointer | O(n) | O(1) | Finds the celebrity using elimination. |
+| `findCelebrity` | Two-pointer | O(n) | O(1) | Finds celebrity |
+
+---
+
+### 🔤 **127 — Word Ladder**
+
+**Goal:**
+Find the **shortest transformation sequence** from `beginWord` to `endWord`.
+
+**Approach:**
+- Use **BFS** for shortest path
+- Try all 1-letter transformations
+- Use set for fast lookup
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|-------|-------------|
+| `ladderLengthI` | BFS | O(m × n × 26) | O(n) | Standard BFS solution |
+| `ladderLengthII` | Bi-BFS | O(m × n × 26) | O(n) | Optimized bidirectional BFS |
 
 ---
 
@@ -127,4 +124,5 @@ node 994_rotting_oranges.js
 node 130_surrounded_regions.js
 node 417_pacific_atlantic_water_flow.js
 node 277_find_celebrity.js
+node 127_word_ladder.js
 ```
