@@ -12,6 +12,7 @@ This folder contains graph problems focused on **graph traversal** using algorit
 | [`994_rotting_oranges.js`](./994_rotting_oranges.js) | LeetCode #994 — Rotting Oranges | Given a grid, return the minimum time required to rot all oranges using BFS. |
 | [`130_surrounded_regions.js`](./130_surrounded_regions.js) | LeetCode #130 — Surrounded Regions | Given a board of 'X' and 'O', capture all regions surrounded by 'X'. |
 | [`417_pacific_atlantic_water_flow.js`](./417_pacific_atlantic_water_flow.js) | LeetCode #417 — Pacific Atlantic Water Flow | Find all cells where water can flow to both oceans. |
+| [`277_find_celebrity.js`](./277_find_celebrity.js) | LeetCode #277 — Find the Celebrity | Find the celebrity in a group using relationship matrix. |
 
 ---
 
@@ -97,6 +98,27 @@ Return all coordinates from which water can flow to **both Pacific and Atlantic 
 
 ---
 
+### 🎭 **277 — Find the Celebrity**
+
+**Goal:**
+You are given `n` people and a matrix where `knows(a, b)` means person `a` knows person `b`.
+
+A **celebrity** is someone who:
+- is known by everyone
+- knows no one
+
+Return the celebrity index or `-1` if none exists.
+
+**Approach:**
+- Use a **two-pointer / elimination technique** to find a candidate.
+- Verify if the candidate is a valid celebrity.
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|-------|-------------|
+| `findCelebrity` | Two-pointer | O(n) | O(1) | Finds the celebrity using elimination. |
+
+---
+
 ## ▶️ How to Run
 
 ```bash
@@ -104,4 +126,5 @@ node 133_clone_graph.js
 node 994_rotting_oranges.js
 node 130_surrounded_regions.js
 node 417_pacific_atlantic_water_flow.js
+node 277_find_celebrity.js
 ```
