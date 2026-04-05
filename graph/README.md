@@ -17,22 +17,32 @@ Graphs can be represented using:
 
 | Folder | Description |
 |--------|-------------|
-| [`connected-components`](./connected-components) | Problems on finding **connected components** using DFS/BFS (e.g., Number of Islands, Number of Provinces) |
-| [`union-find`](./union-find) | Problems using the **Union-Find (Disjoint Set Union)** data structure (e.g., Redundant Connection) |
-| [`traversal`](./traversal) | Problems using the **traversal** by DFS/BFS. |
-| [`topological-sort`](./topological-sort) | Problems using the **topological-sort**. |
-| [`dsu.js`](./dsu.js) | Utility file implementing the **Disjoint Set Union (Union-Find)** class |
+
+## 📂 Folder Structure & Examples
+
+| Folder | Description | Example Problems |
+|--------|-------------|------------------|
+| [`connected-components`](./connected-components) | Find **connected components** using DFS/BFS | Number of Islands, Number of Provinces |
+| [`union-find`](./union-find) | Use **Union-Find (Disjoint Set Union)** for connectivity/cycles | Redundant Connection |
+| [`traversal`](./traversal) | General **DFS/BFS traversal** problems | Word Ladder |
+| [`topological-sort`](./topological-sort) | **Topological sorting** in DAGs | Course Schedule, Course Schedule II |
+| [`shortest-path`](./shortest-path) | **Shortest path** algorithms | Network Delay Time |
+| [`dsu.js`](./dsu.js) | Utility: **Disjoint Set Union (Union-Find)** class | — |
 
 ---
 
 ## 🧠 Key Learnings
 
-- Graph fundamentals: vertices, edges, directed vs undirected graphs
-- Graph representations: adjacency matrix vs adjacency list
-- Traversal algorithms: **Depth-First Search (DFS)** and **Breadth-First Search (BFS)**
+
+## 🧠 Key Learnings
+
+- Graph fundamentals: vertices, edges, directed vs. undirected, weighted vs. unweighted
+- Graph representations: adjacency matrix vs. adjacency list
+- Traversal algorithms: **DFS** and **BFS**
 - Detecting **connected components**
-- Understanding **time and space complexity** in graph traversal
-- When to use **DFS vs BFS**
+- Shortest path and topological sort techniques
+- Time and space complexity in graph traversal
+- When to use **DFS** vs. **BFS**
 
 ---
 
@@ -81,6 +91,17 @@ Graph problems commonly include:
 
 Where:
 
+
+## ⏱ Complexity Overview
+
+| Algorithm                   | Time Complexity | Space Complexity |
+|-----------------------------|----------------|-----------------|
+| DFS                         | O(V + E)       | O(V)            |
+| BFS                         | O(V + E)       | O(V)            |
+| Adjacency Matrix Traversal  | O(V²)          | O(V²)           |
+| Adjacency List Traversal    | O(V + E)       | O(V + E)        |
+
+Where:
 - **V** = number of vertices (nodes)
 - **E** = number of edges
 
@@ -89,10 +110,18 @@ Where:
 ## 🎯 Interview Focus
 
 When solving graph problems, always identify:
-
-1. **Graph representation**
+1. **Graph representation** (adjacency list/matrix)
 2. **Traversal method** (DFS or BFS)
-3. **Problem pattern** (connected components, shortest path, cycle detection)
+3. **Problem pattern** (connected components, shortest path, cycle detection, etc.)
 4. **Visited tracking** to avoid infinite loops
 
-Many graph interview problems reduce to **systematically exploring nodes and edges** using DFS or BFS.
+Most graph interview problems reduce to **systematically exploring nodes and edges** using DFS or BFS.
+
+
+---
+
+## 📝 Summary
+
+Graphs are a versatile data structure for modeling relationships and networks. Mastering graph representations, traversals (DFS/BFS), and common patterns (connected components, shortest path, cycle detection) is essential for technical interviews and real-world problem solving.
+
+Explore the subfolders for categorized problems and solutions!
