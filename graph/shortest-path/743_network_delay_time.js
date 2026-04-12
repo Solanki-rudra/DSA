@@ -1,6 +1,6 @@
-// Pattern: Graph, Shortest Path, Dijkstra's Algorithm
-
 import { MinHeap } from "../../heap/MinHeap.js"
+
+// Pattern: Graph, Shortest Path, Dijkstra's Algorithm
 
 // LeetCode Problem 743: Network Delay Time
 // In this problem, we are given a list of courses and their prerequisites. We need to determine if it is possible to finish all courses.
@@ -47,6 +47,6 @@ function networkDelayTime(times, n, k) {
     return ans
 }
 
-let times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2
+let times = [[2, 1, 1], [2, 3, 1], [3, 4, 1]], n = 4, k = 2
 
 console.log(networkDelayTime(times, n, k))
