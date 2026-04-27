@@ -3,7 +3,7 @@
 This folder contains graph problems focused on **shortest path algorithms**.
 
 Shortest path problems aim to find the minimum distance/time between nodes.
-Common algorithms include **Dijkstra’s Algorithm**, **BFS (for unweighted graphs)**, and **Bellman-Ford**.
+Common algorithms include **Dijkstra’s Algorithm**, **BFS (for unweighted graphs)**, **Bellman-Ford**, and **Prim’s Algorithm**, **Kruskal’s Algorithm**.
 
 ---
 
@@ -13,6 +13,7 @@ Common algorithms include **Dijkstra’s Algorithm**, **BFS (for unweighted grap
 |------|--------|-------------|
 | [`743_network_delay_time.js`](./743_network_delay_time.js) | LeetCode #743 — Network Delay Time | Given travel times, find how long it takes for all nodes to receive the signal. |
 | [`787_cheapest_flights.js`](./787_cheapest_flights.js) | LeetCode #787 — Cheapest Flights Within K Stops | Given a list of flights and their prices, find the cheapest price to travel from a source city to a destination city with at most k stops. |
+| [`1584_min_cost_to_connect.js`](./1584_min_cost_to_connect.js) | LeetCode #1584 — Min Cost to Connect Points | Given a list of points, find the minimum cost to connect all the points. |
 
 ---
 
@@ -63,8 +64,25 @@ If no such route exists, return `-1`.
 
 ---
 
+### 💰 **1584 — Min Cost to Connect Points**
+
+**Goal:**  
+Given a list of points in a 2D plane, find the minimum cost to connect all the points such that they form a connected graph. The cost of connecting two points is the Manhattan distance between them.
+
+**Approach:**
+- Represent points as nodes in a graph where edge weights are Manhattan distances.
+- Use **Prim’s Algorithm** with a min-heap to build the Minimum Spanning Tree (MST).
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|-------|-------------|
+| `minCostConnectPointsI` | Prim’s Algorithm (Min-Heap) | O((V + E) log V) | O(V + E) | Builds MST using a priority queue. |
+| `minCostConnectPointsII` | Prim’s Algorithm (Array) | O(V²) | O(V) | Builds MST without a priority queue. |
+
+---
+
 ## ▶️ How to Run
 
 ```bash
 node 743_network_delay_time.js
 node 787_cheapest_flights.js
+node 1584_min_cost_to_connect.js
