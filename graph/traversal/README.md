@@ -14,6 +14,7 @@ This folder contains graph problems focused on **graph traversal** using algorit
 | [`417_pacific_atlantic_water_flow.js`](./417_pacific_atlantic_water_flow.js) | LeetCode #417 — Pacific Atlantic Water Flow | Find all cells where water can flow to both oceans. |
 | [`277_find_celebrity.js`](./277_find_celebrity.js) | LeetCode #277 — Find the Celebrity | Find the celebrity in a group using relationship matrix. |
 | [`127_word_ladder.js`](./127_word_ladder.js) | LeetCode #127 — Word Ladder | Find the shortest transformation sequence from beginWord to endWord. |
+| [`332_reconstruct_itinerary.js`](./332_reconstruct_itinerary.js) | LeetCode #332 — Reconstruct Itinerary | Given a list of airline tickets, reconstruct the itinerary in lexical order starting from JFK. |
 
 ---
 
@@ -116,6 +117,22 @@ Find the **shortest transformation sequence** from `beginWord` to `endWord`.
 
 ---
 
+### ✈️ **332 — Reconstruct Itinerary**
+
+**Goal:**
+Given a list of airline tickets `[from, to]`, reconstruct the itinerary starting from `"JFK"` in **lexical order**.
+
+**Approach:**
+- Build an adjacency map, sort each destination list in **reverse lexical order**
+- Use **DFS with Hierholzer's algorithm** — pop destinations greedily and append to result **after** all paths are exhausted
+- Reverse the result at the end to get the correct order
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|-------|-------------|
+| `findItinerary` | DFS (Hierholzer) | O(E log E) | O(E) | Reconstructs lexically smallest valid itinerary |
+
+---
+
 ## ▶️ How to Run
 
 ```bash
@@ -125,4 +142,5 @@ node 130_surrounded_regions.js
 node 417_pacific_atlantic_water_flow.js
 node 277_find_celebrity.js
 node 127_word_ladder.js
+node 332_reconstruct_itinerary.js
 ```
