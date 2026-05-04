@@ -5,16 +5,21 @@
 
 /**
  * @name alienOrder
- * @description  Approach: Depth-First Search (DFS)
- * We can represent the words and their order as a directed graph. We will use DFS to detect if there is a cycle in the graph. If there is a cycle, it means that it is not possible to determine the order of the characters. We will maintain two sets: one for visited nodes and another for safe nodes (nodes that have been fully processed). If we encounter a node that is already in the visited set, it means we have found a cycle. If we encounter a node that is in the safe set, it means we have already processed it and can skip it.
- * @timeComplexity O(C + V) where C is the total number of characters in all words and V is the number of vertices
- * @spaceComplexity O(V + E) where V is the number of vertices and E is the number of edges
+ * @description Approach: BFS — Kahn's Algorithm (Topological Sort)
+ * Build a directed graph from adjacent word pairs by comparing characters at each position.
+ * The first differing character between two consecutive words gives an edge u → v.
+ * Then apply Kahn's algorithm: initialize a queue with all zero-indegree nodes,
+ * process them in BFS order, decrement neighbour indegrees, and enqueue newly zero-indegree nodes.
+ * If the result length equals the total number of unique characters, no cycle exists and the
+ * result is the alien alphabet order; otherwise return "" (cycle detected / invalid input).
+ * Also handles the edge case where a longer word appears before its prefix (invalid ordering).
+ * @timeComplexity O(C) where C is the total number of characters across all words
+ * @spaceComplexity O(V + E) where V is the number of unique characters and E is the number of edges
  */
 function alienOrder(words) {
     const inDegree = new Map();
     const adj = new Map();
 
-    // Initialize in-degree and adjacency list for all unique characters
     for (let word of words) {
         for (let char of word) {
             if (!inDegree.has(char)) {
@@ -26,7 +31,6 @@ function alienOrder(words) {
         }
     }
 
-    // Build graph and calculate in-degrees
     for (let i = 1; i < words.length; i++) {
         const w1 = words[i - 1];
         const w2 = words[i];
@@ -37,16 +41,14 @@ function alienOrder(words) {
             const v = w2[j];
 
             if (u !== v) {
-                // Add edge only if it doesn't exist to avoid duplicates
                 if (!adj.get(u).includes(v)) {
                     adj.get(u).push(v);
                     inDegree.set(v, inDegree.get(v) + 1);
                 }
-                break; // Only the first differing character matters
+                break;
             }
         }
 
-        // Edge case: invalid prefix (e.g., ["abc", "ab"])
         if (w1.length > w2.length && w1.startsWith(w2)) {
             return "";
         }
@@ -73,7 +75,6 @@ function alienOrder(words) {
         }
     }
 
-    // If result doesn't contain all unique characters, there's a cycle
     if (result.length !== inDegree.size) {
         return "";
     }
