@@ -14,6 +14,7 @@ Common algorithms include **Dijkstra’s Algorithm**, **BFS (for unweighted grap
 | [`743_network_delay_time.js`](./743_network_delay_time.js) | LeetCode #743 — Network Delay Time | Given travel times, find how long it takes for all nodes to receive the signal. |
 | [`787_cheapest_flights.js`](./787_cheapest_flights.js) | LeetCode #787 — Cheapest Flights Within K Stops | Given a list of flights and their prices, find the cheapest price to travel from a source city to a destination city with at most k stops. |
 | [`1584_min_cost_to_connect.js`](./1584_min_cost_to_connect.js) | LeetCode #1584 — Min Cost to Connect Points | Given a list of points, find the minimum cost to connect all the points. |
+| [`778_swim_in_rising_water.js`](./778_swim_in_rising_water.js) | LeetCode #778 — Swim in Rising Water | Given an n × n elevation grid, find the least time `t` such that you can swim from top-left to bottom-right. |
 
 ---
 
@@ -80,9 +81,30 @@ Given a list of points in a 2D plane, find the minimum cost to connect all the p
 
 ---
 
+### 🏊 **778 — Swim in Rising Water**
+
+**Goal:**  
+You are given an `n x n` integer grid where `grid[i][j]` is the elevation at cell `(i, j)`.  
+At time `t`, you can swim through any cell whose elevation is **≤ t**.
+Starting at `(0, 0)`, return the **least time `t`** at which you can reach `(n - 1, n - 1)`.
+
+**Approach:**
+- Treat each cell as a graph node; adjacent cells with cardinal neighbours are edges.
+- Use **Dijkstra's Algorithm** with a **min-heap** keyed on the maximum elevation seen so far along the path.
+- Pop the cheapest cell, update `t = max(t, elevation)`, and push unvisited neighbours.
+- Return `t` as soon as the bottom-right cell is popped.
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|-------|-------------|
+| `swimInWater` | Dijkstra's Algorithm (Min-Heap) | O(N² log N) | O(N²) | Finds the minimum time to swim from top-left to bottom-right. |
+
+---
+
 ## ▶️ How to Run
 
 ```bash
 node 743_network_delay_time.js
 node 787_cheapest_flights.js
 node 1584_min_cost_to_connect.js
+node 778_swim_in_rising_water.js
+```
