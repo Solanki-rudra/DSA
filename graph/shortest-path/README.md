@@ -90,13 +90,13 @@ Starting at `(0, 0)`, return the **least time `t`** at which you can reach `(n -
 
 **Approach:**
 - Treat each cell as a graph node; adjacent cells with cardinal neighbours are edges.
-- Use **Dijkstra's Algorithm** with a **min-heap** keyed on the maximum elevation seen so far along the path.
-- Pop the cheapest cell, update `t = max(t, elevation)`, and push unvisited neighbours.
-- Return `t` as soon as the bottom-right cell is popped.
+- **Dijkstra's Algorithm (Min-Heap):** Use a min-heap keyed on the maximum elevation seen so far along the path. Pop the cheapest cell, update `t = max(t, elevation)`, push unvisited neighbours. Return `t` as soon as the bottom-right cell is popped.
+- **Binary Search + BFS:** Binary search on the answer `t` (range: `grid[0][0]` → `n²−1`). For each candidate `t`, run a BFS/DFS to check if a path exists where all cell elevations ≤ `t`. Converge on the minimum valid `t`.
 
 | Function | Approach | Time | Space | Description |
 |----------|----------|------|-------|-------------|
-| `swimInWater` | Dijkstra's Algorithm (Min-Heap) | O(N² log N) | O(N²) | Finds the minimum time to swim from top-left to bottom-right. |
+| `swimInWaterDij` | Dijkstra's Algorithm (Min-Heap) | O(N² log N) | O(N²) | Greedily expands via min-heap; returns the minimum bottleneck elevation. |
+| `swimInWaterBST` | Binary Search + BFS | O(N² log N) | O(N²) | Binary searches on time `t` and validates each candidate with a BFS. |
 
 ---
 
