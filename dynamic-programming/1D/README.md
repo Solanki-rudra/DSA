@@ -15,6 +15,7 @@ The solution to `dp[n]` is built from previously computed values using a
 |------|---------|-------------|
 | [`70_climbing_stairs.js`](./70_climbing_stairs.js) | LeetCode #70 — Climbing Stairs | Given `n` steps, find the number of distinct ways to reach the top climbing 1 or 2 steps at a time. |
 | [`198_house_robber.js`](./198_house_robber.js) | LeetCode #198 — House Robber | Given an array of house values, find the maximum money you can rob without robbing two adjacent houses. |
+| [`213_house_robber_2.js`](./213_house_robber_2.js) | LeetCode #213 — House Robber II | Given an array of house values arranged in a circle, find the maximum money you can rob without robbing two adjacent houses. |
 
 ---
 
@@ -56,9 +57,30 @@ Return the **maximum amount of money** you can rob tonight.
 
 ---
 
+### 🏘️ **213 — House Robber II**
+
+**Goal:**  
+You are a robber planning to rob houses along a street. The houses are arranged in a **circle**, meaning the first house is adjacent to the last. Each house has a certain amount of money. You **cannot rob two adjacent houses**.  
+Return the **maximum amount of money** you can rob tonight.
+
+**Approach:**
+- This problem can be broken down into two simpler "House Robber I" problems:
+  1. Rob houses from index `0` to `n-2` (excluding the last house).
+  2. Rob houses from index `1` to `n-1` (excluding the first house).
+- The maximum of these two scenarios is the final answer.
+- Handle edge cases where `n=1` explicitly since it doesn't fit the two ranges.
+
+| Function | Approach | Time | Space | Description |
+|----------|----------|------|-------|-------------|
+| `robBrute` | Recursion (Brute Force) | O(2^n) | O(n) | Explores all rob/skip combinations for both ranges via DFS. |
+| `robOptimal` | Dynamic Programming (Space-Optimized) | O(n) | O(1) | Computes the optimal rob value for both ranges using two rolling variables. |
+
+---
+
 ## ▶️ How to Run
 
 ```bash
 node 70_climbing_stairs.js
 node 198_house_robber.js
+node 213_house_robber_2.js
 ```
