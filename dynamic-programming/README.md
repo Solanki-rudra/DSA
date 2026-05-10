@@ -8,6 +8,7 @@ breaking them down into **overlapping subproblems** and storing the results to
 avoid redundant computation (**memoization** or **tabulation**).
 
 DP problems commonly exhibit:
+
 - **Optimal Substructure** — the optimal solution is built from optimal sub-solutions
 - **Overlapping Subproblems** — the same subproblem is solved multiple times
 
@@ -15,9 +16,10 @@ DP problems commonly exhibit:
 
 ## 📂 Folder Structure & Examples
 
-| Folder | Description | Example Problems |
-|--------|-------------|------------------|
-| [`1D`](./1D) | **1D DP** problems with a single state dimension | Climbing Stairs, House Robber, Coin Change |
+| Folder       | Description                                      | Example Problems                             |
+| ------------ | ------------------------------------------------ | -------------------------------------------- |
+| [`1D`](./1D) | **1D DP** problems with a single state dimension | Climbing Stairs, House Robber, Coin Change   |
+| [`2D`](./2D) | **2D DP** problems with a two state dimension    | Unique Paths, Minimum Path Sum, Dungeon Game |
 
 ---
 
@@ -34,27 +36,32 @@ DP problems commonly exhibit:
 ## 📚 Common DP Problem Categories
 
 ### 1D Dynamic Programming
+
 - Climbing Stairs
 - House Robber
 - Coin Change
 - Jump Game
 
 ### Knapsack Problems
+
 - 0/1 Knapsack
 - Unbounded Knapsack
 - Partition Equal Subset Sum
 
 ### Subsequence Problems
+
 - Longest Common Subsequence (LCS)
 - Longest Increasing Subsequence (LIS)
 - Edit Distance
 
 ### Grid / 2D DP
+
 - Unique Paths
 - Minimum Path Sum
 - Dungeon Game
 
 ### Interval DP
+
 - Burst Balloons
 - Matrix Chain Multiplication
 
@@ -62,18 +69,19 @@ DP problems commonly exhibit:
 
 ## ⏱ Complexity Overview
 
-| Pattern | Time Complexity | Space Complexity |
-|---------|----------------|-----------------|
-| 1D DP (tabulation) | O(n) | O(n) → O(1) optimized |
-| 2D DP (grid) | O(m × n) | O(m × n) → O(n) optimized |
-| Knapsack | O(n × W) | O(n × W) → O(W) optimized |
-| LCS / Edit Distance | O(m × n) | O(m × n) → O(n) optimized |
+| Pattern             | Time Complexity | Space Complexity          |
+| ------------------- | --------------- | ------------------------- |
+| 1D DP (tabulation)  | O(n)            | O(n) → O(1) optimized     |
+| 2D DP (grid)        | O(m × n)        | O(m × n) → O(n) optimized |
+| Knapsack            | O(n × W)        | O(n × W) → O(W) optimized |
+| LCS / Edit Distance | O(m × n)        | O(m × n) → O(n) optimized |
 
 ---
 
 ## 🎯 Interview Focus
 
 When solving DP problems, always identify:
+
 1. **The state** — what does `dp[i]` (or `dp[i][j]`) represent?
 2. **The recurrence relation** — how does `dp[i]` relate to previous states?
 3. **The base case(s)** — what are the smallest known values?
