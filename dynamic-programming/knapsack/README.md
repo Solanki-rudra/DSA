@@ -24,15 +24,19 @@ The knapsack problem is a problem in combinatorial optimization: Given a set of 
 You are given an integer array `coins` representing coins of different denominations and an integer `amount` representing a total amount of money.  
 Return the **fewest number of coins** that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return `-1`. You may assume that you have an infinite number of each kind of coin.
 
-**Approach:**
+**Learning Path & Approaches:**
 
-- **Brute Force (Recursion):** For each coin, we can either include it in our sum (if it's less than or equal to the remaining amount) or exclude it. Since we can reuse coins, if we include a coin, we stay on the same coin index. Return the minimum coins needed.
-- **Optimal (2D Dynamic Programming / Memoization):** Use a 2D memoization table to store the results of subproblems (`ind`, `target`). `dp[ind][target]` stores the minimum coins needed to make `target` using coins up to index `ind`. Time O(n * amount), Space O(n * amount).
+1. **Brute Force (Recursion):** Start by exploring all possible combinations. At each step, either include the current coin (and stay on the same coin since supply is infinite) or skip to the next coin. Time complexity is exponential.
+2. **Top-Down DP (Memoization):** Optimize the recursion by caching results of subproblems (`ind`, `target`) in a 2D array `dp`. This prevents recalculating the same states.
+3. **Bottom-Up DP (Tabulation):** Convert the memoized recursion into an iterative approach. Build a 2D `dp` table from base cases up to the target amount.
+4. **Space-Optimized DP (1D Tabulation):** Notice that the current state in tabulation only depends on the previous row or the current row. We can flatten the 2D table into a 1D array of size `amount + 1` to optimize space.
 
-| Function      | Approach                            | Time           | Space          | Description                                                    |
-| ------------- | ----------------------------------- | -------------- | -------------- | -------------------------------------------------------------- |
-| `coinChange1` | Recursion (Brute Force)             | O(S^n)         | O(S/min(coin)) | Explores all coin combinations recursively without memoization.|
-| `coinChange2` | Memoization (Dynamic Programming)   | O(n * amount)  | O(n * amount)  | Caches overlapping subproblems in a 2D array.                  |
+| Function      | Approach                               | Time           | Space          | Description                                                    |
+| ------------- | -------------------------------------- | -------------- | -------------- | -------------------------------------------------------------- |
+| `coinChange1` | Recursion (Brute Force)                | O(S^n)         | O(S/min(coin)) | Explores all coin combinations recursively without memoization.|
+| `coinChange2` | Top-Down DP (Memoization)              | O(n * amount)  | O(n * amount)  | Caches overlapping subproblems in a 2D array.                  |
+| `coinChange3` | Bottom-Up DP (Tabulation)              | O(n * amount)  | O(n * amount)  | Iteratively builds a 2D table from base cases.                 |
+| `coinChange4` | Space-Optimized DP (1D Tabulation)     | O(n * amount)  | O(amount)      | Uses a 1D array to reduce space complexity.                    |
 
 ---
 

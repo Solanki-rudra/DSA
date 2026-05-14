@@ -59,8 +59,62 @@ function coinChange2(coins, amount) {
     return ans === Infinity ? -1 : ans
 }
 
+/**
+ * @name coinChange3
+ * @description Approach: Tabulation (Bottom-Up Dynamic Programming)
+ * We build a 2D table iteratively from the base cases up to the target amount.
+ * @timeComplexity O(n * amount) where n is the number of coins and amount is the target amount. We iterate through all states.
+ * @spaceComplexity O(n * amount) for the 2D tabulation array.
+ */
+function coinChange3(coins, amount) {
+    let n = coins.length
+
+    let dp = Array.from(
+        { length: n },
+        () => Array(amount + 1).fill(Infinity)
+    )
+    for (let target = 0; target <= amount; target++) {
+        if (target % coins[0] === 0) {
+            dp[0][target] = target / coins[0]
+        }
+    }
+
+    for (let ind = 1; ind < n; ind++) {
+        for (let target = 0; target <= amount; target++) {
+            let notTake = dp[ind - 1][target]
+            let take = Infinity
+            if (coins[ind] <= target) {
+                take = 1 + dp[ind][target - coins[ind]]
+            }
+            dp[ind][target] = Math.min(notTake, take)
+        }
+    }
+    let ans = dp[n - 1][amount]
+    return ans === Infinity ? -1 : ans
+}
+
+/**
+ * @name coinChange4
+ * @description Approach: Space-Optimized Tabulation (1D Dynamic Programming)
+ * We can optimize the space complexity of the tabulation approach by using a 1D array since the current state only depends on the previous row (or the same row for unbounded knapsack).
+ * @timeComplexity O(n * amount) where n is the number of coins and amount is the target amount. We iterate through all states.
+ * @spaceComplexity O(amount) for the 1D tabulation array.
+ */
+function coinChange4(coins, amount) {
+    let dp = Array(amount + 1).fill(Infinity)
+    dp[0] = 0
+    for (let coin of coins) {
+        for (let target = coin; target <= amount; target++) {
+            dp[target] = Math.min(dp[target], 1 + dp[target - coin])
+        }
+    }
+    return dp[amount] !== Infinity ? dp[amount] : -1
+}
+
 // Test
 console.log(coinChange1([1, 2, 5], 11)) // Output: 3
 console.log(coinChange2([1, 2, 5], 11)) // Output: 3
-console.log(coinChange2([2], 3)) // Output: -1
-console.log(coinChange2([1], 0)) // Output: 0
+console.log(coinChange3([1, 2, 5], 11)) // Output: 3
+console.log(coinChange4([1, 2, 5], 11)) // Output: 3
+console.log(coinChange4([2], 3)) // Output: -1
+console.log(coinChange4([1], 0)) // Output: 0
