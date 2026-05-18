@@ -17,6 +17,7 @@ The solution to `dp[n]` is built from previously computed values using a
 | [`198_house_robber.js`](./198_house_robber.js)     | LeetCode #198 — House Robber    | Given an array of house values, find the maximum money you can rob without robbing two adjacent houses.                      |
 | [`213_house_robber_2.js`](./213_house_robber_2.js) | LeetCode #213 — House Robber II | Given an array of house values arranged in a circle, find the maximum money you can rob without robbing two adjacent houses. |
 | [`91_decode_ways.js`](./91_decode_ways.js)         | LeetCode #91 — Decode Ways      | Given a string s containing only digits, return the number of ways to decode it.                                             |
+| [`152_max_product_subarr.js`](./152_max_product_subarr.js) | LeetCode #152 — Max Product Subarray | Given an integer array, find a contiguous non-empty subarray that has the largest product and return its product. |
 
 ---
 
@@ -110,6 +111,23 @@ Given a string `s` containing digits, return the **number of possible decodings*
 
 ---
 
+### 📈 **152 — Maximum Product Subarray**
+
+**Goal:**  
+Given an integer array `nums`, find a contiguous non-empty subarray within the array that has the largest product, and return the product.
+
+**Approach:**
+
+- **Approach 1 (Prefix & Suffix Products):** The maximum product subarray must start at the beginning or end at the end of the array (or subsegments between zeros). By tracking the running product from left to right (`prefix`) and right to left (`suffix`), and resetting them to 1 when a zero is encountered, we can determine the maximum product in O(n) time and O(1) space.
+- **Approach 2 (Dynamic Programming / Min-Max Tracking):** Since negative numbers can turn the smallest product (most negative) into the largest product (most positive) when multiplied by another negative number, we must track both the maximum and minimum product subarrays ending at the current position. At each step, the new max and min are updated by comparing the current number itself, and the products of the current number with the previous max and min.
+
+| Function | Approach | Time | Space | Description |
+| --- | --- | --- | --- | --- |
+| `maxProduct1` | Prefix & Suffix Products | O(n) | O(1) | Computes prefix and suffix products, resetting on zeros. |
+| `maxProduct2` | Space-Optimized DP (Min/Max Tracking) | O(n) | O(1) | Tracks running min and max products ending at the current index. |
+
+---
+
 ## ▶️ How to Run
 
 ```bash
@@ -117,4 +135,5 @@ node 70_climbing_stairs.js
 node 198_house_robber.js
 node 213_house_robber_2.js
 node 91_decode_ways.js
+node 152_max_product_subarr.js
 ```
