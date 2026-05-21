@@ -1,3 +1,5 @@
+// Pattern: Dynamic Programming, Longest subsequence
+
 /**
  * LeetCode #300 - Longest Increasing Subsequence
  *

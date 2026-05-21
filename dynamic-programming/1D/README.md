@@ -11,14 +11,13 @@ The solution to `dp[n]` is built from previously computed values using a
 
 ## 📂 Files
 
-| File                                               | Problem                         | Description                                                                                                                  |
-| -------------------------------------------------- | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| [`70_climbing_stairs.js`](./70_climbing_stairs.js) | LeetCode #70 — Climbing Stairs  | Given `n` steps, find the number of distinct ways to reach the top climbing 1 or 2 steps at a time.                          |
-| [`198_house_robber.js`](./198_house_robber.js)     | LeetCode #198 — House Robber    | Given an array of house values, find the maximum money you can rob without robbing two adjacent houses.                      |
-| [`213_house_robber_2.js`](./213_house_robber_2.js) | LeetCode #213 — House Robber II | Given an array of house values arranged in a circle, find the maximum money you can rob without robbing two adjacent houses. |
-| [`91_decode_ways.js`](./91_decode_ways.js)         | LeetCode #91 — Decode Ways      | Given a string s containing only digits, return the number of ways to decode it.                                             |
-| [`152_max_product_subarr.js`](./152_max_product_subarr.js) | LeetCode #152 — Max Product Subarray | Given an integer array, find a contiguous non-empty subarray that has the largest product and return its product. |
-| [`300_long_inc_sbsqence.js`](./300_long_inc_sbsqence.js) | LeetCode #300 — Longest Increasing Subsequence | Given an integer array, return the length of the longest strictly increasing subsequence. |
+| File                                                       | Problem                              | Description                                                                                                                  |
+| ---------------------------------------------------------- | ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| [`70_climbing_stairs.js`](./70_climbing_stairs.js)         | LeetCode #70 — Climbing Stairs       | Given `n` steps, find the number of distinct ways to reach the top climbing 1 or 2 steps at a time.                          |
+| [`198_house_robber.js`](./198_house_robber.js)             | LeetCode #198 — House Robber         | Given an array of house values, find the maximum money you can rob without robbing two adjacent houses.                      |
+| [`213_house_robber_2.js`](./213_house_robber_2.js)         | LeetCode #213 — House Robber II      | Given an array of house values arranged in a circle, find the maximum money you can rob without robbing two adjacent houses. |
+| [`91_decode_ways.js`](./91_decode_ways.js)                 | LeetCode #91 — Decode Ways           | Given a string s containing only digits, return the number of ways to decode it.                                             |
+| [`152_max_product_subarr.js`](./152_max_product_subarr.js) | LeetCode #152 — Max Product Subarray | Given an integer array, find a contiguous non-empty subarray that has the largest product and return its product.            |
 
 ---
 
@@ -122,27 +121,10 @@ Given an integer array `nums`, find a contiguous non-empty subarray within the a
 - **Approach 1 (Prefix & Suffix Products):** The maximum product subarray must start at the beginning or end at the end of the array (or subsegments between zeros). By tracking the running product from left to right (`prefix`) and right to left (`suffix`), and resetting them to 1 when a zero is encountered, we can determine the maximum product in O(n) time and O(1) space.
 - **Approach 2 (Dynamic Programming / Min-Max Tracking):** Since negative numbers can turn the smallest product (most negative) into the largest product (most positive) when multiplied by another negative number, we must track both the maximum and minimum product subarrays ending at the current position. At each step, the new max and min are updated by comparing the current number itself, and the products of the current number with the previous max and min.
 
-| Function | Approach | Time | Space | Description |
-| --- | --- | --- | --- | --- |
-| `maxProduct1` | Prefix & Suffix Products | O(n) | O(1) | Computes prefix and suffix products, resetting on zeros. |
-| `maxProduct2` | Space-Optimized DP (Min/Max Tracking) | O(n) | O(1) | Tracks running min and max products ending at the current index. |
-
----
-
-### 📈 **300 — Longest Increasing Subsequence**
-
-**Goal:**  
-Given an integer array `nums`, return the length of the longest strictly increasing subsequence.
-
-**Approach:**
-
-- **Approach 1 (Dynamic Programming):** Use a `dp` array where `dp[i]` represents the length of the longest increasing subsequence that ends with `nums[i]`. For each element, check all previous elements. If a previous element is strictly smaller, we can append the current element to its subsequence. The overall answer is the maximum value in the `dp` array.
-- **Approach 2 (Binary Search / Patience Sorting):** Build an array `sub` that keeps track of the smallest tail values for all increasing subsequences of various lengths. For each number, if it's larger than the last element of `sub`, append it. Otherwise, use binary search to find the smallest element in `sub` that is greater than or equal to the current number, and replace it. The length of `sub` will be the answer.
-
-| Function | Approach | Time | Space | Description |
-| --- | --- | --- | --- | --- |
-| `lengthOfLIS1` | Dynamic Programming | O(n^2) | O(n) | Computes LIS length ending at each index by checking previous smaller elements. |
-| `lengthOfLIS2` | Binary Search (Patience Sorting) | O(n log n) | O(n) | Maintains active subsequence tails using binary search for optimal placements. |
+| Function      | Approach                              | Time | Space | Description                                                      |
+| ------------- | ------------------------------------- | ---- | ----- | ---------------------------------------------------------------- |
+| `maxProduct1` | Prefix & Suffix Products              | O(n) | O(1)  | Computes prefix and suffix products, resetting on zeros.         |
+| `maxProduct2` | Space-Optimized DP (Min/Max Tracking) | O(n) | O(1)  | Tracks running min and max products ending at the current index. |
 
 ---
 
@@ -154,5 +136,4 @@ node 198_house_robber.js
 node 213_house_robber_2.js
 node 91_decode_ways.js
 node 152_max_product_subarr.js
-node 300_long_inc_sbsqence.js
 ```

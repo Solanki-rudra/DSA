@@ -16,11 +16,12 @@ DP problems commonly exhibit:
 
 ## 📂 Folder Structure & Examples
 
-| Folder                    | Description                                      | Example Problems                             |
-| ------------------------- | ------------------------------------------------ | -------------------------------------------- |
-| [`1D`](./1D)              | **1D DP** problems with a single state dimension | Climbing Stairs, House Robber, Coin Change   |
-| [`2D`](./2D)              | **2D DP** problems with a two state dimension    | Unique Paths, Minimum Path Sum, Dungeon Game |
-| [`knapsack`](./knapsack/) | **Knapsack** problems with a two state dimension | Coin Change, Best Time to Buy and Sell Stock |
+| Folder                                          | Description                                      | Example Problems                                           |
+| ----------------------------------------------- | ------------------------------------------------ | ---------------------------------------------------------- |
+| [`1D`](./1D)                                    | **1D DP** problems with a single state dimension | Climbing Stairs, House Robber, Coin Change                 |
+| [`2D`](./2D)                                    | **2D DP** problems with a two state dimension    | Unique Paths, Minimum Path Sum, Dungeon Game               |
+| [`knapsack`](./knapsack/)                       | **Knapsack** problems with a two state dimension | Coin Change, Best Time to Buy and Sell Stock               |
+| [`longest-subsequence`](./longest-subsequence/) | **Longest Subsequence** problems                 | Longest Increasing Subsequence, Longest Common Subsequence |
 
 ---
 
